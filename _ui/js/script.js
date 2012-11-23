@@ -1,19 +1,75 @@
-(function($) {
+/* by @Idered */
 
-	var App = {
+var App = App || (function($) {
 
-		init: function() {
+    var Utils   = {},
+        Public  = {};
 
-			this.fn1();
+    Utils = {
+        settings: {
+            debug: true,
+            init: function() {
 
-		} // init
+            $("body").removeClass("no-js");
 
-		, fn1: function() {
+            Utils.placeholder();
 
-		} // fn1
+            }
+        }, // settings
 
-	};
+        log: function(what) {
+            if (Utils.settings.debug) {
+                console.log(what);
+            }
+        }, // log
 
-	App.init();
+        placeholder: function() {
+            if(!('placeholder' in document.createElement('input'))) {
+                $('[placeholder]').focus(function() {
+                    var input = $(this);
+                    if (input.val() == input.attr('placeholder'))
+                        input.val('').removeClass('placeholder');
+                }).blur(function() {
+                    var input = $(this);
+                    if (input.val() == '' || input.val() == input.attr('placeholder'))
+                        input.val(input.attr('placeholder')).addClass('placeholder');
+                }).blur();
 
-})(jQuery);
+                $('[placeholder]').parents('form').submit(function() {
+                    $(this).find('[placeholder]').each(function() {
+                        var input = $(this);
+                        if (input.val() == input.attr('placeholder'))
+                            input.val('');
+                    })
+                });
+            }
+        } // placeholder
+    };
+    var _log = Utils.log;
+
+
+    Public = {
+        init: function() {
+
+            _log('main.js initialized.');
+
+            Utils.settings.init();
+
+            Public.fn1();
+
+        }, // init
+
+        fn1: function() {
+
+        }, // fn1
+
+        fn2: function() {
+
+        } // fn2
+    };
+
+    return Public;
+
+})(window.jQuery);
+
+jQuery(document).ready(App.init);
