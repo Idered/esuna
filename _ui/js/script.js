@@ -10,20 +10,30 @@ var App = App || (function($) {
             debug: true,
             init: function() {
 
-            $("body").removeClass("no-js");
+                $("body").removeClass("no-js");
 
-            Utils.placeholder();
+                Utils.placeholder();
+
+                Utils.nav('.site-nav', '.site-nav-trigger');
+                Utils.dropdown('.dropdown');
 
             }
         }, // settings
 
+        /**
+         * Custom log wrapper function
+         */
         log: function(what) {
-            if (Utils.settings.debug) {
-                console.log(what);
-            }
+
+            Utils.settings.debug && window.console && console.log.apply(console, arguments);
+
         }, // log
 
+        /**
+         * Placeholder shim
+         */
         placeholder: function() {
+
             if(!('placeholder' in document.createElement('input'))) {
                 $('[placeholder]').focus(function() {
                     var input = $(this);
@@ -43,7 +53,51 @@ var App = App || (function($) {
                     })
                 });
             }
-        } // placeholder
+
+        }, // placeholder
+
+        /**
+         * Toggle site nav using trigger button
+         * @param  {string} nav     Navigation selector
+         * @param  {string} trigger Trigger button selector
+         */
+        nav: function(nav, trigger) {
+
+            $(trigger).on('click', function() {
+                $(nav).slideToggle();
+            });
+
+        }, // nav
+
+        /**
+         * Handle dropdowns
+         * @param  {string} dropdown Dropdown class
+         */
+        dropdown: function(dropdown) {
+
+            var $this;
+
+            $(dropdown).each(function() {
+
+                $this = $(this);
+
+                $(this).find('.dropdown__toggle').on('click', function(event) {
+
+                    event.stopPropagation();
+
+                    $this.toggleClass('is-open');
+
+                });
+
+            });
+
+            $(document).on('click', function() {
+
+                $('.is-open').removeClass('is-open');
+
+            });
+
+        } // dropdown
     };
     var _log = Utils.log;
 
