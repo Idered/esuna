@@ -16,6 +16,7 @@ var App = App || (function($) {
 
                 Utils.nav('.site-nav', '.site-nav-trigger');
                 Utils.dropdown('.dropdown');
+                Utils.submitShorcut();
 
             }
         }, // settings
@@ -97,7 +98,24 @@ var App = App || (function($) {
 
             });
 
-        } // dropdown
+        }, // dropdown
+
+        /**
+         * Submit forms using Ctlr + Enter shorcut
+         */
+        submitShorcut: function() {
+            var isCtrl = false;
+
+            $('textarea, input').keyup(function(e) {
+                if (e.which == 17) isCtrl = false;
+            }).keydown(function(e) {
+                if (e.which == 17) isCtrl = true;
+                if (e.which == 13 && isCtrl === true) {
+                    $(this).closest('form').submit();
+                    return false;
+                }
+            });
+        } // submitShortcut
     };
     var _log = Utils.log;
 
