@@ -1,8 +1,8 @@
-= esuna
+# esuna
 
 Personal starting point for Front-End projects.
 
-== Structure
+## Structure
 
 ```
 .
@@ -20,38 +20,38 @@ Personal starting point for Front-End projects.
 |-- _media
 ```
 
-=== index.html
+### index.html
 
 Contains basic structure.
 
-=== style.css
+### style.css
 
 This is where we write all those cool css stuff. It also contains normalize.css, some helpers, objects and media queries.
 
 Please see [my snippets repo][2] for basic strucure of elemenets included in `style.css`, I've put ther structure of comments, post, blockquotes, tags and many more elements.
 
-=== plugins.js
+### plugins.js
 
 This file contains matchMedia() polyfill and Respond.js to add min/max-width media query polyfill. It also contains [DEVTools][1], it's a set of simple tools(css refresher, window size viewier).
 
-=== script.js
+### script.js
 
 This file is where you work on JS stuff. There's already a basic structure with placholder polyfill and some other useful scripts.
 
 ** Don't forget to set custom development domain at the beggining of file**.
 
-=== __assets
+### __assets
 
 In this folder you can put not converted fonts, PSD's including sprite.psd, documentations from client, etc.
 
-=== __media
+### __media
 
 This is where you hold videos, placeholder images for articles, user avatars and other elements not directly conected with UI.
 
  [1]: https://github.com/Idered/snippets/blob/master/JS/devtools.js
  [2]: https://github.com/Idered/snippets
 
-== License
+## License
 
 **MIT Licensing**
 
