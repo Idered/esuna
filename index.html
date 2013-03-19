@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 
+	<!-- @see developer.mozilla.org/en-US/docs/Controlling_DNS_prefetching -->
 	<link rel="dns-prefetch" href="//p.twitter.com">
 	<link rel="dns-prefetch" href="//cdn.api.twitter.com">
 	<link rel="dns-prefetch" href="//ajax.googleapis.com">
@@ -19,6 +20,22 @@
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+
+	<!-- @see codular.com/google-author-image -->
+	<link rel="author" href="https://plus.google.com/{{ page.author.gplus }}/posts">
+
+	<!-- @see ogp.me -->
+	<meta property="og:title" content="{{ page.title }}" />
+	<meta property="og:type" content="website" />
+	<meta property="og:description" content="{{ page.description }}" />
+	<meta property="og:url" content="{{ page.url }}">
+
+	<!-- @see dev.twitter.com/docs/cards -->
+	<meta property="twitter:title" content="{{ page.title }}">
+	<meta property="twitter:creator" content="@{{ page.author.username }}">
+	<meta property="twitter:card" content="summary">
+	<meta property="twitter:description" content="{{ page.description }}">
+	<meta property="twitter:url" content="{{ page.url }}">
 </head>
 <body>
 
