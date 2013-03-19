@@ -1,146 +1,118 @@
 /* by @Idered */
 
+/* global jQuery, DEVTools */
 var App = App || (function($) {
 
-    var Utils   = {},
-        Public  = {};
+	var Utils   = {},
+		Public  = {};
 
-    Utils = {
-        settings: {
-            debug: true,
-            init: function() {
+	Utils = {
+		settings: {
+			debug: true,
+			devDomain: 'xhtmlized.dev',
+			init: function() {
+				Utils.placeholder();
+				Utils.submitShorcut();
 
-                $("body").removeClass("no-js");
+				if (Utils.settings.debug && Utils.settings.devDomain === location.host) {
+					DEVTools.windowSize();
+					DEVTools.CSSRefresher.init();
+				}
+			}
+		}, // settings
 
-                Utils.placeholder();
+		/**
+		 * Placeholder shim
+		 */
+		placeholder: function() {
 
-                Utils.nav('.site-nav', '.site-nav-trigger');
-                Utils.dropdown('.dropdown');
-                Utils.submitShorcut();
+			if(!('placeholder' in document.createElement('input'))) {
+				$('[placeholder]').focus(function() {
+					var input = $(this);
+					if (input.val() === input.attr('placeholder')) { input.val('').removeClass('placeholder'); }
+				}).blur(function() {
+					var input = $(this);
+					if (input.val() === '' || input.val() === input.attr('placeholder')) {
+						input.val(input.attr('placeholder')).addClass('placeholder');
+					}
+				}).blur();
 
-            }
-        }, // settings
+				$('[placeholder]').parents('form').submit(function() {
+					$(this).find('[placeholder]').each(function() {
+						var input = $(this);
+						if (input.val() === input.attr('placeholder')) {
+							input.val('');
+						}
+					});
+				});
+			}
 
-        /**
-         * Custom log wrapper function
-         */
-        log: function(what) {
+		}, // placeholder
 
-            Utils.settings.debug && window.console && console.log.apply(console, arguments);
+		/**
+		 * Toggle site nav using trigger button
+		 * @param  {string} nav
+		 * @param  {string} trigger
+		 */
+		nav: function(nav, trigger) {
 
-        }, // log
+			$(trigger).on('click', function() {
+				$(nav).slideToggle();
+			});
 
-        /**
-         * Placeholder shim
-         */
-        placeholder: function() {
+		}, // nav
 
-            if(!('placeholder' in document.createElement('input'))) {
-                $('[placeholder]').focus(function() {
-                    var input = $(this);
-                    if (input.val() == input.attr('placeholder'))
-                        input.val('').removeClass('placeholder');
-                }).blur(function() {
-                    var input = $(this);
-                    if (input.val() == '' || input.val() == input.attr('placeholder'))
-                        input.val(input.attr('placeholder')).addClass('placeholder');
-                }).blur();
+		/**
+		 * Handle dropdowns
+		 * @param  {string} dropdown Dropdown class
+		 */
+		dropdown: function(dropdown) {
+			var $this;
 
-                $('[placeholder]').parents('form').submit(function() {
-                    $(this).find('[placeholder]').each(function() {
-                        var input = $(this);
-                        if (input.val() == input.attr('placeholder'))
-                            input.val('');
-                    })
-                });
-            }
+			$(dropdown).each(function() {
+				$this = $(this);
 
-        }, // placeholder
+				$(this).find('.dropdown__toggle').on('click', function(event) {
+					event.stopPropagation();
 
-        /**
-         * Toggle site nav using trigger button
-         * @param  {string} nav     Navigation selector
-         * @param  {string} trigger Trigger button selector
-         */
-        nav: function(nav, trigger) {
+					$this.toggleClass('is-open');
+				});
+			});
 
-            $(trigger).on('click', function() {
-                $(nav).slideToggle();
-            });
+			$(document).on('click', function() {
+				$('.is-open').removeClass('is-open');
+			});
+		}, // dropdown
 
-        }, // nav
+		/**
+		 * Submit forms using Ctlr + Enter shorcut
+		 */
+		submitShorcut: function() {
+			var isCtrl = false;
 
-        /**
-         * Handle dropdowns
-         * @param  {string} dropdown Dropdown class
-         */
-        dropdown: function(dropdown) {
+			$('textarea, input').keyup(function(key) {
+				if (key.which === 17) { isCtrl = false; }
+			}).keydown(function(key) {
+				if (key.which === 17) { isCtrl = true; }
+				if (key.which === 13 && isCtrl === true) {
+					$(this).closest('form').submit();
+					return false;
+				}
+			});
+		} // submitShortcut
+	};
 
-            var $this;
+	Public = {
+		init: function() {
 
-            $(dropdown).each(function() {
+			Utils.settings.init();
 
-                $this = $(this);
+			Utils.nav('.site-nav', '.js-toggle-nav');
 
-                $(this).find('.dropdown__toggle').on('click', function(event) {
+		} // init
+	};
 
-                    event.stopPropagation();
-
-                    $this.toggleClass('is-open');
-
-                });
-
-            });
-
-            $(document).on('click', function() {
-
-                $('.is-open').removeClass('is-open');
-
-            });
-
-        }, // dropdown
-
-        /**
-         * Submit forms using Ctlr + Enter shorcut
-         */
-        submitShorcut: function() {
-            var isCtrl = false;
-
-            $('textarea, input').keyup(function(e) {
-                if (e.which == 17) isCtrl = false;
-            }).keydown(function(e) {
-                if (e.which == 17) isCtrl = true;
-                if (e.which == 13 && isCtrl === true) {
-                    $(this).closest('form').submit();
-                    return false;
-                }
-            });
-        } // submitShortcut
-    };
-    var _log = Utils.log;
-
-
-    Public = {
-        init: function() {
-
-            _log('main.js initialized.');
-
-            Utils.settings.init();
-
-            Public.fn1();
-
-        }, // init
-
-        fn1: function() {
-
-        }, // fn1
-
-        fn2: function() {
-
-        } // fn2
-    };
-
-    return Public;
+	return Public;
 
 })(window.jQuery);
 

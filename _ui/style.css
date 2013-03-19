@@ -1,25 +1,18 @@
+/**
+ * @author Kasper Mikiewicz - Idered
+ * @url    http://idered.pl
+\*----------------------------------------------------------------------------*/
+
 /*----------------------------------------------------------------------------*\
    $NORMALIZE normalize.css v2.1.0 | MIT License | git.io/normalize
 \*----------------------------------------------------------------------------*/
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section,
-summary {
+article, aside, details, figcaption, figure, footer,
+header, hgroup, main, nav, section, summary {
 	display: block;
 }
 
-audio,
-canvas,
-video {
+audio, canvas, video {
 	display: inline-block;
 }
 
@@ -32,27 +25,11 @@ audio:not([controls]) {
 	display: none;
 }
 
-html {
-	font-family: sans-serif;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-}
-
-body {
-	margin: 0;
-}
-
-h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
-}
-
 abbr[title] {
 	border-bottom: 1px dotted;
 }
 
-b,
-strong {
+b, strong {
 	font-weight: bold;
 }
 
@@ -71,10 +48,7 @@ mark {
 	color: #000;
 }
 
-code,
-kbd,
-pre,
-samp {
+code, kbd, pre, samp {
 	font-family: monospace, serif;
 	font-size: 1em;
 }
@@ -91,8 +65,7 @@ small {
 	font-size: 80%;
 }
 
-sub,
-sup {
+sub, sup {
 	font-size: 75%;
 	line-height: 0;
 	position: relative;
@@ -132,22 +105,18 @@ legend {
 	padding: 0;
 }
 
-button,
-input,
-select,
-textarea {
+button, input,
+select, textarea {
 	font-family: inherit;
 	font-size: 100%;
 	margin: 0;
 }
 
-button,
-input {
+button, input {
 	line-height: normal;
 }
 
-button,
-select {
+button, select {
 	text-transform: none;
 }
 
@@ -207,51 +176,13 @@ html {
 	font: 300 1em/1.5 "Open Sans", sans-serif;
 	background-color: #fff;
 	color: #333;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
 }
 
 body {
-	-webkit-font-smoothing: antialiased;
-}
-
-/*----------------------------------------------------------------------------*\
-	$GRID
-\*----------------------------------------------------------------------------*/
-
-.wrapper {
-	max-width: 1120px;
-	margin: 0 auto;
-}
-
-
-/*----------------------------------------------------------------------------*\
-	$ISLAND | csswizardry.com/2011/10/the-island-object
-\*----------------------------------------------------------------------------*/
-
-.islet,
-.island {
-	display: block;
-	margin-bottom: 24px;
-}
-
-.islet:after,
-.island:after {
-	content: "";
-	display: table;
-	clear: both;
-}
-
-.island {
-	padding:  24px;
-}
-
-.island > :last-child,
-.islet > :last-child{
-	margin-bottom: 0;
-}
-
-.islet {
-	padding: 12px;
-	margin-bottom: 12px;
+	margin: 0;
 }
 
 
@@ -274,14 +205,45 @@ a:hover {
 
 .link--natural {
 	color: inherit;
-	font-size:inherit;
-	line-height:inherit;
+	font-size: inherit;
+	line-height: inherit;
 }
 
 
 /*----------------------------------------------------------------------------*\
-	$LISTS
+	$TYPOGRAPHY
 \*----------------------------------------------------------------------------*/
+
+h1, h2, h3,
+h4, h5, h6,
+.alpha, .beta, .gamma,
+.delta, .epsilon, .zeta {
+	margin: .5em 0;
+}
+
+h1, .alpha {
+	font-size: 2.5em;
+}
+
+h2, .beta {
+	font-size: 2.2em;
+}
+
+h3, .gamma {
+	font-size: 1.9em;
+}
+
+h4, .delta {
+	font-size: 1.6em;
+}
+
+h5, .epsilon {
+	font-size: 1.3em;
+}
+
+h6, .zeta {
+	font-size: 1em;
+}
 
 
 /*----------------------------------------------------------------------------*\
@@ -304,9 +266,7 @@ a:hover {
    font-style: italic;
 }
 
-.input-wrap {
-
-}
+.input-wrap {}
 
 .input-wrap:after {
 	content:"";
@@ -314,9 +274,7 @@ a:hover {
 	clear:both;
 }
 
-.input-wrap label {
-
-}
+.input-wrap label {}
 
 .input-wrap input,
 .input-wrap textarea {
@@ -342,51 +300,63 @@ a:hover {
 			transition: all .25s ease;
 }
 
+/*------------------------------------*/
+
 .fx--opacity:hover {
 	opacity: .7;
 	filter: alpha(opacity = 70);
 }
 
+/*------------------------------------*/
 
-/*----------------------------------------------------------------------------*\
-	$TYPOGRAPHY
-\*----------------------------------------------------------------------------*/
+@-webkit-keyframes pulse { 0% { opacity: .6; } 50% { opacity: 1; } 100% { opacity: .6; } }
+@-moz-keyframes pulse    { 0% { opacity: .6; } 50% { opacity: 1; } 100% { opacity: .6; } }
+@-o-keyframes pulse      { 0% { opacity: .6; } 50% { opacity: 1; } 100% { opacity: .6; } }
+@keyframes pulse         { 0% { opacity: .6; } 50% { opacity: 1; } 100% { opacity: .6; } }
 
-h1, h2, h3,
-h4, h5, h6 {
-	font-family: Merriweather, serif;
+.fx--pulse {
+	-webkit-animation: pulse 1s infinite;
+	-moz-animation:    pulse 1s infinite;
+	-o-animation:      pulse 1s infinite;
+	animation:         pulse 1s infinite;
 }
 
 
 /*----------------------------------------------------------------------------*\
-	$SPRITE
-
-	<i class="s s--twitter"></i>
+	$SPRITES
 \*----------------------------------------------------------------------------*/
 
 .s {
 	background-image:url(img/sprite.png);
-	display:inline-block;
-	line-height:1;
-	position:relative;
 	vertical-align:middle;
+	display:inline-block;
+	position:relative;
+	line-height:1;
 	zoom:1;
+	top:-1px;
 	width: 16px;
 	height:16px;
-	top:-1px;
 	overflow:hidden;
    *text-indent:-9999px;
 }
 
 .s:before{
-	content:"";
-	display:block;
 	width:0;
 	height:100%;
+	content: '';
+	display:block;
 }
 
-/* Custom sprites
-\*------------------------------------*/
+/*------------------------------------*/
+
+.s--facebook { background-position: 0 0; }
+.s--twitter  { background-position: 0 0; }
+.s--gplus    { background-position: 0 0; }
+.s--linkedin { background-position: 0 0; }
+.s--rss      { background-position: 0 0; }
+
+.s--phone    { background-position: 0 0; }
+.s--email    { background-position: 0 0; }
 
 
 /*----------------------------------------------------------------------------*\
@@ -395,57 +365,43 @@ h4, h5, h6 {
 
 .nav {
 	list-style: none;
-	margin-left: 0;
+	padding-left: 0;
 }
 
 .nav:after {
-	content: "";
-	display: table;
+	content: '';
 	clear: both;
+	display: table;
 }
 
 .nav li,
-.nav li a {
+.nav a {
 	display: inline-block;
-   *display: inline;
-	zoom: 1;
 }
 
 .nav--stacked li {
 	display: list-item;
 }
 
-.nav--stacked li a {
+.nav--stacked a {
 	display: block;
 }
 
-
-/*----------------------------------------------------------------------------*\
-	$QUOTES
-\*----------------------------------------------------------------------------*/
-
-blockquote {
-	display: block;
-	clear: both;
-	position: relative;
+.nav--fluid {
+	display: table;
+	width: 100%;
 }
 
-blockquote p:first-child {
-	margin-top: 0;
-}
-
-.source {
-	display: block;
-	text-indent: 0;
-	color: #b02424;
-	font-weight: normal;
-	text-align: right;
+.nav--fluid > li {
+	display: table-cell;
+	text-align: center;
 }
 
 
 /*----------------------------------------------------------------------------*\
 	$BUTTONS | Based on github.com/csswizardry/beautons
 \*----------------------------------------------------------------------------*/
+
 .btn {
 	display: inline-block;
 	vertical-align: middle;
@@ -454,54 +410,57 @@ blockquote p:first-child {
 	cursor: pointer;
 	border: none;
 	margin: 0;
-	padding-top: 0;
-	padding-bottom: 0;
-	line-height: 1.8;
-	padding-right: 1em;
-	padding-left: 1em;
-	border-radius: 4px;
-	text-shadow: 0 -1px rgba(0,0,0,.3);
+	height: 2em;
+	padding: 0 1em;
+	line-height: 2;
 }
 
 .btn,
-.btn:hover {
+.btn:hover,
+.btn:active,
+.btn:focus{
 	text-decoration: none;
 }
 
-.btn:hover {
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
+.btn:hover {}
 
 .btn:active,
 .btn:focus {
 	outline: none;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
 }
 
 /* Sizes
 \*------------------------------------*/
-.btn--small {
-	padding-right: 0.5em;
-	padding-left: 0.5em;
-	line-height: 1.4;
+.btn--small{
+    padding-right:0.5em;
+    padding-left: 0.5em;
+    line-height:2;
+    height:     2em;
 }
 
-.btn--large {
-	padding-right: 1.5em;
-	padding-left: 1.5em;
-	line-height: 2.2;
+.btn--large{
+    padding-right:1.5em;
+    padding-left: 1.5em;
+    line-height:4;
+    height:     4em;
 }
 
-.btn--huge {
-	padding-right: 2em;
-	padding-left: 2em;
-	line-height: 4;
+.btn--huge{
+    padding-right:2em;
+    padding-left: 2em;
+    line-height:5;
+    height:     5em;
+}
+
+.btn--wide {
+	padding-left: 4em;
+	padding-right: 4em;
 }
 
 .btn--full {
 	width: 100%;
-	padding-right: 0;
 	padding-left: 0;
+	padding-right: 0;
 	text-align: center;
 }
 
@@ -532,8 +491,10 @@ blockquote p:first-child {
 }
 
 .btn--natural {
-	font-size: inherit;
-	line-height: inherit;
+    vertical-align:baseline;
+    line-height:inherit;
+    font-size:inherit;
+    height:auto;
 	padding-right: 0.5em;
 	padding-left: 0.5em;
 }
@@ -542,12 +503,15 @@ blockquote p:first-child {
 \*------------------------------------*/
 .btn--primary {}
 .btn--primary:hover {}
+.btn--primary:active {}
 
 .btn--secondary {}
 .btn--secondary:hover {}
+.btn--secondary:active {}
 
 .btn--tertiary {}
 .btn--tertiary:hover {}
+.btn--tertiary:active {}
 
 .btn--positive {
 	background-color: #4A993E;
@@ -565,13 +529,14 @@ blockquote p:first-child {
 .btn--inactive:focus {
 	background-color: #ddd;
 	color: #777;
-	cursor: text;
+	cursor: default;
+    box-shadow:none;
 }
 
 /* Styles
 \*------------------------------------*/
 .btn--soft {
-	border-radius: 200px;
+	border-radius: 5em;
 }
 
 .btn--hard {
@@ -582,6 +547,12 @@ blockquote p:first-child {
 /*----------------------------------------------------------------------------*\
 	$LAYOUT
 \*----------------------------------------------------------------------------*/
+
+.wrapper {
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 .main:after {
 	content: '';
@@ -608,8 +579,10 @@ blockquote p:first-child {
 	$HEADER
 \*----------------------------------------------------------------------------*/
 
-.page-head {}
+.header {}
 
+/* Logo
+\*------------------------------------*/
 .site-logo {
 	float: left;
 	display: inline-block;
@@ -619,16 +592,16 @@ blockquote p:first-child {
 	display: inline-block;
 }
 
-.site-nav-trigger {
+/* Nav
+\*------------------------------------*/
+.mobile-nav-header {
 	display: none;
 }
 
 .site-nav {
-	display: inline-block;
-	padding-left: 0;
 	margin: 0;
-	font-size: 1.125em;
-	color: #666;
+	padding: 0;
+	display: inline-block;
 }
 
 .site-nav li + li {
@@ -637,7 +610,6 @@ blockquote p:first-child {
 
 .site-nav a {
 	vertical-align: middle;
-	color: #666;
 }
 
 .site-nav a:hover,
@@ -645,15 +617,8 @@ blockquote p:first-child {
 
 .site-nav .active a {}
 
+.site-nav a:active {}
 
-/*----------------------------------------------------------------------------*\
-	$FOOTER
-\*----------------------------------------------------------------------------*/
-
-.page-foot {
-	font-size: .9em;
-	text-align: center;
-}
 
 /*----------------------------------------------------------------------------*\
 	$CONTENT
@@ -661,75 +626,47 @@ blockquote p:first-child {
 
 
 /*----------------------------------------------------------------------------*\
-	$PAGES
+	$SIDEBAR
 \*----------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------*\
+	$FOOTER
+\*----------------------------------------------------------------------------*/
+
+.footer {
+	font-size: .9em;
+	text-align: center;
+}
 
 
 /*----------------------------------------------------------------------------*\
 	$HELPERS
 \*----------------------------------------------------------------------------*/
 
-.centered {
-	margin-left: auto;
-	margin-right: auto;
-}
-
-/* Bar
+/* Display
 \*------------------------------------*/
-.bar--small {
-	margin-bottom: 12px;
+.accessibility {
+	left: -99999px;
+	position: absolute;
 }
 
-.bar--medium {
-	margin-bottom: 24px;
-}
-
-.bar--large {
-	margin-bottom: 36px;
-}
-
-.bar--huge {
-	margin-bottom: 48px;
-}
-
-[class^="bar"]:after {
-	content: '';
-	display: table;
-	clear: both;
-}
-
-
-/* Clear | Reset things
-\*------------------------------------*/
-.clear--margins {
-	margin: 0;
-}
-
-.clear--paddings {
-	padding: 0;
-}
 
 /* Clearfix
 \*------------------------------------*/
 .cf:after {
-	content: "";
-	display: table;
+	content: '';
 	clear: both;
+	display: table;
 }
 
 /* Text
 \*------------------------------------*/
-.text--center {
-	text-align: center;
-}
+.text--center { text-align: center; }
+.text--left   { text-align: left; }
+.text--right  { text-align: right; }
 
-.text--left {
-	text-align: left;
-}
-
-.text--right {
-	text-align: right;
-}
+/*------------------------------------*/
 
 /* Used to obsfucate email */
 .text--reverse {
@@ -737,21 +674,98 @@ blockquote p:first-child {
 	direction:rtl;
 }
 
-/* Colors
-\*------------------------------------*/
-.color--primary {
-	color: #b02424;
+.text--truncate {
+	max-width: 100%;
+	overflow: hidden;
+	word-wrap: normal;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
-.color--secondary {
-	color: #a1a1a1;
+.text--break {
+    word-break: break-all;
+    word-break: break-word;
+    word-wrap: break-word;
 }
+
+/*------------------------------------*/
+
+.text--smaller 	{ font-size: smaller; }
+.text--larger 	{ font-size: larger; }
+
+.text--lighter 	{ font-weight: lighter; }
+.text--bolder 	{ font-weight: bolder; }
+
+.text--light 	{ font-weight: 300; }
+.text--normal 	{ font-weight: 400; }
+.text--semi 	{ font-weight: 600; }
+.text--bold 	{ font-weight: 700; }
+.text--extra 	{ font-weight: 800; }
+
+/* Colors
+\*------------------------------------*/
+.color--primary   { color: #b02424; }
+.color--secondary {	color: #a1a1a1; }
 
 
 /*----------------------------------------------------------------------------*\
-	$WIDGETS
+	$OBJECTS
 \*----------------------------------------------------------------------------*/
 
+/* Media
+\*------------------------------------*/
+.media {
+	display: block;
+}
+
+.media:after {
+	content: '';
+	clear: both;
+	display: table;
+}
+
+.media__img {
+	float: left;
+	margin-right: 1em;
+}
+
+.media__img--rev {
+	float: right;
+	margin-left: 1em;
+}
+
+.media__body {
+	overflow: hidden;
+}
+
+/* Bar
+\*------------------------------------*/
+.bar {
+	margin-bottom: 24px;
+}
+
+.bar:after {
+	content: '';
+	clear: both;
+	display: table;
+}
+
+.bar--small  { margin-bottom: 12px; }
+.bar--medium { margin-bottom: 24px; }
+.bar--large  { margin-bottom: 36px; }
+.bar--huge 	 { margin-bottom: 48px; }
+
+/* Navicon
+\*------------------------------------*/
+.navicon {
+	width: 1em;
+	cursor: pointer;
+	padding-bottom: .2em;
+	display: inline-block;
+	border-top: .6em double;
+	border-bottom: .2em solid;
+	border-color: #999;
+}
 
 /* Pagination
 \*------------------------------------*/
@@ -786,8 +800,13 @@ blockquote p:first-child {
 .pagination .prev a,
 .pagination .next a {}
 
+.pagination .prev a {}
+.pagination .next a {}
+
 .pagination .current,
 .pagination a:hover {}
+
+.pagination a:active {}
 
 .pagination .prev:hover,
 .pagination .next:hover {}
@@ -911,12 +930,36 @@ blockquote p:first-child {
 }
 
 .tags a {
-	border: 1px solid #d5d5d5;
-	display: inline-block;
-	border-radius: 3px;
-	line-height: 1.5;
 	padding: 0 .5em;
+	line-height: 1.5;
+	border-radius: 3px;
+	display: inline-block;
+	border: 1px solid #d5d5d5;
 }
+
+/* Quotes
+\*------------------------------------*/
+blockquote {
+	clear: both;
+	display: block;
+	position: relative;
+}
+
+blockquote p:first-child {
+	margin-top: 0;
+}
+
+.source {
+	display: block;
+	text-indent: 0;
+	color: #b02424;
+	text-align: right;
+	font-style: italic;
+	font-weight: normal;
+}
+
+/* Lists
+\*------------------------------------*/
 
 /* Comments area
 \*------------------------------------*/
@@ -939,7 +982,7 @@ blockquote p:first-child {
 .comment__photo {
 	float: left;
 	max-width: 80px;
-	margin-right: 20px;
+	margin-right: 24px;
 }
 
 .comment__content {
@@ -958,20 +1001,20 @@ blockquote p:first-child {
 
 .comment__meta {}
 
+
 /*----------------------------------------------------------------------------*\
-	$MEDIA-QUERIES
+	$RESPONSIVE
 \*----------------------------------------------------------------------------*/
 
 @media (max-width: 1024px) {}
 
-/* Only Phones and Tablets (Portrait) */
-@media (max-width: 959px) {
+@media (max-width: 960px) {
 
-	.hide--mobile {
+	.tablet-hide {
 		display: none;
 	}
 
-	/* Grid
+	/* Layout
 	\*------------------------------------*/
 	.wrapper {
 		padding-left: 10px;
@@ -980,15 +1023,15 @@ blockquote p:first-child {
 
 }
 
-/* Only Tablets (Portrait) */
-@media (min-width: 768px) and (max-width: 959px) {}
-
-/* Only Phones */
 @media (max-width: 767px) {
 
-	/* Page head
+	.mobile-hide {
+		display: none;
+	}
+
+	/* Header
 	\*------------------------------------*/
-	.page-head .wrapper {
+	.header .wrapper {
 		padding: 0;
 	}
 
@@ -1005,36 +1048,43 @@ blockquote p:first-child {
 
 	/* Nav
 	\*------------------------------------*/
-	.site-nav-trigger {
-		top: 10px;
-		right: 10px;
-		position: absolute;
-		vertical-align: top;
-		display: inline-block;
+	.mobile-nav-header {
+		display: block;
+		background: #333;
+		text-align: right;
+		margin-bottom: 1em;
+		position: relative;
+		padding: 8px 8px 7px 8px;
 	}
 
 	.site-nav {
+		top: 39px;
 		width: 100%;
 		display: none;
+		background: #333;
 		text-align: center;
-		border-top: 1px solid #eee;
+		position: absolute;
 	}
 
 	.site-nav li {
 		width: 50%;
 		padding: 0;
 		float: left;
-		border-bottom: 1px solid #eee;
 	}
 
 	.site-nav li + li {
 		margin-left: 0;
 	}
 
-	.site-nav li a {
+	.site-nav a {
+		color: #ccc;
 		display: block;
-		color: inherit;
-		border-left: 1px solid #eee;
+		padding: .5em 0;
+	}
+
+	.site-nav  a:hover,
+	.site-nav .active a {
+		color: #fff;
 	}
 
 	/* Layout
@@ -1055,17 +1105,11 @@ blockquote p:first-child {
 
 }
 
-/* Only Phones (Landscape) */
-@media (min-width: 480px) and (max-width: 767px) {}
+@media (max-width: 480px) {
 
-/* Only Phones (Portrait) */
-@media (max-width: 479px) {
-
-	/* Buttons font sizes
+	/* Buttons
 	\*------------------------------------*/
-	.btn--alpha, .btn--beta,
-	.btn--gamma, .btn--delta,
-	.btn--epsilon, .btn--zeta {
+	.btn {
 		font-size: 1em;
 	}
 
@@ -1085,18 +1129,18 @@ blockquote p:first-child {
 		width: 100%;
 		-webkit-box-sizing: border-box;
 		   -moz-box-sizing: border-box;
-		        box-sizing: border-box;
+				box-sizing: border-box;
 	}
 
 	/* Nav
 	\*------------------------------------*/
 	.site-nav li {
 		width: 100%;
-		border-bottom: 1px solid #eee;
 	}
 
 	.site-nav li a {
-		border-left: none;
+		text-align: left;
+		padding: .5em 1em;
 	}
 
 }

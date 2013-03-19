@@ -13,184 +13,59 @@
 
 	<title></title>
 
-	<link type="text/plain" rel="author" href="humans.txt">
 	<link rel="shortcut icon" href="icon.png">
 	<link rel="stylesheet" href="_ui/style.css">
 
-	<script src="_ui/js/modernizr.js"></script>
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 </head>
 <body>
 
+<header class="header">
 
-<header class="page-head">
+	<div class="mobile-nav-header">
+		<span class="js-toggle-nav"><i class="navicon"></i></span>
+	</div>
+	<!-- /.mobile-nav-header -->
 
 	<div class="wrapper">
 
-		<span class="btn btn--tertiary site-nav-trigger"><i class="s s--navicon"></i></span>
-
-		<a href="/" rel="index" class="site-logo fx--opacity">
-			<img src="_ui/img/logo.png" alt="">
+		<a href="/" rel="index" class="site-l	ogo fx--opacity">
+			<!-- <img src="_ui/img/logo.png" alt=""> -->
 		</a>
 		<!-- /.site-logo -->
 
 		<ul class="nav site-nav">
-			<li class="active"><a href="">Home</a></li>
-			<li><a href="">Gallery</a></li>
-			<li><a href="">Contact</a></li>
+			<li class="active"><a href=""></a></li>
+			<li><a href=""></a></li>
 		</ul>
 		<!-- /.nav.site-nav -->
 
 	</div>
 	<!-- /.wrapper -->
-
 </header>
-<!-- /.page-head -->
+<!-- /.header -->
 
 <div class="main wrapper">
-
 	<div class="main__inner">
 
-		<div class="content">
-
-
-			<article class="post">
-				<h2 class="post__title"></h2>
-				<div class="post__date"></div>
-				<div class="post__content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed asperiores nulla veniam impedit nobis beatae.</p>
-				</div>
-				<div class="post__footer">
-					<div class="post__share"></div>
-					<a href="" class="post__readmore"></a>
-				</div>
-			</article>
-			<!-- /.post -->
-
-			<div class="tags">
-				<a href="#">tag 1</a>
-				<a href="#">tag 2</a>
-				<a href="#">tag 3</a>
-			</div>
-
-			<blockquote>
-				<p>Insanity: doing the same thing over and over again and expecting
-				different results.</p>
-				<b class=source>Albert Einstein</b>
-			</blockquote>
-
-			<div class="comments-area">
-
-				<div class="comments-area__inner">
-
-					<h2 class="comments-area__title">Comments</h2>
-
-					<ul class="comments">
-						<li class="comment">
-							<img class="comment__photo" src="_media/avatar.png" alt="Avatar of user">
-							<div class="comment__content">
-								<div class="comment__text">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-								</div>
-								<div class="comment__meta">
-									Posted by: <a href="">Name</a>, April 25, 2013, 5:03pm
-								</div>
-							</div>
-						</li>
-					</ul>
-					<!-- /.comments -->
-
-					<h2 class="comments-area__title">Add Comment</h2>
-
-					<form action="/" class="comments-form">
-						<div class="input-wrap">
-							<label for="input:name">Name:</label>
-							<input id="input:name" type="text" name="name" placeholder="required">
-						</div>
-						<div class="input-wrap">
-							<label for="input:email">Email:</label>
-							<input id="input:email" type="text" name="email" placeholder="optional">
-						</div>
-						<div class="input-wrap">
-							<label for="input:message">Message:</label>
-							<textarea id="input:message" name="message" rows="5" placeholder="required"></textarea>
-						</div>
-						<div class="form-actions">
-							<input type="submit" name="submit" value="Submit" class="btn btn--primary">
-						</div>
-					</form>
-					<!-- /.comments-form -->
-
-				</div>
-				<!-- /.comments-area__inner -->
-
-			</div>
-			<!-- /.comments-area -->
-
-			<div class="pagination">
-				<ul>
-					<li class="prev"><a href="#">&lt; Previous</a></li>
-					<li><span class="current">1</span></li>
-					<li><a href="">2</a></li>
-					<li><a href="">3</a></li>
-					<li><a href="">4</a></li>
-					<li class="next"><a href="#">Next &gt;</a></li>
-				</ul>
-			</div>
-			<!-- /.pagination -->
-
-		</div>
+		<div class="content"></div>
 		<!-- /.content -->
 
-		<aside class="sidebar">
-
-			<section class="widget widget--search">
-				<h3 class="widget__title">Search</h3>
-				<div class="widget__content">
-					<form action="" class="search-form">
-						<div class="input-wrap">
-							<input type="text" name="q" class="input">
-						</div>
-					</form>
-				</div>
-			</section>
-			<!-- /.widget-search -->
-
-			<section class="widget widget--archive">
-				<h3 class="widget__title">Archive</h3>
-				<div class="widget__content">
-					<div class="dropdown">
-						<div class="dropdown__text">Select archive:</div>
-						<div class="dropdown__toggle"></div>
-						<div class="dropdown__content">
-							<li><a href="">October 2012</a></li>
-							<li><a href="">November 2012</a></li>
-							<li><a href="">December 2012</a></li>
-							<li><a href="">January 2013</a></li>
-							<li><a href="">February 2013</a></li>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- /.widget-archive -->
-
-		</aside>
+		<aside class="sidebar"></aside>
 		<!-- /.sidebar -->
 
 	</div>
 	<!-- /.main__inner -->
-
 </div>
 <!-- /.main  -->
 
-<footer class="page-foot">
-
-	<div class="wrapper">
-		2013 &copy; All rights reserved.
-	</div>
+<footer class="footer">
+	<div class="wrapper"></div>
 	<!-- /.wrapper -->
-
 </footer>
-<!-- /.page-foot -->
+<!-- /.footer -->
 
 <div id="fb-root"></div>
 <script>
