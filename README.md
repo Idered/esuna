@@ -48,8 +48,80 @@ In this folder you can put not converted fonts, PSD's including sprite.psd, docu
 
 This is where you hold videos, placeholder images for articles, user avatars and other elements not directly conected with UI.
 
- [1]: https://github.com/Idered/snippets/blob/master/JS/devtools.js
- [2]: https://github.com/Idered/snippets
+
+## HTML guideline
+
+### Comments
+
+#### Informational comments
+
+```
+<!-- @see dev.twitter.com/docs/cards -->
+```
+
+These comments are used to pass additional info about used technique, element, etc. These comments are optional.
+
+#### Ending comments
+
+```
+<ul class="nav site-nav">
+	<li></li>
+</ul>
+<!-- /.site-nav -->
+```
+
+These comments helps to maintain readability of source and are suggested to use.
+
+
+## CSS guideline
+
+### Indetation
+
+Tabs are used to indent code in all files. Tab size is equal to 4 spaces.
+
+### Comments
+
+There're 3 main type of comments used in `style.css`. Max width is 79 chars so you can use 80 chars column to wrap your css.
+
+#### Top level comments
+
+```
+
+
+/*---------------------------------------------------------------------------*\
+   $NORMALIZE normalize.css v2.1.0 | git.io/normalize
+\*---------------------------------------------------------------------------*/
+
+```
+
+This is primary style of comments used to separate main sections of css.
+
+There're two empty lines before this comment and one after.
+
+Please note that these comments aren't used in media queries.
+
+#### Section comments
+
+```
+
+/* Pagination
+\*------------------------------------*/
+
+```
+
+These comments are used for single objects like pagination, post, footer, etc.
+
+One empty line before and after this comment.
+
+#### Separator comments
+
+```
+
+/*------------------------------------*/
+
+```
+
+These comments are used to visualy separate objects into smaller parts. For example you can separate two different styles of `<ul>` lists using this comment.
 
 ## License
 
@@ -62,3 +134,6 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+ [1]: https://github.com/Idered/snippets/blob/master/JS/devtools.js
+ [2]: https://github.com/Idered/snippets
