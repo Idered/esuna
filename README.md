@@ -38,7 +38,7 @@ This file contains matchMedia() polyfill and Respond.js to add min/max-width med
 
 This file is where you work on JS stuff. There's already a basic structure with placholder polyfill and some other useful scripts.
 
-** Don't forget to set custom development domain at the beggining of file**.
+**Don't forget to set custom development domain at the beggining of file**.
 
 ### __assets
 
