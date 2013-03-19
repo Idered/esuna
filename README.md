@@ -79,6 +79,25 @@ These comments helps to maintain readability of source and are suggested to use.
 
 Tabs are used to indent code in all files. Tab size is equal to 4 spaces.
 
+### Style
+
+```
+.header {
+	paddding: 0 10px;
+}
+
+.content {
+	float: left;
+	width: auto;
+}
+```
+
+One empty line is used to separate each declaration.
+
+One empty space before `{` and `:`.
+
+For helpers you can ommit this rules and write your code in one line but only if that helps to maintain readability.
+
 ### Comments
 
 There're 3 main type of comments used in `style.css`. Max width is 79 chars so you can use 80 chars column to wrap your css.
