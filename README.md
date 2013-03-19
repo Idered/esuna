@@ -51,6 +51,10 @@ This is where you hold videos, placeholder images for articles, user avatars and
 
 ## HTML guideline
 
+### Indetation
+
+Tabs are used to indent code in all files. Tab size is equal to 4 spaces.
+
 ### Comments
 
 #### Informational comments
@@ -125,12 +129,11 @@ Please note that these comments aren't used in media queries.
 
 /* Pagination
 \*------------------------------------*/
-
 ```
 
 These comments are used for single objects like pagination, post, footer, etc.
 
-One empty line before and after this comment.
+One empty line before this comment.
 
 #### Separator comments
 
