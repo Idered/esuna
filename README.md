@@ -94,7 +94,7 @@ Tabs are used to indent code in all files. Tab size is equal to 4 spaces.
 
 One empty line is used to separate each declaration.
 
-One empty space before `{` and `:`.
+One empty space before `{` and one after `:`.
 
 For helpers you can ommit this rules and write your code in one line but only if that helps to maintain readability.
 
