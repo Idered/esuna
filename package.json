@@ -1,0 +1,19 @@
+{
+  "name": "Esuna",
+  "version": "1.0.0",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-cssmin": "~0.5.0"
+  },
+  "author": {
+    "name": "Kasper Mikiewicz",
+    "url": "https://idered.pl"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ]
+}

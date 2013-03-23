@@ -1,0 +1,245 @@
+/**
+ * @author Kasper Mikiewicz - Idered
+ * @url    http://idered.pl
+\*---------------------------------------------------------------------------*/
+
+
+/*---------------------------------------------------------------------------*\
+	$LINKS
+\*---------------------------------------------------------------------------*/
+
+a {
+	color: #00becc;
+	text-decoration: none;
+}
+
+a:focus,
+a:active,
+a:hover {
+	outline: 0;
+	color: #162d2f;
+}
+
+/*---------------------------------------------------------------------------*\
+	$TYPOGRAPHY
+\*---------------------------------------------------------------------------*/
+
+h1, h2, h3,
+h4, h5, h6,
+.alpha, .beta, .gamma,
+.delta, .epsilon, .zeta {
+	margin: .5em 0;
+	font-family: "Open Sans Condensed";
+}
+
+h1, .alpha {
+	font-size: 2.4em;
+}
+
+h2, .beta {
+	font-size: 2.4em;
+}
+
+h3, .gamma {
+	font-size: 2.1em;
+}
+
+h4, .delta {
+	font-size: 1.8em;
+}
+
+h5, .epsilon {
+	font-size: 1.4em;
+}
+
+h6, .epsilon {
+	font-size: 1em;
+}
+
+
+/*---------------------------------------------------------------------------*\
+	$OBJECTS
+\*---------------------------------------------------------------------------*/
+
+/* Buttons
+\*------------------------------------*/
+.btn {}
+
+.btn,
+.btn:hover,
+.btn:active,
+.btn:focus {}
+
+.btn:hover {}
+
+.btn:active,
+.btn:focus {
+	outline: none;
+}
+
+/*------------------------------------*/
+
+.btn--alpha   { font-size: 3em; }
+.btn--beta    { font-size: 2.5em; }
+.btn--gamma   { font-size: 2em; }
+.btn--delta   { font-size: 1.55em; }
+.btn--epsilon { font-size: 1.4em; }
+.btn--zeta    { font-size: 1.125em; }
+
+/*------------------------------------*/
+
+.btn--primary {}
+.btn--primary:hover {}
+.btn--primary:active {}
+
+.btn--secondary {}
+.btn--secondary:hover {}
+.btn--secondary:active {}
+
+.btn--tertiary {}
+.btn--tertiary:hover {}
+.btn--tertiary:active {}
+
+/* Lists
+\*------------------------------------*/
+ul ul {
+	list-style-type: none;
+	padding-left: 1em;
+}
+
+
+/*---------------------------------------------------------------------------*\
+	$HEADER
+\*---------------------------------------------------------------------------*/
+.header {
+}
+
+.header .wrapper {
+	border-bottom: 1px solid #eee;
+	margin-bottom: 2em;
+	padding-top: 3em;
+	padding-bottom: 2em;
+}
+/* Logo
+\*------------------------------------*/
+.site-logo {
+	float: none;
+	margin: 0;
+	line-height: 1;
+}
+
+/* Nav
+\*------------------------------------*/
+.site-nav {
+	color: #666;
+	font-size: .95em;
+	display: block;
+}
+
+.site-nav__title {
+	padding: .5em 1.5em;
+	text-transform: uppercase;
+	border-bottom: 1px solid #ccc;
+	-webkit-transition: .25s ease;
+	   -moz-transition: .25s ease;
+	    -ms-transition: .25s ease;
+	     -o-transition: .25s ease;
+	        transition: .25s ease;
+}
+
+.site-nav li:hover .site-nav__title {
+	border-bottom-color: #f32837
+}
+
+.site-nav ul {
+	padding: 0 0 1.5em 0;
+}
+
+.site-nav ul a {
+	padding: .35em 0 .35em 1.5em;
+	color: #999;
+}
+
+.site-nav a:hover {
+	background: #e7fdff;
+	color: #333;
+}
+
+/*---------------------------------------------------------------------------*\
+	$CONTENT
+\*---------------------------------------------------------------------------*/
+
+/* Lists
+\*------------------------------------*/
+.list--clear {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+.list--clear li,
+.content dd {
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+
+/*---------------------------------------------------------------------------*\
+	$SIDEBAR
+\*---------------------------------------------------------------------------*/
+
+
+/*---------------------------------------------------------------------------*\
+	$FOOTER
+\*---------------------------------------------------------------------------*/
+.footer {
+	border-top: 1px solid #eee;
+	margin-top: 2em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	float: right;
+	width: 100%;
+	margin-top: 2em;
+	text-align: right;
+}
+
+.footer p {
+	float: left;
+}
+
+
+/*---------------------------------------------------------------------------*\
+	$RESPONSIVE
+\*---------------------------------------------------------------------------*/
+
+@media (max-width: 1024px) {}
+
+@media (max-width: 960px) {}
+
+@media (max-width: 767px) {
+
+	/* Header
+	\*------------------------------------*/
+	.header .wrapper {
+		padding-top: 2em;
+	}
+
+	.site-nav {
+		display: none;
+	}
+
+	.site-nav__title {
+		border-bottom: none;
+	}
+
+	/* Footer
+	\*------------------------------------*/
+	.footer {
+		text-align: center;
+	}
+
+	.footer p {
+		float: none;
+	}
+
+}
+
+@media (max-width: 480px) {}
