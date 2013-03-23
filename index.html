@@ -42,9 +42,18 @@
 
 			<h3><a href="#introduction" name="introduction">Introduction</a></h3>
 
-			<p>Esuna is open source, BEM based Front-End framework for those who don't want to struggle with heavy frameworks and tons of useless code. It contains well formated code for popular elements used on websites like comments, responsive navigation, tags, and many other elements which you use in most of your projects.</p>
+			<p>Esuna is open source Front-End framework for those who don't want to struggle with heavy frameworks and tons of useless code. It contains well formated code for popular elements used on websites like comments, responsive navigation, tags, and many other elements which you use in most of your projects.</p>
 
 			<p>This project is created and maintained by <a href="http://twitter.com/Idered">Kasper Mikiewicz</a>.</p>
+
+			<p>Main features: </p>
+
+			<ul>
+				<li>BEM based</li>
+				<li>Responsive</li>
+				<li>Custom style guidelines</li>
+				<li>No bullshit code</li>
+			</ul>
 
 			<h3><a href="#contributing" name="contributing">Contributing</a></h3>
 
@@ -236,6 +245,110 @@
 			<p>To load DevTool, use this command:</p>
 
 			<pre><code>DevTools.loadModule('toolName', options);</code></pre>
+
+			<h3><a href="#base" name="base">Base</a></h3>
+
+			<h4><a href="#forms" name="forms">Forms</a></h4>
+
+			<h5>Vertical mode</h5>
+
+			<form action="">
+				<div class="input-wrap">
+					<label for="username">Username: </label>
+					<input type="text" id="username" name="username">
+				</div>
+				<div class="input-wrap">
+					<label for="password">Password: </label>
+					<input type="password" id="password" name="password">
+				</div>
+				<div class="form-actions text--left">
+					<input type="submit" name="submit" value="Send" class="btn btn--primary">
+				</div>
+			</form>
+
+<pre><code><form action="">
+	<div class="input-wrap">
+		<label for="username">Username: </label>
+		<input type="text" id="username" name="username">
+	</div>
+	<div class="input-wrap">
+		<label for="password">Password: </label>
+		<input type="password" id="password" name="password">
+	</div>
+	<div class="form-actions">
+		<input type="submit" name="submit" value="Send" class="btn btn--primary">
+	</div>
+</form></code></pre>
+
+			<h5>Horizontal mode</h5>
+
+			<form action="">
+				<div class="input-row">
+					<div class="input-wrap">
+						<label for="username">Name: </label>
+						<input type="text" id="username" name="username">
+					</div>
+					<div class="input-wrap">
+						<label for="password">Email: </label>
+						<input type="password" id="password" name="password">
+					</div>
+					<div class="input-wrap">
+						<label for="url">URL: </label>
+						<input type="url" id="url" name="url">
+					</div>
+				</div>
+				<div class="input-wrap">
+					<textarea name="message" class="input--full" id="message" rows="5"></textarea>
+				</div>
+				<div class="form-actions">
+					<input type="submit" name="submit" value="Send" class="btn btn--primary">
+				</div>
+			</form>
+
+<pre><code><form action="">
+	<div class="input-row">
+		<div class="input-wrap">
+			<label for="username">Name: </label>
+			<input type="text" id="username" name="username">
+		</div>
+		<div class="input-wrap">
+			<label for="password">Email: </label>
+			<input type="password" id="password" name="password">
+		</div>
+		<div class="input-wrap">
+			<label for="url">URL: </label>
+			<input type="url" id="url" name="url">
+		</div>
+	</div>
+	<div class="input-wrap">
+		<textarea name="message" class="input--full" id="message" rows="5"></textarea>
+	</div>
+	<div class="form-actions">
+		<input type="submit" name="submit" value="Send" class="btn btn--primary">
+	</div>
+</form></code></pre>
+
+			<h5>Classes</h5>
+			<dl>
+				<dt><code>.input-row</code></dt>
+				<dd>Force 100% width of parent and display inner inputs inline.</dd>
+
+				<dt><code>.input-wrap</code></dt>
+				<dd>Basic input wrapper, used to add margins and manipulate flow of elements.</dd>
+
+				<dt><code>.form-actions</code></dt>
+				<dd>Contains form submission buttons, cancel, submit, etc.</dd>
+			</dl>
+
+			<h5>Modifiers</h5>
+
+			<dl>
+				<dt><code>.input--half</code></dt>
+				<dd>Fill 50% of parent width.</dd>
+
+				<dt><code>.input--full</code></dt>
+				<dd>Fill 100% of parent width.</dd>
+			</dl>
 
 			<h3><a href="#objects" name="objects">Objects</a></h3>
 
@@ -654,6 +767,7 @@
 					<ul>
 						<li><a href="#structure">Structure</a></li>
 						<li><a href="#devtools">Development Tools</a></li>
+						<li><a href="#base">Base</a></li>
 						<li><a href="#objects">Objects</a></li>
 						<li><a href="#helpers">Helpers</a></li>
 					</ul>
