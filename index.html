@@ -16,11 +16,6 @@
 
 	<link rel="shortcut icon" href="icon.png">
 	<link rel="stylesheet" href="_ui/style.css">
-
-	<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-
 	<!-- @see ogp.me -->
 	<meta property="og:title" content="" />
 	<meta property="og:type" content="website" />
@@ -33,19 +28,18 @@
 	<meta property="twitter:card" content="summary">
 	<meta property="twitter:description" content="">
 	<meta property="twitter:url" content="">
+
+	<script src="_ui/js/modernizr.js"></script>
 </head>
 <body>
-
 <header class="header">
-
 	<div class="mobile-nav-header">
 		<span class="js-toggle-nav"><i class="navicon"></i></span>
 	</div>
 	<!-- /.mobile-nav-header -->
 
 	<div class="wrapper">
-
-		<a href="/" rel="index" class="site-l	ogo fx--opacity">
+		<a href="/" rel="index" class="site-logo fx--opacity">
 			<!-- <img src="_ui/img/logo.png" alt=""> -->
 		</a>
 		<!-- /.site-logo -->
@@ -55,7 +49,6 @@
 			<li><a href=""></a></li>
 		</ul>
 		<!-- /.nav.site-nav -->
-
 	</div>
 	<!-- /.wrapper -->
 </header>
@@ -63,13 +56,25 @@
 
 <div class="main wrapper">
 	<div class="main__inner">
+		<div class="content">
 
-		<div class="content"></div>
+			<div class="input-row">
+				<div class="input-wrap">
+					<input type="text">
+				</div>
+				<div class="input-wrap">
+					<input type="text" placeholder="dd">
+				</div>
+			</div>
+			<div class="input-wrap">
+				<input type="text" class="input--full">
+			</div>
+
+		</div>
 		<!-- /.content -->
 
 		<aside class="sidebar"></aside>
 		<!-- /.sidebar -->
-
 	</div>
 	<!-- /.main__inner -->
 </div>
@@ -93,7 +98,7 @@
 	for (var id in scripts) {
 		script = document.createElement('script'); script.src = scripts[id];
 		script.id = id;script.type = 'text/javascript'; script.async = true;
-		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+		/*document.getElementsByTagName('head')[0].appendChild(script);*/
 	}
 </script>
 <script src="_ui/js/jquery.js"></script>

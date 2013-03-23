@@ -1,6 +1,6 @@
 /* by @Idered */
 
-/* global jQuery, DEVTools */
+/* global jQuery, DevTools */
 var App = App || (function($) {
 
 	var Utils   = {},
@@ -9,34 +9,37 @@ var App = App || (function($) {
 	Utils = {
 		settings: {
 			debug: true,
-			devDomain: 'xhtmlized.dev',
-			init: function() {
-				Utils.placeholder();
-				Utils.submitShorcut();
-
-				if (Utils.settings.debug && Utils.settings.devDomain === location.host) {
-					DEVTools.windowSize();
-					DEVTools.CSSRefresher.init();
-				}
-			}
+			devDomains: ['localhost', 'github.dev']
 		}, // settings
+
+		init: function() {
+			Utils.placeholder();
+			Utils.submitShorcut();
+
+			if (Utils.settings.debug && $.inArray(location.host, Utils.settings.devDomains) !== -1) {
+				DevTools.loadModule('cssRefresh', {
+					interval: 2000
+				});
+				// DevTools.loadModule('windowSize');
+			}
+		}, //init
 
 		/**
 		 * Placeholder shim
 		 */
 		placeholder: function() {
-
 			if(!('placeholder' in document.createElement('input'))) {
 				$('[placeholder]').focus(function() {
 					var input = $(this);
-					if (input.val() === input.attr('placeholder')) { input.val('').removeClass('placeholder'); }
+					if (input.val() === input.attr('placeholder')) {
+						input.val('').removeClass('placeholder');
+					}
 				}).blur(function() {
 					var input = $(this);
 					if (input.val() === '' || input.val() === input.attr('placeholder')) {
 						input.val(input.attr('placeholder')).addClass('placeholder');
 					}
 				}).blur();
-
 				$('[placeholder]').parents('form').submit(function() {
 					$(this).find('[placeholder]').each(function() {
 						var input = $(this);
@@ -46,21 +49,7 @@ var App = App || (function($) {
 					});
 				});
 			}
-
 		}, // placeholder
-
-		/**
-		 * Toggle site nav using trigger button
-		 * @param  {string} nav
-		 * @param  {string} trigger
-		 */
-		nav: function(nav, trigger) {
-
-			$(trigger).on('click', function() {
-				$(nav).slideToggle();
-			});
-
-		}, // nav
 
 		/**
 		 * Handle dropdowns
@@ -104,12 +93,31 @@ var App = App || (function($) {
 
 	Public = {
 		init: function() {
-
-			Utils.settings.init();
-
-			Utils.nav('.site-nav', '.js-toggle-nav');
-
+			Utils.init();
+			Utils.dropdown('.dropdown');
+			$('.js-toggle-nav').toggleTarget('.site-nav');
 		} // init
+	};
+
+	/**
+	 * Toggle target element
+	 */
+	$.fn.toggleTarget = function(target) {
+		$(this).on('click', function(event) {
+			event.preventDefault();
+			$(target).stop().slideToggle();
+		});
+		return this;
+	};
+
+	$.fn.softScroll = function(speed) {
+		$(this).on('click', function(event) {
+			event.preventDefault();
+			$('html,body').animate({
+				scrollTop:$(this.hash).length ? $(this.hash) : $('[name=' + this.hash.substr(1) + ']').offset().top
+			}, speed || 500);
+		});
+		return this;
 	};
 
 	return Public;
