@@ -759,13 +759,12 @@ textarea:focus {
 /* Navicon
 \*------------------------------------*/
 .navicon {
-	width: 1em;
 	cursor: pointer;
-	padding-bottom: .2em;
 	display: inline-block;
-	border-bottom: .2em solid;
-	border-top: .6em double;
-	border-color: #999;
+	width: 1em; /* 16px */
+	height: .1875em; /* 3/16px */
+	border-top: .5625em double #999; /* 9/16px */
+	border-bottom: .1875em solid #999; /* 3/16px */
 }
 
 /* Pagination
