@@ -651,6 +651,41 @@ textarea:focus {
 	border-radius: 0;
 }
 
+/*------------------------------------*/
+
+.buttons-group {
+    display: table;
+}
+
+.buttons-group .btn {
+	display: table-cell;
+    border-radius: 0;
+}
+
+.buttons-group .btn:first-child {
+	border-radius: 5px 0 0 5px;
+}
+
+.buttons-group .btn:last-child {
+	border-radius: 0 5px 5px 0;
+}
+
+.buttons-group--vertical {
+	display: inline-block;
+}
+
+.buttons-group--vertical .btn {
+	display: block;
+}
+
+.buttons-group--vertical .btn:first-child {
+	border-radius: 5px 5px 0 0;
+}
+
+.buttons-group--vertical .btn:last-child {
+	border-radius: 0 0 5px 5px;
+}
+
 /* Media
 \*------------------------------------*/
 .media {
