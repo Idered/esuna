@@ -99,6 +99,7 @@ var App = App || (function($) {
 			$('.header__btn-view').on('click', function(e) {
 				_gaq.push(['_trackEvent', 'External Link', e.currentTarget.host, this.href, 0]);
 			});
+			$('.example').find('input').noon();
 		}, // init
 
 		modifiersToggler: function() {
@@ -184,6 +185,13 @@ var App = App || (function($) {
 			$('html,body').animate({
 				scrollTop:$(this.hash).length ? $(this.hash) : $('[name=' + this.hash.substr(1) + ']').offset().top
 			}, speed || 500);
+		});
+		return this;
+	};
+
+	$.fn.noon = function() {
+		$(this).on('click', function(event) {
+			event.preventDefault();
 		});
 		return this;
 	};
