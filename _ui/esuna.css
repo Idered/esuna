@@ -260,6 +260,9 @@ code {
 pre {
 	padding: .5em;
 	overflow: auto;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
 }
 
 pre code {
@@ -269,9 +272,6 @@ pre code {
 	white-space: pre;
 	margin: 0;
 	padding: 0;
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
 }
 
 /*---------------------------------------------------------------------------*\
@@ -649,6 +649,41 @@ textarea:focus {
 
 .btn--hard {
 	border-radius: 0;
+}
+
+/*------------------------------------*/
+
+.btn-group {
+    display: table;
+}
+
+.btn-group .btn {
+	display: table-cell;
+    border-radius: 0;
+}
+
+.btn-group .btn:first-child {
+	border-radius: 5px 0 0 5px;
+}
+
+.btn-group .btn:last-child {
+	border-radius: 0 5px 5px 0;
+}
+
+.btn-group--vertical {
+	display: inline-block;
+}
+
+.btn-group--vertical .btn {
+	display: block;
+}
+
+.btn-group--vertical .btn:first-child {
+	border-radius: 5px 5px 0 0;
+}
+
+.btn-group--vertical .btn:last-child {
+	border-radius: 0 0 5px 5px;
 }
 
 /* Media

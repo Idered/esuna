@@ -14,7 +14,7 @@
 
 	<link rel="shortcut icon" href="icon.png">
 
-	<script src="../_ui/js/modernizr.js"></script>
+	<script src="_ui/js/modernizr.js"></script>
 </head>
 <body>
 
@@ -290,21 +290,22 @@
 			<h5>Vertical mode</h5>
 
 			<div class="example">
-				<form action="" class="form--aligned">
-					<div class="input-wrap">
-						<label for="username">Username: </label>
-						<input type="text" id="username" name="username">
-					</div>
-					<div class="input-wrap">
-						<label for="password">Password: </label>
-						<input type="password" id="password" name="password">
-					</div>
-					<div class="form-actions text--left">
-						<input type="submit" name="submit" value="Send" class="btn btn--primary">
-					</div>
-				</form>
-			</div>
-
+				<div class="example__content">
+					<form action="" class="form--aligned">
+						<div class="input-wrap">
+							<label for="username">Username: </label>
+							<input type="text" id="username" name="username">
+						</div>
+						<div class="input-wrap">
+							<label for="password">Password: </label>
+							<input type="password" id="password" name="password">
+						</div>
+						<div class="form-actions text--left">
+							<input type="submit" name="submit" value="Send" class="btn btn--primary">
+						</div>
+					</form>
+				</div>
+				<div class="example__code">
 <pre><code><form action="">
 	<div class="input-wrap">
 		<label for="username">Username: </label>
@@ -318,35 +319,38 @@
 		<input type="submit" name="submit" value="Send" class="btn btn--primary">
 	</div>
 </form></code></pre>
+				</div>
+			</div>
 
 			<h5>Horizontal mode</h5>
 
 			<div class="example">
-				<form action="">
-					<div class="input-row">
-						<div class="input-wrap">
-							<label for="username">Name: </label>
-							<input type="text" id="username" name="username">
+				<div class="example__content">
+					<form action="">
+						<div class="input-row">
+							<div class="input-wrap">
+								<label for="username">Name: </label>
+								<input type="text" id="username" name="username">
+							</div>
+							<div class="input-wrap">
+								<label for="password">Email: </label>
+								<input type="password" id="password" name="password">
+							</div>
+							<div class="input-wrap">
+								<label for="url">URL: </label>
+								<input type="url" id="url" name="url">
+							</div>
 						</div>
 						<div class="input-wrap">
-							<label for="password">Email: </label>
-							<input type="password" id="password" name="password">
+							<label for="message">Message</label>
+							<textarea name="message" class="input--full" id="message" rows="5"></textarea>
 						</div>
-						<div class="input-wrap">
-							<label for="url">URL: </label>
-							<input type="url" id="url" name="url">
+						<div class="form-actions">
+							<input type="submit" name="submit" value="Send" class="btn btn--primary">
 						</div>
-					</div>
-					<div class="input-wrap">
-						<label for="message">Message</label>
-						<textarea name="message" class="input--full" id="message" rows="5"></textarea>
-					</div>
-					<div class="form-actions">
-						<input type="submit" name="submit" value="Send" class="btn btn--primary">
-					</div>
-				</form>
-			</div>
-
+					</form>
+				</div>
+				<div class="example__code">
 <pre><code><form action="">
 	<div class="input-row">
 		<div class="input-wrap">
@@ -370,6 +374,8 @@
 		<input type="submit" name="submit" value="Send" class="btn btn--primary">
 	</div>
 </form></code></pre>
+				</div>
+			</div>
 
 			<h5>Classes</h5>
 			<dl>
@@ -406,10 +412,25 @@
 
 			<h5>Usage</h5>
 
+			<div class="example">
+				<div class="example__content">
+					<ul class="nav nav--fluid" data-base="nav" data-modifiers='["fluid", "stacked", ""]'>
+						<li><a href="#" class="active">Home</a></li>
+						<li><a href="#">Gallery</a></li>
+						<li><a href="#">About us</a></li>
+						<li><a href="#">Our clients</a></li>
+						<li><a href="#">Contact us</a></li>
+					</ul>
+				</div>
+				<div class="example__code">
 <pre><code><ul class="nav">
 	<li><a href="" class="active"></a></li>
 	<li><a href=""></a></li>
 </ul></code></pre>
+				</div>
+			</div>
+
+			<p>Used classes: <code>nav nav--fluid</code></p>
 
 			<h5>Modifiers</h5>
 
@@ -421,21 +442,36 @@
 				<dd>Force navigation to fill 100% of its parent width.</dd>
 			</dl>
 
-			<h5>Sample</h5>
+			<h4><a href="#buttons" name="buttons">Buttons</a></h4>
+
+			<h5>Usage</h5>
 
 			<div class="example">
-				<ul class="nav nav--fluid" data-base="nav" data-modifiers='["fluid", "stacked", ""]'>
-					<li><a href="#" class="active">Home</a></li>
-					<li><a href="#">Gallery</a></li>
-					<li><a href="#">About us</a></li>
-					<li><a href="#">Our clients</a></li>
-					<li><a href="#">Contact us</a></li>
-				</ul>
+				<div class="example__content">
+				<p>
+					<a href="#" class="btn btn--primary">Primary button</a>
+					<a href="#" class="btn btn--secondary">Secondary button</a>
+					<a href="#" class="btn btn--tertiary">Tertiary button</a>
+				</p>
+				<p>
+					<a href="#" class="btn btn--positive">Positive button</a>
+					<a href="#" class="btn btn--negative">Negative button</a>
+					<a href="#" class="btn btn--inactive">Inactive button</a>
+				</p>
+				</div>
+				<div class="example__code">
+<pre><code><p>
+	<a href="#" class="btn btn--primary">Primary button</a>
+	<a href="#" class="btn btn--secondary">Secondary button</a>
+	<a href="#" class="btn btn--tertiary">Tertiary button</a>
+</p>
+<p>
+	<a href="#" class="btn btn--positive">Positive button</a>
+	<a href="#" class="btn btn--negative">Negative button</a>
+	<a href="#" class="btn btn--inactive">Inactive button</a>
+</p></code></pre>
+				</div>
 			</div>
-
-			<p>Used classes: <code>nav nav--fluid</code></p>
-
-			<h4><a href="#buttons" name="buttons">Buttons</a></h4>
 
 			<h5>Button size</h5>
 
@@ -485,24 +521,44 @@
 				<dd>No border radius.</dd>
 			</dl>
 
-			<h5>Usage</h5>
-
-			<pre><code><a href="#" class="btn btn--primary btn--small">Small primary button</a></code></pre>
-
-			<h5>Sample</h5>
+			<h5>Button groups</h5>
 
 			<div class="example">
-				<p>
-					<a href="#" class="btn btn--primary">Primary button</a>
-					<a href="#" class="btn btn--secondary">Secondary button</a>
-					<a href="#" class="btn btn--tertiary">Tertiary button</a>
-				</p>
-				<p>
-					<a href="#" class="btn btn--positive">Positive button</a>
-					<a href="#" class="btn btn--negative">Negative button</a>
-					<a href="#" class="btn btn--inactive">Inactive button</a>
-				</p>
+				<div class="example__content">
+					<p class="btn-group">
+						<a href="#" class="btn btn--primary">Button 1</a>
+						<a href="#" class="btn btn--secondary">Button 2</a>
+						<a href="#" class="btn btn--tertiary">Button 3</a>
+					</p>
+
+					<p class="btn-group btn-group--vertical">
+						<a href="#" class="btn btn--primary">Button 1</a>
+						<a href="#" class="btn btn--secondary">Button 2</a>
+						<a href="#" class="btn btn--tertiary">Button 3</a>
+					</p>
+				</div>
+				<div class="example__code">
+<pre><code><p class="btn-group">
+	<a href="#" class="btn btn--primary">Button 1</a>
+	<a href="#" class="btn btn--secondary">Button 2</a>
+	<a href="#" class="btn btn--tertiary">Button 3</a>
+</p>
+
+<p class="btn-group  btn-group--vertical">
+	<a href="#" class="btn btn--primary">Button 1</a>
+	<a href="#" class="btn btn--secondary">Button 2</a>
+	<a href="#" class="btn btn--tertiary">Button 3</a>
+</p></code></pre>
+				</div>
 			</div>
+
+			<dl>
+				<dt><code>.btn-group</code></dt>
+				<dd>Container with this class group buttons.</dd>
+
+				<dt><code>.btn-group--verical</code></dt>
+				<dd>Throw group into vertical mode.</dd>
+			</dl>
 
 			<h4><a href="#media-object" name="media-object">Media object</a></h4>
 
@@ -527,7 +583,17 @@
 			<h4><a href="#notifications" name="notifications">Notifications</a></h4>
 
 			<h5>Usage</h5>
-			<pre><code><div class="notification notification--info">Sample informational notification.</div></code></pre>
+
+			<div class="example">
+				<div class="example__content">
+					<div class="notification notification--info" data-base="notification" data-modifiers='["info", "error", "warning", "success"]'>Sample informational notification.</div>
+				</div>
+				<div class="example__code">
+					<pre><code><div class="notification notification--info">Sample informational notification.</div></code></pre>
+				</div>
+			</div>
+
+			<p>Used classes: <code>notification notification--info</code></p>
 
 			<h5>Modifiers</h5>
 
@@ -538,21 +604,22 @@
 				<li><code>.notification--info</code></li>
 			</ul>
 
-			<h5>Sample</h5>
-
-			<div class="example">
-				<div class="notification notification--info" data-base="notification" data-modifiers='["info", "error", "warning", "success"]'>Sample informational notification.</div>
-			</div>
-
-			<p>Used classes: <code>notification notification--info</code></p>
-
 			<h4><a href="#bar" name="bar">Bar</a></h4>
 
 			<p>Bar is an object which allow you to manipulate bottom margin.</p>
 
 			<h5>Usage</h5>
 
-			<pre><code><div class="bar bar--huge">After this content we have a lot of free space.</div></code></pre>
+			<div class="example">
+				<div class="example__content">
+					<div class="bar bar--huge" data-base="bar" data-modifiers='["huge", "large", "", "small"]'>After this content we have a lot of free space.</div>
+				</div>
+				<div class="example__code">
+					<pre><code><div class="bar bar--huge">After this content we have a lot of free space.</div></code></pre>
+				</div>
+			</div>
+
+			<p>Used classes: <code>bar bar--huge</code></p>
 
 			<h5>Modifiers</h5>
 
@@ -562,32 +629,39 @@
 				<li><code>.bar--huge</code></li>
 			</ul>
 
-			<h5>Sample</h5>
-
-			<div class="example">
-				<div class="bar bar--huge" data-base="bar" data-modifiers='["huge", "large", "", "small"]'>After this content we have a lot of free space.</div>
-			</div>
-
-			<p>Used classes: <code>bar bar--huge</code></p>
-
 			<h4><a href="#navicon" name="navicon">Navicon</a></h4>
 
 			<p>It's an icon based on font size . You can use it in responsive navigations.</p>
 
 			<h5>Usage</h5>
 
-			<pre><code><i class="navicon"></i></code></pre>
-
-			<h5>Sample</h5>
-
 			<div class="example">
-				<i class="navicon"></i>
+				<div class="example__content">
+					<i class="navicon"></i>
+				</div>
+				<div class="example__code">
+					<pre><code><i class="navicon"></i></code></pre>
+				</div>
 			</div>
 
 			<h4><a href="#pagination" name="pagination">Pagination</a></h4>
 
 			<h5>Usage</h5>
 
+			<div class="example">
+				<div class="example__content">
+					<div class="pagination">
+						<ul>
+							<li class="pagination__prev"><a href="#">&lt; Previous</a></li>
+							<li><span class="current">1</span></li>
+							<li><a href="">2</a></li>
+							<li><a href="">3</a></li>
+							<li><a href="">4</a></li>
+							<li class="pagination__next"><a href="#">Next &gt;</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="example__code">
 <pre><code><div class="pagination">
 	<ul>
 		<li class="pagination__prev"><a href="#">&lt; Previous</a></li>
@@ -598,19 +672,6 @@
 		<li class="pagination__next"><a href="#">Next &gt;</a></li>
 	</ul>
 </div></code></pre>
-
-			<h5>Sample</h5>
-
-			<div class="example">
-				<div class="pagination">
-					<ul>
-						<li class="pagination__prev"><a href="#">&lt; Previous</a></li>
-						<li><span class="current">1</span></li>
-						<li><a href="">2</a></li>
-						<li><a href="">3</a></li>
-						<li><a href="">4</a></li>
-						<li class="pagination__next"><a href="#">Next &gt;</a></li>
-					</ul>
 				</div>
 			</div>
 
@@ -618,6 +679,21 @@
 
 			<h5>Usage</h5>
 
+			<div class="example">
+				<div class="example__content">
+					<div class="dropdown">
+						<div class="dropdown__text">Your account</div>
+						<div class="dropdown__toggle"></div>
+						<ul class="dropdown__content">
+							<li><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></li>
+							<li><a href="">Settings</a></li>
+							<li><a href="">Friends</a></li>
+							<li><a href="">Go pro</a></li>
+							<li><a href="">Sign out</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="example__code">
 <pre><code><div class="dropdown">
 	<div class="dropdown__text"></div>
 	<div class="dropdown__toggle"></div>
@@ -625,20 +701,6 @@
 		<li><a href=""></a></li>
 	</ul>
 </div></code></pre>
-
-			<h5>Sample</h5>
-
-			<div class="example">
-				<div class="dropdown">
-					<div class="dropdown__text">Your account</div>
-					<div class="dropdown__toggle"></div>
-					<ul class="dropdown__content">
-						<li><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></li>
-						<li><a href="">Settings</a></li>
-						<li><a href="">Friends</a></li>
-						<li><a href="">Go pro</a></li>
-						<li><a href="">Sign out</a></li>
-					</ul>
 				</div>
 			</div>
 
@@ -646,19 +708,20 @@
 
 			<h5>Usage</h5>
 
+			<div class="example">
+				<div class="example__content">
+					<div class="tags" data-base="tags" data-modifiers='["", "separated"]'>
+						<a href="#">css</a>
+						<a href="#">tips</a>
+						<a href="#">vertical align</a>
+					</div>
+				</div>
+				<div class="example__code">
 <pre><code><div class="tags">
 	<a href="#">tag 1</a>
 	<a href="#">tag 2</a>
 	<a href="#">tag 3</a>
 </div></code></pre>
-
-			<h5>Sample</h5>
-
-			<div class="example">
-				<div class="tags" data-base="tags" data-modifiers='["", "separated"]'>
-					<a href="#">css</a>
-					<a href="#">tips</a>
-					<a href="#">vertical align</a>
 				</div>
 			</div>
 

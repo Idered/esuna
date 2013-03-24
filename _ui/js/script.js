@@ -56,20 +56,16 @@ var App = App || (function($) {
 		 * @param  {string} dropdown Dropdown class
 		 */
 		dropdown: function(dropdown) {
-			var $this;
-
 			$(dropdown).each(function() {
-				$this = $(this);
+				var $this = $(this);
 
 				$(this).find('.dropdown__toggle').on('click', function(event) {
 					event.stopPropagation();
-
 					$this.toggleClass('is-open');
 				});
 			});
 
 			$(document).on('click', function() {
-				$('.is-open').removeClass('is-open');
 			});
 		}, // dropdown
 
@@ -114,7 +110,7 @@ var App = App || (function($) {
 					classes = base + ' ';
 					classes+= modifiers[i] === '' ? modifiers[i] : base + '--' + modifiers[i];
 					$this.attr('class', '').addClass(classes);
-					$this.parent().next().find('code').text(classes);
+					$this.closest('.example').next().find('code').text(classes);
 				})
 			});
 
@@ -135,9 +131,35 @@ var App = App || (function($) {
 		}, // sitckySidebar
 
 		codeHelper: function() {
-			$('pre').find('code').each(function(code) {
-				code = $(this).html();
-				$(this).text(code);
+
+			$('pre').find('code').each(function() {
+				$(this).text($(this).html());
+			});
+
+			$('.example__code').find('pre').each(function() {
+				$(this).addClass('prettyprint');
+			});
+
+			prettyPrint();
+
+			$('pre').delegate('code', 'click', function(e) {
+
+				scrollTopValue = $(window).scrollTop();
+
+				var $this  = $(this).parent(),
+					$code  = $this.children('code'),
+					$clone = $code.clone(),
+					text   = $code.text(),
+					height = $code.height();
+
+				$code.replaceWith($('<textarea/>'));
+
+				$this.children('textarea').one('blur', function() {
+					$(this).replaceWith($clone);
+				}).height(height).val(text).select();
+
+				$(window).scrollTop(scrollTopValue);
+
 			});
 		}
 	};
