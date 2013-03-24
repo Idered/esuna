@@ -95,7 +95,7 @@ var App = App || (function($) {
 			Public.codeHelper();
 			Public.stickySidebar();
 			Public.modifiersToggler();
-			$('a[href^=#]').softScroll(600, true);
+			$('a[href^=#]').softScroll(600);
 			$('.header__btn-view').on('click', function(e) {
 				_gaq.push(['_trackEvent', 'External Link', e.currentTarget.host, this.href, 0]);
 			});
@@ -183,7 +183,7 @@ var App = App || (function($) {
 		$(this).on('click', function(event) {
 			event.preventDefault();
 			$('html,body').animate({
-				scrollTop:$(this.hash).length ? $(this.hash) : $('[name=' + this.hash.substr(1) + ']').offset().top
+				scrollTop:$(this.hash).length ? $(this.hash).offset().top : $('[name=' + this.hash.substr(1) + ']').offset().top
 			}, speed || 500);
 		});
 		return this;
