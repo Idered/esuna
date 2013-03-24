@@ -4,6 +4,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 
+	<link rel="dns-prefetch" href="//p.twitter.com">
+	<link rel="dns-prefetch" href="//cdn.api.twitter.com">
+	<link rel="dns-prefetch" href="//ajax.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//platform.twitter.com">
+
 	<title>Esuna · Classy Front-End Framework</title>
 
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css">
@@ -12,11 +18,29 @@
 	<link rel="stylesheet" href="_ui/esuna.css">
 	<link rel="stylesheet" href="_ui/style.css">
 
-	<link rel="shortcut icon" href="icon.png">
+	<!-- @see ogp.me -->
+	<meta property="og:title" content="Esuna · Classy Front-End Framework" />
+	<meta property="og:type" content="website" />
+	<meta property="og:description" content="Esuna is open source, classy Front-End framework for those who don't want to struggle with heavy frameworks and tons of useless code." />
+	<meta property="og:url" content="http://idered.pl/esuna">
+
+	<!-- @see dev.twitter.com/docs/cards -->
+	<meta property="twitter:title" content="Esuna · Classy Front-End Framework">
+	<meta property="twitter:creator" content="@Idered">
+	<meta property="twitter:card" content="summary">
+	<meta property="twitter:description" content="Esuna is open source, classy Front-End framework for those who don't want to struggle with heavy frameworks and tons of useless code.">
+	<meta property="twitter:url" content="http://idered.pl/esuna">
 
 	<script src="_ui/js/modernizr.js"></script>
 </head>
 <body>
+
+<div class="social">
+	<!-- @see dev.twitter.com/docs/tweet-button -->
+</div>
+
+<!-- @see dev.twitter.com/docs/tweet-button -->
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://idered.pl/esuna" data-text="Esuna - Classy Front-End Framework" data-via="Idered" data-count="vertical" data-lang="en">Tweet</a>
 
 <header class="header">
 
@@ -919,6 +943,7 @@
 <!-- /.main  -->
 <script>
 	var scripts = {
+		'twitter-wjs'   : '//platform.twitter.com/widgets.js',
 		'analytics'     : ('https:'==location.protocol?'//ssl':'//www') + '.google-analytics.com/ga.js'
 	}, script, _gaq=[['_setAccount','UA-18366146-7'],['_trackPageview']];
 

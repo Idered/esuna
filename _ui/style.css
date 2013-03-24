@@ -213,6 +213,14 @@ ul ul {
 	margin-bottom: .5em;
 }
 
+/* Social
+\*------------------------------------*/
+.twitter-share-button {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+}
+
 /* Examples
 \*------------------------------------*/
 
@@ -334,7 +342,11 @@ ul ul {
 	$RESPONSIVE
 \*---------------------------------------------------------------------------*/
 
-@media (max-width: 1024px) {}
+@media (max-width: 1100px) {
+	.twitter-share-button {
+		display: none;
+	}
+}
 
 @media (max-width: 960px) {}
 
