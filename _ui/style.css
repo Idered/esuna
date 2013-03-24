@@ -227,7 +227,7 @@ ul ul {
 	opacity: .5;
 }
 
-.twitter-share-button {
+.twitter-share-button:hover {
 	opacity: 1;
 }
 
