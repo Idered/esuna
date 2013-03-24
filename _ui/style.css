@@ -455,7 +455,7 @@ textarea:focus {
 	overflow:hidden;
 }
 
-.s:before{
+.s:before {
 	width:0;
 	height:100%;
 	content: '';
