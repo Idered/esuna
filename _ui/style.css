@@ -169,6 +169,7 @@ ul ul {
 	$HEADER
 \*---------------------------------------------------------------------------*/
 .header {
+	text-align: right
 }
 
 .header .wrapper {
@@ -180,47 +181,20 @@ ul ul {
 /* Logo
 \*------------------------------------*/
 .site-logo {
-	float: none;
 	margin: 0;
 	line-height: 1;
 }
 
-/* Nav
-\*------------------------------------*/
-.site-nav {
-	color: #666;
-	font-size: .95em;
-	display: block;
+.header__btn-view {
+	color: #00becc;
+	margin: 3px 0;
+	text-shadow: none;
 }
 
-.site-nav__title {
-	padding: .5em 1.5em;
-	text-transform: uppercase;
-	border-bottom: 1px solid #ccc;
-	-webkit-transition: .25s ease;
-	   -moz-transition: .25s ease;
-	    -ms-transition: .25s ease;
-	     -o-transition: .25s ease;
-	        transition: .25s ease;
-}
-
-.site-nav li:hover .site-nav__title {
-	border-bottom-color: #f32837
-}
-
-.site-nav ul {
-	padding: 0 0 1.5em 0;
-}
-
-.site-nav ul a {
-	padding: .35em 0 .35em 1.5em;
-	color: #999;
-}
-
-.site-nav a:hover {
-	background: #e7fdff;
+.header__btn-view:hover {
 	color: #333;
 }
+
 
 /*---------------------------------------------------------------------------*\
 	$CONTENT
@@ -291,6 +265,51 @@ ul ul {
 	$SIDEBAR
 \*---------------------------------------------------------------------------*/
 
+/* Nav
+\*------------------------------------*/
+.site-nav {
+	color: #666;
+	font-size: .95em;
+	display: block;
+}
+
+.site-nav__title {
+	padding: .5em 1.5em;
+	text-transform: uppercase;
+	border-bottom: 1px solid #ccc;
+	-webkit-transition: .25s ease;
+	   -moz-transition: .25s ease;
+	    -ms-transition: .25s ease;
+	     -o-transition: .25s ease;
+	        transition: .25s ease;
+}
+
+.site-nav li:hover .site-nav__title {
+	border-bottom-color: #f32837
+}
+
+.site-nav ul {
+	padding: 0 0 1.5em 0;
+}
+
+.site-nav ul a {
+	padding: .35em 0 .35em 1.5em;
+	color: #999;
+}
+
+.site-nav a:hover {
+	background: #e7fdff;
+	color: #333;
+}
+
+
+/*---------------------------------------------------------------------------*\
+	$HELPERS
+\*---------------------------------------------------------------------------*/
+.mute {
+	opacity: .5;
+}
+
 
 /*---------------------------------------------------------------------------*\
 	$FOOTER
@@ -323,10 +342,20 @@ ul ul {
 
 	/* Header
 	\*------------------------------------*/
+	.header {
+		text-align: center;
+	}
+
 	.header .wrapper {
 		padding-top: 2em;
 	}
 
+	.header__btn-view {
+		margin: 2em 0 0 0;
+	}
+
+	/* Nav
+	\*------------------------------------*/
 	.site-nav {
 		display: none;
 	}
