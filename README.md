@@ -1,5 +1,3 @@
-# esuna
-
 ![](http://i.imgur.com/8sPq70n.png)
 
 [View documentation](http://idered.pl/esuna)
