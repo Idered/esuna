@@ -9,7 +9,8 @@
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet" type="text/css">
 
-	<link rel="stylesheet" href="_ui/style.min.css">
+	<link rel="stylesheet" href="_ui/esuna.css">
+	<link rel="stylesheet" href="_ui/style.css">
 
 	<link rel="shortcut icon" href="icon.png">
 
@@ -42,7 +43,7 @@
 
 			<h3><a href="#introduction" name="introduction">Introduction</a></h3>
 
-			<p>Esuna is open source Front-End framework for those who don't want to struggle with heavy frameworks and tons of useless code. It contains well formatted code for popular elements used on websites like comments, responsive navigation, tags, and many other elements which you use in most of your projects.</p>
+			<p>Esuna is open source, classy Front-End framework for those who don't want to struggle with heavy frameworks and tons of useless code. It contains well formatted code for popular elements used on websites like comments, responsive navigation, tags, and many other elements which you use in most of your projects.</p>
 
 			<p>This project is created and maintained by <a href="http://twitter.com/Idered">Kasper Mikiewicz</a>.</p>
 
@@ -116,6 +117,36 @@
 
 			<p>Tabs are used to indent code in all files. Tab size is equal to 4 spaces.</p>
 
+			<h4>Naming conventions</h4>
+
+			<p>For most of elements you can use hyphen delimited classes: <code>.site-nav</code>, <code>.page-title</code>, however <abbr title="Block, Element, Modifier">BEM</abbr> notation is also used.</p>
+
+			<p>The naming convention follows this pattern:</p>
+
+<pre><code>.block {}
+.block__element {}
+.block--modifier {}</code></pre>
+
+			<dl>
+				<dt><code>.block</code></dt>
+				<dd>represents the higher level of an abstraction or component.</dd>
+
+				<dt><code>.block__element</code></dt>
+				<dd>represents a descendent of .block.</dd>
+
+				<dt><code>.block--modifier</code></dt>
+				<dd>represents a different state of .block.</dd>
+			</dl>
+
+			Further reading: <a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/">MindBEMding – getting your head ’round BEM syntax</a> by Harry Roberts
+
+			<h4>JS hooks</h4>
+
+			<p>Don't attach any JavaScript function to CSS styling classes. Instead use namespaced classes: <code>.js-</code>. For example <code>.js-toggle-nav</code> or <code>.js-hide-parent</code>.</p>
+
+			<pre><code><input type="file" name="image" class="btn btn--primary js-upload"/></code></pre>
+
+
 			<h4>Style</h4>
 
 <pre><code>.header {
@@ -127,7 +158,7 @@
 	width: auto;
 }</code></pre>
 
-			<p>One empty line is used to separate each declaration.</p>
+			<p>One empty line is used to separate each ruleset.</p>
 
 			<p>One empty space before <code>{</code> and one after <code>:</code>.</p>
 
@@ -246,25 +277,33 @@
 
 			<pre><code>DevTools.loadModule('toolName', options);</code></pre>
 
+			<h4>Grunt</h4>
+
+			<p>Grunt is JavaScript task runner. Esuna uses it to compress and concat css, js files.</p>
+
+			<p>Please follor <a href="http://gruntjs.com/getting-started">Grunt documentation</a> for more info.</p>
+
 			<h3><a href="#base" name="base">Base</a></h3>
 
 			<h4><a href="#forms" name="forms">Forms</a></h4>
 
 			<h5>Vertical mode</h5>
 
-			<form action="">
-				<div class="input-wrap">
-					<label for="username">Username: </label>
-					<input type="text" id="username" name="username">
-				</div>
-				<div class="input-wrap">
-					<label for="password">Password: </label>
-					<input type="password" id="password" name="password">
-				</div>
-				<div class="form-actions text--left">
-					<input type="submit" name="submit" value="Send" class="btn btn--primary">
-				</div>
-			</form>
+			<div class="example">
+				<form action="" class="form--aligned">
+					<div class="input-wrap">
+						<label for="username">Username: </label>
+						<input type="text" id="username" name="username">
+					</div>
+					<div class="input-wrap">
+						<label for="password">Password: </label>
+						<input type="password" id="password" name="password">
+					</div>
+					<div class="form-actions text--left">
+						<input type="submit" name="submit" value="Send" class="btn btn--primary">
+					</div>
+				</form>
+			</div>
 
 <pre><code><form action="">
 	<div class="input-wrap">
@@ -282,29 +321,31 @@
 
 			<h5>Horizontal mode</h5>
 
-			<form action="">
-				<div class="input-row">
-					<div class="input-wrap">
-						<label for="username">Name: </label>
-						<input type="text" id="username" name="username">
+			<div class="example">
+				<form action="">
+					<div class="input-row">
+						<div class="input-wrap">
+							<label for="username">Name: </label>
+							<input type="text" id="username" name="username">
+						</div>
+						<div class="input-wrap">
+							<label for="password">Email: </label>
+							<input type="password" id="password" name="password">
+						</div>
+						<div class="input-wrap">
+							<label for="url">URL: </label>
+							<input type="url" id="url" name="url">
+						</div>
 					</div>
 					<div class="input-wrap">
-						<label for="password">Email: </label>
-						<input type="password" id="password" name="password">
+						<label for="message">Message</label>
+						<textarea name="message" class="input--full" id="message" rows="5"></textarea>
 					</div>
-					<div class="input-wrap">
-						<label for="url">URL: </label>
-						<input type="url" id="url" name="url">
+					<div class="form-actions">
+						<input type="submit" name="submit" value="Send" class="btn btn--primary">
 					</div>
-				</div>
-				<div class="input-wrap">
-					<label for="message">Message</label>
-					<textarea name="message" class="input--full" id="message" rows="5"></textarea>
-				</div>
-				<div class="form-actions">
-					<input type="submit" name="submit" value="Send" class="btn btn--primary">
-				</div>
-			</form>
+				</form>
+			</div>
 
 <pre><code><form action="">
 	<div class="input-row">
@@ -382,13 +423,15 @@
 
 			<h5>Sample</h5>
 
-			<ul class="nav nav--fluid" data-base="nav" data-modifiers='["fluid", "stacked", ""]'>
-				<li><a href="#" class="active">Home</a></li>
-				<li><a href="#">Gallery</a></li>
-				<li><a href="#">About us</a></li>
-				<li><a href="#">Our clients</a></li>
-				<li><a href="#">Contact us</a></li>
-			</ul>
+			<div class="example">
+				<ul class="nav nav--fluid" data-base="nav" data-modifiers='["fluid", "stacked", ""]'>
+					<li><a href="#" class="active">Home</a></li>
+					<li><a href="#">Gallery</a></li>
+					<li><a href="#">About us</a></li>
+					<li><a href="#">Our clients</a></li>
+					<li><a href="#">Contact us</a></li>
+				</ul>
+			</div>
 
 			<p>Used classes: <code>nav nav--fluid</code></p>
 
@@ -448,16 +491,18 @@
 
 			<h5>Sample</h5>
 
-			<p>
-				<a href="#" class="btn btn--primary">Primary button</a>
-				<a href="#" class="btn btn--secondary">Secondary button</a>
-				<a href="#" class="btn btn--tertiary">Tertiary button</a>
-			</p>
-			<p>
-				<a href="#" class="btn btn--positive">Positive button</a>
-				<a href="#" class="btn btn--negative">Negative button</a>
-				<a href="#" class="btn btn--inactive">Inactive button</a>
-			</p>
+			<div class="example">
+				<p>
+					<a href="#" class="btn btn--primary">Primary button</a>
+					<a href="#" class="btn btn--secondary">Secondary button</a>
+					<a href="#" class="btn btn--tertiary">Tertiary button</a>
+				</p>
+				<p>
+					<a href="#" class="btn btn--positive">Positive button</a>
+					<a href="#" class="btn btn--negative">Negative button</a>
+					<a href="#" class="btn btn--inactive">Inactive button</a>
+				</p>
+			</div>
 
 			<h4><a href="#media-object" name="media-object">Media object</a></h4>
 
@@ -494,7 +539,10 @@
 			</ul>
 
 			<h5>Sample</h5>
-			<div class="notification notification--info" data-base="notification" data-modifiers='["info", "error", "warning", "success"]'>Sample informational notification.</div>
+
+			<div class="example">
+				<div class="notification notification--info" data-base="notification" data-modifiers='["info", "error", "warning", "success"]'>Sample informational notification.</div>
+			</div>
 
 			<p>Used classes: <code>notification notification--info</code></p>
 
@@ -503,6 +551,7 @@
 			<p>Bar is an object which allow you to manipulate bottom margin.</p>
 
 			<h5>Usage</h5>
+
 			<pre><code><div class="bar bar--huge">After this content we have a lot of free space.</div></code></pre>
 
 			<h5>Modifiers</h5>
@@ -514,7 +563,10 @@
 			</ul>
 
 			<h5>Sample</h5>
-			<div class="bar bar--huge" data-base="bar" data-modifiers='["huge", "large", "", "small"]'>After this content we have a lot of free space.</div>
+
+			<div class="example">
+				<div class="bar bar--huge" data-base="bar" data-modifiers='["huge", "large", "", "small"]'>After this content we have a lot of free space.</div>
+			</div>
 
 			<p>Used classes: <code>bar bar--huge</code></p>
 
@@ -528,7 +580,9 @@
 
 			<h5>Sample</h5>
 
-			<p><i class="navicon"></i></p>
+			<div class="example">
+				<i class="navicon"></i>
+			</div>
 
 			<h4><a href="#pagination" name="pagination">Pagination</a></h4>
 
@@ -547,15 +601,17 @@
 
 			<h5>Sample</h5>
 
-			<div class="pagination">
-				<ul>
-					<li class="pagination__prev"><a href="#">&lt; Previous</a></li>
-					<li><span class="current">1</span></li>
-					<li><a href="">2</a></li>
-					<li><a href="">3</a></li>
-					<li><a href="">4</a></li>
-					<li class="pagination__next"><a href="#">Next &gt;</a></li>
-				</ul>
+			<div class="example">
+				<div class="pagination">
+					<ul>
+						<li class="pagination__prev"><a href="#">&lt; Previous</a></li>
+						<li><span class="current">1</span></li>
+						<li><a href="">2</a></li>
+						<li><a href="">3</a></li>
+						<li><a href="">4</a></li>
+						<li class="pagination__next"><a href="#">Next &gt;</a></li>
+					</ul>
+				</div>
 			</div>
 
 			<h4><a href="#dropdown" name="dropdown">Dropdown</a></h4>
@@ -572,16 +628,18 @@
 
 			<h5>Sample</h5>
 
-			<div class="dropdown">
-				<div class="dropdown__text">Your account</div>
-				<div class="dropdown__toggle"></div>
-				<ul class="dropdown__content">
-					<li><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></li>
-					<li><a href="">Settings</a></li>
-					<li><a href="">Friends</a></li>
-					<li><a href="">Go pro</a></li>
-					<li><a href="">Sign out</a></li>
-				</ul>
+			<div class="example">
+				<div class="dropdown">
+					<div class="dropdown__text">Your account</div>
+					<div class="dropdown__toggle"></div>
+					<ul class="dropdown__content">
+						<li><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></li>
+						<li><a href="">Settings</a></li>
+						<li><a href="">Friends</a></li>
+						<li><a href="">Go pro</a></li>
+						<li><a href="">Sign out</a></li>
+					</ul>
+				</div>
 			</div>
 
 			<h4><a href="#tags" name="tags">Tags</a></h4>
@@ -596,10 +654,12 @@
 
 			<h5>Sample</h5>
 
-			<div class="tags" data-base="tags" data-modifiers='["", "separated"]'>
-				<a href="#">css</a>
-				<a href="#">tips</a>
-				<a href="#">vertical align</a>
+			<div class="example">
+				<div class="tags" data-base="tags" data-modifiers='["", "separated"]'>
+					<a href="#">css</a>
+					<a href="#">tips</a>
+					<a href="#">vertical align</a>
+				</div>
 			</div>
 
 			<p>Used classes: <code>tags</code></p>
@@ -805,6 +865,6 @@
 </script>
 <script src="_ui/js/jquery.js"></script>
 <script src="_ui/js/plugins.js"></script>
-<script src="_ui/js/script.min.js"></script>
+<script src="_ui/js/script.js"></script>
 </body>
 </html>

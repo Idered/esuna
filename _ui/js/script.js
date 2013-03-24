@@ -114,7 +114,7 @@ var App = App || (function($) {
 					classes = base + ' ';
 					classes+= modifiers[i] === '' ? modifiers[i] : base + '--' + modifiers[i];
 					$this.attr('class', '').addClass(classes);
-					$this.next().find('code').text(classes);
+					$this.parent().next().find('code').text(classes);
 				})
 			});
 

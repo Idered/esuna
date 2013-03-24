@@ -182,6 +182,35 @@ ul ul {
 	margin-bottom: .5em;
 }
 
+/* Examples
+\*------------------------------------*/
+
+.example {
+	border: 1px solid #ddd;
+	box-shadow: 0 1px 5px rgba(0,0,0, .1) inset;
+	border-radius: 5px;
+	padding: 1.5em;
+	margin: 1em 0;
+	position: relative;
+}
+
+.example:after {
+	content: 'Example';
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: #eee;
+	border-left: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	padding: .5em 1em;
+	border-radius: 0 8px 0 5px;
+	font-size: .8em;
+}
+
+.example:hover:after {
+	display: none;
+}
+
 /*---------------------------------------------------------------------------*\
 	$SIDEBAR
 \*---------------------------------------------------------------------------*/
