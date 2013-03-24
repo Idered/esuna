@@ -123,11 +123,11 @@ var App = App || (function($) {
 		stickySidebar: function() {
 			var sidebar = $(".sidebar"),
 				viewport = $(window),
-				offset = sidebar.offset().top;
+				offset = $('.main').offset().top;
 
 			viewport.on('scroll', function() {
 				if (viewport.width() >= 768) {
-					sidebar.css({marginTop: viewport.scrollTop() > offset ? viewport.scrollTop() - offset + 10 : 0});
+					sidebar.css(viewport.scrollTop() > offset ? {position: 'fixed', top: 0} : {position: 'static'});
 				} else {
 					sidebar.attr('style', '');
 				}
