@@ -224,6 +224,11 @@ ul ul {
 	position: fixed;
 	top: 10px;
 	right: 10px;
+	opacity: .5;
+}
+
+.twitter-share-button {
+	opacity: 1;
 }
 
 /* Examples
