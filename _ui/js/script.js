@@ -96,6 +96,9 @@ var App = App || (function($) {
 			Public.stickySidebar();
 			Public.modifiersToggler();
 			$('a[href^=#]').softScroll(600, true);
+			$('.header__btn-view').on('click', function(e) {
+				_gaq.push(['_trackEvent', 'External Link', e.currentTarget.host, this.href, 0]);
+			});
 		}, // init
 
 		modifiersToggler: function() {
