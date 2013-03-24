@@ -368,6 +368,21 @@ pre code {
 	width: 100%;
 }
 
+.form--aligned .input-wrap {
+	display: table;
+	width: 100%;
+}
+
+.form--aligned label {
+	display: table-cell;
+	width: 8em;
+}
+
+.form--aligned .input-wrap input,
+.form--aligned .input-wrap textarea {
+	display: table-cell;
+}
+
 /* Form actions
 \*------------------------------------*/
 .form-actions {
@@ -1299,6 +1314,11 @@ ul ul {
 		-webkit-box-sizing: border-box;
 		   -moz-box-sizing: border-box;
 				box-sizing: border-box;
+	}
+
+	.form--aligned label {
+		display: block;
+		width: auto;
 	}
 
 	/* Buttons
