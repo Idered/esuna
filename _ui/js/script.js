@@ -114,7 +114,7 @@ var App = App || (function($) {
 		$(this).on('click', function(event) {
 			event.preventDefault();
 			$('html,body').animate({
-				scrollTop:$(this.hash).length ? $(this.hash) : $('[name=' + this.hash.substr(1) + ']').offset().top
+				scrollTop:$(this.hash).length ? $(this.hash).offset().top : $('[name=' + this.hash.substr(1) + ']').offset().top
 			}, speed || 500);
 		});
 		return this;
