@@ -260,6 +260,9 @@ code {
 pre {
 	padding: .5em;
 	overflow: auto;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
 }
 
 pre code {
@@ -269,9 +272,6 @@ pre code {
 	white-space: pre;
 	margin: 0;
 	padding: 0;
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
 }
 
 /*---------------------------------------------------------------------------*\
