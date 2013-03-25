@@ -4,8 +4,7 @@
 \*---------------------------------------------------------------------------*/
 
 
-/*---------------------------------------------------------------------------*\
-   $NORMALIZE normalize.css v2.1.0 | MIT License | git.io/normalize
+/** $normalize.css v2.1.0 | MIT License | git.io/normalize
 \*---------------------------------------------------------------------------*/
 
 article, aside, details, figcaption, figure, footer,
@@ -161,8 +160,7 @@ table {
 }
 
 
-/*---------------------------------------------------------------------------*\
-	$BASE
+/** $Base
 \*---------------------------------------------------------------------------*/
 
 html {
@@ -178,7 +176,7 @@ body {
 	margin: 0;
 }
 
-/* Links
+/** %Links
 \*------------------------------------*/
 a {
 	color: #00becc;
@@ -202,7 +200,7 @@ a:hover {
 	border-bottom: 1px dashed #ccc;
 }
 
-/* Typography
+/** %Typography
 \*------------------------------------*/
 h1, h2, h3,
 h4, h5, h6,
@@ -235,7 +233,7 @@ h6, .zeta {
 	font-size: 1em;
 }
 
-/* Code
+/** %Code
 \*------------------------------------*/
 code, kbd, pre, samp {
 	font-family: Monaco, 'Andale Mono', 'Courier New', monospace;
@@ -274,13 +272,12 @@ pre code {
 	padding: 0;
 }
 
-/*---------------------------------------------------------------------------*\
-	$FORMS
+
+/** $Forms
 \*---------------------------------------------------------------------------*/
 
-/* Placeholders
+/** %Placeholders
 \*------------------------------------*/
-
 .placeholder { /* Not supported browsers */
 	color: #bbb;
 	font-style: italic;
@@ -306,7 +303,7 @@ pre code {
 	font-style: italic;
 }
 
-/* Basic structure
+/** %Basic structure
 \*------------------------------------*/
 .input-wrap {
 	margin-bottom: 1em;
@@ -318,47 +315,22 @@ pre code {
 	display: table;
 }
 
-.input-wrap label {}
+.input-wrap label {
+	display: block;
+}
 
 .input-wrap input,
 .input-wrap textarea {
-	border: 1px solid #aaa;
+	width: 100%;
 	padding: .5em;
 	border-radius: 3px;
+	border: 1px solid #aaa;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
-/* Input row
-\*------------------------------------*/
-.input-row {
-	width: 100%;
-	display: table;
-	margin-bottom: 1em;
-    table-layout: fixed;
-}
-
-.input-row .input-wrap {
-	display: table-cell;
-	padding-right: .5em;
-}
-
-.input-row .input-wrap ~ .input-wrap {
-	padding-left: .5em;
-	padding-right: 0;
-}
-
-.input-row .input-wrap ~ .input-wrap ~ .input-wrap {
-	padding-left: 1em;
-}
-
-.input-row input,
-.input-row textarea {
-	width: 100%;
-}
-
-/* Modifiers
+/** %Modifiers
 \*------------------------------------*/
 .input--half {
 	width: 50%
@@ -368,28 +340,13 @@ pre code {
 	width: 100%;
 }
 
-.form--aligned .input-wrap {
-	display: table;
-	width: 100%;
-}
-
-.form--aligned label {
-	display: table-cell;
-	width: 8em;
-}
-
-.form--aligned .input-wrap input,
-.form--aligned .input-wrap textarea {
-	display: table-cell;
-}
-
-/* Form actions
+/** %Form actions
 \*------------------------------------*/
 .form-actions {
 	text-align: right;
 }
 
-/* Focus
+/** %Focus
 \*------------------------------------*/
 :focus {
   outline-color: transparent;
@@ -402,8 +359,7 @@ textarea:focus {
 }
 
 
-/*---------------------------------------------------------------------------*\
-	$FX | Special effects
+/** $Fx
 \*---------------------------------------------------------------------------*/
 
 [class*=fx--] {
@@ -436,11 +392,10 @@ textarea:focus {
 }
 
 
-/*---------------------------------------------------------------------------*\
-	$OBJECTS
+/** $Objects
 \*---------------------------------------------------------------------------*/
 
-/* Sprites
+/** %Sprites
 \*------------------------------------*/
 .s {
 	background-image:url(img/sprite.png);
@@ -473,7 +428,7 @@ textarea:focus {
 .s--phone    { background-position: 0 0; }
 .s--email    { background-position: 0 0; }
 
-/* Navigation
+/** %Navigation
 \*------------------------------------*/
 .nav {
 	list-style: none;
@@ -510,7 +465,7 @@ textarea:focus {
 	text-align: center;
 }
 
-/* Buttons
+/** %Buttons
 \*------------------------------------*/
 .btn {
 	display: inline-block;
@@ -544,8 +499,7 @@ textarea:focus {
 }
 
 .btn:active,
-.btn:focus {
-}
+.btn:focus {}
 
 /*------------------------------------*/
 
@@ -687,7 +641,7 @@ textarea:focus {
 	border-radius: 0 0 5px 5px;
 }
 
-/* Media
+/** %Media
 \*------------------------------------*/
 .media {
 	display: block;
@@ -713,7 +667,7 @@ textarea:focus {
 	overflow: hidden;
 }
 
-/* Notifications
+/** %Notifications
 \*------------------------------------*/
 .notification {
     position: relative;
@@ -741,7 +695,7 @@ textarea:focus {
     background-color: #f2ae00;
 }
 
-/* Bar
+/** %Bar
 \*------------------------------------*/
 .bar {
 	margin-bottom: 1.5em;
@@ -757,7 +711,7 @@ textarea:focus {
 .bar--large  { margin-bottom: 2em; }
 .bar--huge 	 { margin-bottom: 3em; }
 
-/* Navicon
+/** %Navicon
 \*------------------------------------*/
 .navicon {
 	cursor: pointer;
@@ -768,7 +722,7 @@ textarea:focus {
 	border-bottom: .1875em solid #999; /* 3/16px */
 }
 
-/* Pagination
+/** %Pagination
 \*------------------------------------*/
 .pagination {
 	text-align: center;
@@ -817,7 +771,7 @@ textarea:focus {
 .pagination__prev:active,
 .pagination__next:active {}
 
-/* Dropdown
+/** %Dropdown
 \*------------------------------------*/
 .dropdown {
 	color: #666;
@@ -927,7 +881,7 @@ textarea:focus {
 	visibility: visible;
 }
 
-/* Tags
+/** %Tags
 \*------------------------------------*/
 .tags {
 	position: relative;
@@ -959,7 +913,7 @@ textarea:focus {
 	content: ',\00a0';
 }
 
-/* Quotes
+/** %Quotes
 \*------------------------------------*/
 blockquote {
 	clear: both;
@@ -980,7 +934,7 @@ blockquote p:first-child {
 	font-weight: normal;
 }
 
-/* Lists
+/** %Lists
 \*------------------------------------*/
 ul ul {
 	list-style-type: disc;
@@ -988,7 +942,7 @@ ul ul {
 	padding-left: 1em;
 }
 
-/* Comments area
+/** %Comments area
 \*------------------------------------*/
 .comments-area {}
 
@@ -1029,8 +983,18 @@ ul ul {
 .comment__meta {}
 
 
-/*---------------------------------------------------------------------------*\
-	$HEADER
+/** $Layout
+\*---------------------------------------------------------------------------*/
+.wrapper {
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
+/** $Header
 \*---------------------------------------------------------------------------*/
 
 .header {}
@@ -1041,7 +1005,7 @@ ul ul {
 	display: table;
 }
 
-/* Logo
+/** %Logo
 \*------------------------------------*/
 .site-logo {
 	display: block;
@@ -1055,7 +1019,7 @@ ul ul {
 	display: inline-block;
 }
 
-/* Navigation
+/** %Navigation
 \*------------------------------------*/
 .mobile-nav-header {
 	display: block;
@@ -1075,10 +1039,6 @@ ul ul {
 	position: absolute;
 }
 
-.site-nav ul {
-	display: none;
-}
-
 .site-nav li {
 	width: 100%;
 }
@@ -1095,18 +1055,15 @@ ul ul {
 }
 
 
-/*---------------------------------------------------------------------------*\
-	$CONTENT
+/** $Content
 \*---------------------------------------------------------------------------*/
 
 
-/*---------------------------------------------------------------------------*\
-	$SIDEBAR
+/** $Sidebar
 \*---------------------------------------------------------------------------*/
 
 
-/*---------------------------------------------------------------------------*\
-	$FOOTER
+/** $Footer
 \*---------------------------------------------------------------------------*/
 
 .footer {
@@ -1115,21 +1072,37 @@ ul ul {
 }
 
 
-/*---------------------------------------------------------------------------*\
-	$RESPONSIVE
+/** $Responsive
 \*---------------------------------------------------------------------------*/
 
-/* Phones - portrait
+/** %Phones - portrait
 \*------------------------------------*/
 @media (min-width: 320px) {
 
 }
 
-/* Phones - landscape
+/** %Phones - landscape
 \*------------------------------------*/
 @media (min-width: 480px) {
 
-	/* Navigation
+	/* =Form - Modifiers
+	\*------------------------------------*/
+	.form--aligned .input-wrap {
+		display: table;
+		width: 100%;
+	}
+
+	.form--aligned label {
+		display: table-cell;
+		width: 8em;
+	}
+
+	.form--aligned .input-wrap input,
+	.form--aligned .input-wrap textarea {
+		display: table-cell;
+	}
+
+	/* =Navigation
 	\*------------------------------------*/
 	.site-nav li {
 		width: 50%;
@@ -1138,12 +1111,11 @@ ul ul {
 
 }
 
-/* Phones
+/** %Phones
 \*------------------------------------*/
 @media (max-width: 767px) {
 
-
-	/* Helpers
+	/* =Helpers
 	\*------------------------------------*/
 	.mobile-hide {
 		display: none;
@@ -1151,11 +1123,39 @@ ul ul {
 
 }
 
-/* Tablets - portrait
+/** %Tablets - portrait
 \*------------------------------------*/
 @media (min-width: 768px) {
 
-	/* Helpers
+	/* =Forms - Input row
+	\*------------------------------------*/
+	.input-row {
+		width: 100%;
+		display: table;
+		margin-bottom: 1em;
+	    table-layout: fixed;
+	}
+
+	.input-row .input-wrap {
+		display: table-cell;
+		padding-right: .5em;
+	}
+
+	.input-row .input-wrap ~ .input-wrap {
+		padding-left: .5em;
+		padding-right: 0;
+	}
+
+	.input-row .input-wrap ~ .input-wrap ~ .input-wrap {
+		padding-left: 1em;
+	}
+
+	.input-row input,
+	.input-row textarea {
+		width: 100%;
+	}
+
+	/* =Helpers
 	\*------------------------------------*/
 	.tablet-hide {
 		display: none;
@@ -1163,16 +1163,15 @@ ul ul {
 
 }
 
-/* Layout width breakpoint
+/** %Layout width breakpoint
 \*------------------------------------*/
 @media (min-width: 960px) {
 
-	/* Layout
+	/* =Layout
 	\*------------------------------------*/
 	.wrapper {
-		max-width: 960px;
-		margin-left: auto;
-		margin-right: auto;
+		padding-left: 0;
+		padding-right: 0;
 	}
 
 	.main:after {
@@ -1196,14 +1195,14 @@ ul ul {
 		float: left;
 	}
 
-	/* Site logo
+	/* =Logo
 	\*------------------------------------*/
 	.site-logo {
 		display: inline-block;
 		vertical-align: middle;
 	}
 
-	/* Navigation
+	/* =Navigation
 	\*------------------------------------*/
 	.mobile-nav-header {
 		display: none;
@@ -1218,25 +1217,19 @@ ul ul {
 		background: transparent;
 	}
 
-	.site-nav ul {
-		display: block;
-	}
-
 	.site-nav li {
 		width: auto;
 		float: none;
 	}
 
-	.site-nav a {
+	.site-nav li + li {
+		margin-left: 35px;
 	}
 
 	.site-nav a {
 		padding: 0;
 	}
 
-	.site-nav li + li {
-		margin-left: 35px;
-	}
 	.site-nav  a:hover,
 	.site-nav .active a {
 		color: inherit;
@@ -1246,83 +1239,29 @@ ul ul {
 
 }
 
-/* Tablets - landscape
+/** %Tablets - landscape
 \*------------------------------------*/
 @media (min-width: 1024px) {
 
 }
 
-/* Tablets
+/** %Tablets
 \*------------------------------------*/
 @media (max-width: 1024px) {
 
 }
 
-/* Widescreens
+/** %Widescreens
 \*------------------------------------*/
 @media (min-width: 1280px) {
 
 }
 
-@media (max-width: 479px) {
 
-	/* Forms
-	\*------------------------------------*/
-	.input-row {
-		display: block;
-		width: auto;
-	}
-
-	.input-wrap,
-	.input-row .input-wrap,
-	.input-row .input-wrap ~ .input-wrap,
-	.input-row .input-wrap ~ .input-wrap ~ .input-wrap {
-		padding: 0;
-		display: block;
-	}
-
-	.input-wrap label {
-		display: block;
-	}
-
-	.input-wrap input,
-	.input-wrap textarea {
-		width: 100%;
-		-webkit-box-sizing: border-box;
-		   -moz-box-sizing: border-box;
-				box-sizing: border-box;
-	}
-
-	.form--aligned label {
-		display: block;
-		width: auto;
-	}
-
-	/* Buttons
-	\*------------------------------------*/
-	.btn {
-		font-size: 1em;
-	}
-
-	/* Nav
-	\*------------------------------------*/
-	.site-nav li {
-		width: 100%;
-	}
-
-	.site-nav li a {
-		text-align: left;
-		padding: .5em 1em;
-	}
-
-}
-
-
-/*---------------------------------------------------------------------------*\
-	$HELPERS
+/** $Helpers
 \*---------------------------------------------------------------------------*/
 
-/* Display
+/** %Display
 \*------------------------------------*/
 .hidden {
     display: none !important;
@@ -1344,7 +1283,7 @@ ul ul {
     clip: rect(0 0 0 0);
 }
 
-/* Clearfix
+/** %Clearfix
 \*------------------------------------*/
 .cf:after {
 	content: '';
@@ -1352,7 +1291,7 @@ ul ul {
 	display: table;
 }
 
-/* Text
+/** %Text
 \*------------------------------------*/
 .text--center { text-align: center; }
 .text--left   { text-align: left; }
@@ -1393,7 +1332,7 @@ ul ul {
 .text--bold 	{ font-weight: 700; }
 .text--extra 	{ font-weight: 800; }
 
-/* Colors
+/** %Colors
 \*------------------------------------*/
 .color--primary   { color: #00becc; }
 .color--secondary {	color: #f32837; }
