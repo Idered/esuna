@@ -1,11 +1,27 @@
 /**
  * @author Kasper Mikiewicz - Idered
  * @url    http://idered.pl
+ *
+ * Contents:
+ * - Normalize............. normalize.css
+ * - Base.................. Style of basic css elements
+ * - Forms.................
+ * - Fx.................... Special effects
+ * - Objects............... Nav, pagination, tags, etc.
+ * - Layout................
+ * - Header................
+ * - Content...............
+ * - Sidebar...............
+ * - Footer................
+ * - Media queries......... Responsive stuff
+ * - Helpers...............
+ * - Print.................
+ *
 \*---------------------------------------------------------------------------*/
 
 
-/** $normalize.css v2.1.0 | MIT License | git.io/normalize
-\*---------------------------------------------------------------------------*/
+/** $normalize.css v2.1.0 | MIT License | git.io/normalize */
+/*---------------------------------------------------------------------------*/
 
 article, aside, details, figcaption, figure, footer,
 header, hgroup, main, nav, section, summary {
@@ -160,8 +176,8 @@ table {
 }
 
 
-/** $Base
-\*---------------------------------------------------------------------------*/
+/** $Base */
+/*---------------------------------------------------------------------------*/
 
 html {
 	font: 300 1em/1.5 "Open Sans", sans-serif;
@@ -176,8 +192,8 @@ body {
 	margin: 0;
 }
 
-/** %[Base] Links
-\*------------------------------------*/
+/** [Base] Links */
+/*------------------------------------*/
 a {
 	color: #00becc;
 	text-decoration: none;
@@ -200,8 +216,8 @@ a:hover {
 	border-bottom: 1px dashed #ccc;
 }
 
-/** %[Base] Typography
-\*------------------------------------*/
+/** [Base] Typography */
+/*------------------------------------*/
 h1, h2, h3,
 h4, h5, h6,
 .alpha, .beta, .gamma,
@@ -233,8 +249,8 @@ h6, .zeta {
 	font-size: 1em;
 }
 
-/** %[Base] Code
-\*------------------------------------*/
+/** [Base] Code */
+/*------------------------------------*/
 code, kbd, pre, samp {
 	font-family: Monaco, 'Andale Mono', 'Courier New', monospace;
 }
@@ -272,12 +288,33 @@ pre code {
 	padding: 0;
 }
 
+/** [Base] Blockquotes */
+/*------------------------------------*/
+blockquote {
+	clear: both;
+	display: block;
+	position: relative;
+}
 
-/** $Forms
-\*---------------------------------------------------------------------------*/
+blockquote p:first-child {
+	margin-top: 0;
+}
 
-/** %[Form] Placeholders
-\*------------------------------------*/
+.source {
+	display: block;
+	text-indent: 0;
+	color: #00becc;
+	text-align: right;
+	font-style: italic;
+	font-weight: normal;
+}
+
+
+/** $Forms */
+/*---------------------------------------------------------------------------*/
+
+/** [Form] Placeholders */
+/*------------------------------------*/
 .placeholder { /* Not supported browsers */
 	color: #bbb;
 	font-style: italic;
@@ -303,8 +340,8 @@ pre code {
 	font-style: italic;
 }
 
-/** %[Form] Basic structure
-\*------------------------------------*/
+/** [Form] Basic structure */
+/*------------------------------------*/
 .input-wrap {
 	margin-bottom: 1em;
 }
@@ -330,8 +367,8 @@ pre code {
 	box-sizing: border-box;
 }
 
-/** %[Form] Modifiers
-\*------------------------------------*/
+/** [Form] Modifiers */
+/*------------------------------------*/
 .input--half {
 	width: 50%
 }
@@ -340,14 +377,14 @@ pre code {
 	width: 100%;
 }
 
-/** %[Form] Actions
-\*------------------------------------*/
+/** [Form] Actions */
+/*------------------------------------*/
 .form-actions {
 	text-align: right;
 }
 
-/** %[Form] Focus
-\*------------------------------------*/
+/** [Form] Focus */
+/*------------------------------------*/
 :focus {
   outline-color: transparent;
   outline-style: none;
@@ -359,8 +396,8 @@ textarea:focus {
 }
 
 
-/** $Fx
-\*---------------------------------------------------------------------------*/
+/** $Fx */
+/*---------------------------------------------------------------------------*/
 
 [class*=fx--] {
 	-webkit-transition: all .25s ease;
@@ -392,11 +429,11 @@ textarea:focus {
 }
 
 
-/** $Objects
-\*---------------------------------------------------------------------------*/
+/** $Objects */
+/*---------------------------------------------------------------------------*/
 
-/** %[Object] Sprites
-\*------------------------------------*/
+/** [Object] Sprites */
+/*------------------------------------*/
 .s {
 	background-image:url(img/sprite.png);
 	vertical-align:middle;
@@ -428,8 +465,8 @@ textarea:focus {
 .s--phone    { background-position: 0 0; }
 .s--email    { background-position: 0 0; }
 
-/** %[Object] Nav
-\*------------------------------------*/
+/** [Object] Nav */
+/*------------------------------------*/
 .nav {
 	list-style: none;
 	padding: 0;
@@ -465,8 +502,8 @@ textarea:focus {
 	text-align: center;
 }
 
-/** %[Object] Buttons
-\*------------------------------------*/
+/** [Object] Buttons */
+/*------------------------------------*/
 .btn {
 	display: inline-block;
 	vertical-align: middle;
@@ -506,21 +543,18 @@ textarea:focus {
 .btn--small {
 	padding-right: 0.5em;
 	padding-left: 0.5em;
-	line-height: 2;
 	height: 2em;
 }
 
 .btn--large {
 	padding-right: 1.5em;
 	padding-left: 1.5em;
-	line-height: 4;
 	height: 4em;
 }
 
 .btn--huge {
 	padding-right: 2em;
 	padding-left: 2em;
-	line-height: 5;
 	height: 5em;
 }
 
@@ -641,8 +675,8 @@ textarea:focus {
 	border-radius: 0 0 5px 5px;
 }
 
-/** %[Object] Media
-\*------------------------------------*/
+/** [Object] Media */
+/*------------------------------------*/
 .media {
 	display: block;
 }
@@ -667,8 +701,8 @@ textarea:focus {
 	overflow: hidden;
 }
 
-/** %[Object] Notifications
-\*------------------------------------*/
+/** [Object] Notifications */
+/*------------------------------------*/
 .notification {
     position: relative;
     border-radius: 5px;
@@ -695,8 +729,8 @@ textarea:focus {
     background-color: #f2ae00;
 }
 
-/** %[Object] Bar
-\*------------------------------------*/
+/** [Object] Bar */
+/*------------------------------------*/
 .bar {
 	margin-bottom: 1.5em;
 }
@@ -711,8 +745,8 @@ textarea:focus {
 .bar--large  { margin-bottom: 2em; }
 .bar--huge 	 { margin-bottom: 3em; }
 
-/** %[Object] Navicon
-\*------------------------------------*/
+/** [Object] Navicon */
+/*------------------------------------*/
 .navicon {
 	cursor: pointer;
 	display: inline-block;
@@ -722,8 +756,8 @@ textarea:focus {
 	border-bottom: .1875em solid #999; /* 3/16px */
 }
 
-/** %[Object] Pagination
-\*------------------------------------*/
+/** [Object] Pagination */
+/*------------------------------------*/
 .pagination {
 	text-align: center;
 }
@@ -771,8 +805,8 @@ textarea:focus {
 .pagination__prev:active,
 .pagination__next:active {}
 
-/** %[Object] Dropdown
-\*------------------------------------*/
+/** [Object] Dropdown */
+/*------------------------------------*/
 .dropdown {
 	color: #666;
 	font-size: .9em;
@@ -881,8 +915,8 @@ textarea:focus {
 	visibility: visible;
 }
 
-/** %[Object] Tags
-\*------------------------------------*/
+/** [Object] Tags */
+/*------------------------------------*/
 .tags {
 	position: relative;
 	vertical-align: top;
@@ -913,37 +947,16 @@ textarea:focus {
 	content: ',\00a0';
 }
 
-/** %[Object] Quotes
-\*------------------------------------*/
-blockquote {
-	clear: both;
-	display: block;
-	position: relative;
-}
-
-blockquote p:first-child {
-	margin-top: 0;
-}
-
-.source {
-	display: block;
-	text-indent: 0;
-	color: #00becc;
-	text-align: right;
-	font-style: italic;
-	font-weight: normal;
-}
-
-/** %[Object] Lists
-\*------------------------------------*/
+/** [Object] Lists */
+/*------------------------------------*/
 ul ul {
 	list-style-type: disc;
 	list-style-position: inside;
 	padding-left: 1em;
 }
 
-/** %[Object] Comments area
-\*------------------------------------*/
+/** [Object] Comments area */
+/*------------------------------------*/
 .comments-area {}
 
 .comments-area__inner {}
@@ -983,8 +996,8 @@ ul ul {
 .comment__meta {}
 
 
-/** $Layout
-\*---------------------------------------------------------------------------*/
+/** $Layout */
+/*---------------------------------------------------------------------------*/
 .wrapper {
 	max-width: 960px;
 	margin-left: auto;
@@ -994,8 +1007,8 @@ ul ul {
 }
 
 
-/** $Header
-\*---------------------------------------------------------------------------*/
+/** $Header */
+/*---------------------------------------------------------------------------*/
 
 .header {}
 
@@ -1005,8 +1018,8 @@ ul ul {
 	display: table;
 }
 
-/** %Logo
-\*------------------------------------*/
+/** %Logo */
+/*------------------------------------*/
 .site-logo {
 	display: block;
 	margin: 1em auto;
@@ -1019,8 +1032,8 @@ ul ul {
 	display: inline-block;
 }
 
-/** %[Nav] Site nav
-\*------------------------------------*/
+/** %Site nav */
+/*------------------------------------*/
 .mobile-nav-header {
 	display: block;
 	background: #333;
@@ -1035,7 +1048,6 @@ ul ul {
 	width: 100%;
 	display: none;
 	background: #333;
-	text-align: center;
 	position: absolute;
 }
 
@@ -1046,7 +1058,7 @@ ul ul {
 .site-nav a {
 	color: #ccc;
 	display: block;
-	padding: .5em 0;
+	padding: .5em 1em;
 }
 
 .site-nav  a:hover,
@@ -1055,16 +1067,16 @@ ul ul {
 }
 
 
-/** $Content
-\*---------------------------------------------------------------------------*/
+/** $Content */
+/*---------------------------------------------------------------------------*/
 
 
-/** $Sidebar
-\*---------------------------------------------------------------------------*/
+/** $Sidebar */
+/*---------------------------------------------------------------------------*/
 
 
-/** $Footer
-\*---------------------------------------------------------------------------*/
+/** $Footer */
+/*---------------------------------------------------------------------------*/
 
 .footer {
 	font-size: .9em;
@@ -1072,21 +1084,21 @@ ul ul {
 }
 
 
-/** $Responsive
-\*---------------------------------------------------------------------------*/
+/** $Media queries */
+/*---------------------------------------------------------------------------*/
 
-/** =Phones - portrait
-\*------------------------------------*/
+/** =Phones - portrait */
+/*------------------------------------*/
 @media (min-width: 320px) {
 
 }
 
-/** =Phones - landscape
-\*------------------------------------*/
+/** =Phones - landscape */
+/*------------------------------------*/
 @media (min-width: 480px) {
 
-	/** %[Form] Modifiers
-	\*------------------------------------*/
+	/** [Form] Modifiers */
+	/*------------------------------------*/
 	.form--aligned .input-wrap {
 		display: table;
 		width: 100%;
@@ -1102,33 +1114,34 @@ ul ul {
 		display: table-cell;
 	}
 
-	/** %[Nav] Site nav
-	\*------------------------------------*/
+	/** %Site nav */
+	/*------------------------------------*/
 	.site-nav li {
 		width: 50%;
 		float: left;
+		text-align: center;
 	}
 
 }
 
-/** =Phones
-\*------------------------------------*/
+/** =Phones */
+/*------------------------------------*/
 @media (max-width: 767px) {
 
-	/** %Helpers
-	\*------------------------------------*/
+	/** [Helper] Hide - mobile */
+	/*------------------------------------*/
 	.mobile-hide {
 		display: none;
 	}
 
 }
 
-/** =Tablets - portrait
-\*------------------------------------*/
+/** =Tablets - portrait */
+/*------------------------------------*/
 @media (min-width: 768px) {
 
-	/** %[Form] Input row
-	\*------------------------------------*/
+	/** [Form] Input row */
+	/*------------------------------------*/
 	.input-row {
 		width: 100%;
 		display: table;
@@ -1155,20 +1168,20 @@ ul ul {
 		width: 100%;
 	}
 
-	/** %Helpers
-	\*------------------------------------*/
+	/** [Helper] Hide - tablet */
+	/*------------------------------------*/
 	.tablet-hide {
 		display: none;
 	}
 
 }
 
-/** =Layout width breakpoint
-\*------------------------------------*/
+/** =Layout width breakpoint */
+/*------------------------------------*/
 @media (min-width: 960px) {
 
-	/** %Layout
-	\*------------------------------------*/
+	/** %Layout */
+	/*------------------------------------*/
 	.wrapper {
 		padding-left: 0;
 		padding-right: 0;
@@ -1195,15 +1208,15 @@ ul ul {
 		float: left;
 	}
 
-	/** %Logo
-	\*------------------------------------*/
+	/** %Logo */
+	/*------------------------------------*/
 	.site-logo {
 		display: inline-block;
 		vertical-align: middle;
 	}
 
-	/** %[Nav] Site nav
-	\*------------------------------------*/
+	/** %Site nav */
+	/*------------------------------------*/
 	.mobile-nav-header {
 		display: none;
 	}
@@ -1239,30 +1252,30 @@ ul ul {
 
 }
 
-/** =Tablets - landscape
-\*------------------------------------*/
+/** =Tablets - landscape */
+/*------------------------------------*/
 @media (min-width: 1024px) {
 
 }
 
-/** =Tablets
-\*------------------------------------*/
+/** =Tablets */
+/*------------------------------------*/
 @media (max-width: 1024px) {
 
 }
 
-/** =Widescreens
-\*------------------------------------*/
+/** =Widescreens */
+/*------------------------------------*/
 @media (min-width: 1280px) {
 
 }
 
 
-/** $Helpers
-\*---------------------------------------------------------------------------*/
+/** $Helpers */
+/*---------------------------------------------------------------------------*/
 
-/** %[Helper] Display
-\*------------------------------------*/
+/** [Helper] Display */
+/*------------------------------------*/
 .hidden {
     display: none !important;
     visibility: hidden;
@@ -1283,16 +1296,16 @@ ul ul {
     clip: rect(0 0 0 0);
 }
 
-/** %[Helper] Clearfix
-\*------------------------------------*/
+/** [Helper] Clearfix */
+/*------------------------------------*/
 .cf:after {
 	content: '';
 	clear: both;
 	display: table;
 }
 
-/** %[Helper] Text
-\*------------------------------------*/
+/** [Helper] Text */
+/*------------------------------------*/
 .text--center { text-align: center; }
 .text--left   { text-align: left; }
 .text--right  { text-align: right; }
@@ -1332,8 +1345,74 @@ ul ul {
 .text--bold 	{ font-weight: 700; }
 .text--extra 	{ font-weight: 800; }
 
-/** %[Helper] Colors
-\*------------------------------------*/
+/** [Helper] Colors */
+/*------------------------------------*/
 .color--primary   { color: #00becc; }
 .color--secondary {	color: #f32837; }
 .color--tertiary  {	color: #2d303c; }
+
+
+/** $Print */
+/*---------------------------------------------------------------------------*/
+
+@media print {
+
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a, a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr, img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2, h3 {
+        page-break-after: avoid;
+    }
+
+    .mobile-nav-header {
+    	display: none;
+    }
+}
