@@ -176,7 +176,7 @@ body {
 	margin: 0;
 }
 
-/** %Links
+/** %[Base] Links
 \*------------------------------------*/
 a {
 	color: #00becc;
@@ -200,7 +200,7 @@ a:hover {
 	border-bottom: 1px dashed #ccc;
 }
 
-/** %Typography
+/** %[Base] Typography
 \*------------------------------------*/
 h1, h2, h3,
 h4, h5, h6,
@@ -233,7 +233,7 @@ h6, .zeta {
 	font-size: 1em;
 }
 
-/** %Code
+/** %[Base] Code
 \*------------------------------------*/
 code, kbd, pre, samp {
 	font-family: Monaco, 'Andale Mono', 'Courier New', monospace;
@@ -276,7 +276,7 @@ pre code {
 /** $Forms
 \*---------------------------------------------------------------------------*/
 
-/** %Placeholders
+/** %[Form] Placeholders
 \*------------------------------------*/
 .placeholder { /* Not supported browsers */
 	color: #bbb;
@@ -303,7 +303,7 @@ pre code {
 	font-style: italic;
 }
 
-/** %Basic structure
+/** %[Form] Basic structure
 \*------------------------------------*/
 .input-wrap {
 	margin-bottom: 1em;
@@ -330,7 +330,7 @@ pre code {
 	box-sizing: border-box;
 }
 
-/** %Modifiers
+/** %[Form] Modifiers
 \*------------------------------------*/
 .input--half {
 	width: 50%
@@ -340,13 +340,13 @@ pre code {
 	width: 100%;
 }
 
-/** %Form actions
+/** %[Form] Actions
 \*------------------------------------*/
 .form-actions {
 	text-align: right;
 }
 
-/** %Focus
+/** %[Form] Focus
 \*------------------------------------*/
 :focus {
   outline-color: transparent;
@@ -395,7 +395,7 @@ textarea:focus {
 /** $Objects
 \*---------------------------------------------------------------------------*/
 
-/** %Sprites
+/** %[Object] Sprites
 \*------------------------------------*/
 .s {
 	background-image:url(img/sprite.png);
@@ -428,7 +428,7 @@ textarea:focus {
 .s--phone    { background-position: 0 0; }
 .s--email    { background-position: 0 0; }
 
-/** %Navigation
+/** %[Object] Nav
 \*------------------------------------*/
 .nav {
 	list-style: none;
@@ -465,7 +465,7 @@ textarea:focus {
 	text-align: center;
 }
 
-/** %Buttons
+/** %[Object] Buttons
 \*------------------------------------*/
 .btn {
 	display: inline-block;
@@ -641,7 +641,7 @@ textarea:focus {
 	border-radius: 0 0 5px 5px;
 }
 
-/** %Media
+/** %[Object] Media
 \*------------------------------------*/
 .media {
 	display: block;
@@ -667,7 +667,7 @@ textarea:focus {
 	overflow: hidden;
 }
 
-/** %Notifications
+/** %[Object] Notifications
 \*------------------------------------*/
 .notification {
     position: relative;
@@ -695,7 +695,7 @@ textarea:focus {
     background-color: #f2ae00;
 }
 
-/** %Bar
+/** %[Object] Bar
 \*------------------------------------*/
 .bar {
 	margin-bottom: 1.5em;
@@ -711,7 +711,7 @@ textarea:focus {
 .bar--large  { margin-bottom: 2em; }
 .bar--huge 	 { margin-bottom: 3em; }
 
-/** %Navicon
+/** %[Object] Navicon
 \*------------------------------------*/
 .navicon {
 	cursor: pointer;
@@ -722,7 +722,7 @@ textarea:focus {
 	border-bottom: .1875em solid #999; /* 3/16px */
 }
 
-/** %Pagination
+/** %[Object] Pagination
 \*------------------------------------*/
 .pagination {
 	text-align: center;
@@ -771,7 +771,7 @@ textarea:focus {
 .pagination__prev:active,
 .pagination__next:active {}
 
-/** %Dropdown
+/** %[Object] Dropdown
 \*------------------------------------*/
 .dropdown {
 	color: #666;
@@ -881,7 +881,7 @@ textarea:focus {
 	visibility: visible;
 }
 
-/** %Tags
+/** %[Object] Tags
 \*------------------------------------*/
 .tags {
 	position: relative;
@@ -913,7 +913,7 @@ textarea:focus {
 	content: ',\00a0';
 }
 
-/** %Quotes
+/** %[Object] Quotes
 \*------------------------------------*/
 blockquote {
 	clear: both;
@@ -934,7 +934,7 @@ blockquote p:first-child {
 	font-weight: normal;
 }
 
-/** %Lists
+/** %[Object] Lists
 \*------------------------------------*/
 ul ul {
 	list-style-type: disc;
@@ -942,7 +942,7 @@ ul ul {
 	padding-left: 1em;
 }
 
-/** %Comments area
+/** %[Object] Comments area
 \*------------------------------------*/
 .comments-area {}
 
@@ -1019,7 +1019,7 @@ ul ul {
 	display: inline-block;
 }
 
-/** %Navigation
+/** %[Nav] Site nav
 \*------------------------------------*/
 .mobile-nav-header {
 	display: block;
@@ -1075,17 +1075,17 @@ ul ul {
 /** $Responsive
 \*---------------------------------------------------------------------------*/
 
-/** %Phones - portrait
+/** =Phones - portrait
 \*------------------------------------*/
 @media (min-width: 320px) {
 
 }
 
-/** %Phones - landscape
+/** =Phones - landscape
 \*------------------------------------*/
 @media (min-width: 480px) {
 
-	/* =Form - Modifiers
+	/** %[Form] Modifiers
 	\*------------------------------------*/
 	.form--aligned .input-wrap {
 		display: table;
@@ -1102,7 +1102,7 @@ ul ul {
 		display: table-cell;
 	}
 
-	/* =Navigation
+	/** %[Nav] Site nav
 	\*------------------------------------*/
 	.site-nav li {
 		width: 50%;
@@ -1111,11 +1111,11 @@ ul ul {
 
 }
 
-/** %Phones
+/** =Phones
 \*------------------------------------*/
 @media (max-width: 767px) {
 
-	/* =Helpers
+	/** %Helpers
 	\*------------------------------------*/
 	.mobile-hide {
 		display: none;
@@ -1123,11 +1123,11 @@ ul ul {
 
 }
 
-/** %Tablets - portrait
+/** =Tablets - portrait
 \*------------------------------------*/
 @media (min-width: 768px) {
 
-	/* =Forms - Input row
+	/** %[Form] Input row
 	\*------------------------------------*/
 	.input-row {
 		width: 100%;
@@ -1155,7 +1155,7 @@ ul ul {
 		width: 100%;
 	}
 
-	/* =Helpers
+	/** %Helpers
 	\*------------------------------------*/
 	.tablet-hide {
 		display: none;
@@ -1163,11 +1163,11 @@ ul ul {
 
 }
 
-/** %Layout width breakpoint
+/** =Layout width breakpoint
 \*------------------------------------*/
 @media (min-width: 960px) {
 
-	/* =Layout
+	/** %Layout
 	\*------------------------------------*/
 	.wrapper {
 		padding-left: 0;
@@ -1195,14 +1195,14 @@ ul ul {
 		float: left;
 	}
 
-	/* =Logo
+	/** %Logo
 	\*------------------------------------*/
 	.site-logo {
 		display: inline-block;
 		vertical-align: middle;
 	}
 
-	/* =Navigation
+	/** %[Nav] Site nav
 	\*------------------------------------*/
 	.mobile-nav-header {
 		display: none;
@@ -1239,19 +1239,19 @@ ul ul {
 
 }
 
-/** %Tablets - landscape
+/** =Tablets - landscape
 \*------------------------------------*/
 @media (min-width: 1024px) {
 
 }
 
-/** %Tablets
+/** =Tablets
 \*------------------------------------*/
 @media (max-width: 1024px) {
 
 }
 
-/** %Widescreens
+/** =Widescreens
 \*------------------------------------*/
 @media (min-width: 1280px) {
 
@@ -1261,7 +1261,7 @@ ul ul {
 /** $Helpers
 \*---------------------------------------------------------------------------*/
 
-/** %Display
+/** %[Helper] Display
 \*------------------------------------*/
 .hidden {
     display: none !important;
@@ -1283,7 +1283,7 @@ ul ul {
     clip: rect(0 0 0 0);
 }
 
-/** %Clearfix
+/** %[Helper] Clearfix
 \*------------------------------------*/
 .cf:after {
 	content: '';
@@ -1291,7 +1291,7 @@ ul ul {
 	display: table;
 }
 
-/** %Text
+/** %[Helper] Text
 \*------------------------------------*/
 .text--center { text-align: center; }
 .text--left   { text-align: left; }
@@ -1332,7 +1332,7 @@ ul ul {
 .text--bold 	{ font-weight: 700; }
 .text--extra 	{ font-weight: 800; }
 
-/** %Colors
+/** %[Helper] Colors
 \*------------------------------------*/
 .color--primary   { color: #00becc; }
 .color--secondary {	color: #f32837; }
