@@ -1173,7 +1173,6 @@ ul ul {
 
 /*------------------------------------*/
 
-/* Used to obsfucate email */
 .text--reverse {
 	unicode-bidi: bidi-override;
 	direction:rtl;
@@ -1211,7 +1210,7 @@ ul ul {
 \*------------------------------------*/
 .color--primary   { color: #00becc; }
 .color--secondary {	color: #f32837; }
-.color--tertiary {	color: #2d303c; }
+.color--tertiary  {	color: #2d303c; }
 
 
 /*---------------------------------------------------------------------------*\
