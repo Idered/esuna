@@ -186,17 +186,23 @@ ul ul {
 }
 
 .site-logo span {
-	color: #e9e9e9;
+	color: #e0e0e0;
 	letter-spacing: -.04em;
 }
 
-.header__btn-view {
-	color: #00becc;
+/* Social nav
+\*------------------------------------*/
+.social-nav {
 	margin: 3px 0;
+	color: #e0e0e0;
+}
+
+.social-nav a {
+	color: #00becc;
 	text-shadow: none;
 }
 
-.header__btn-view:hover {
+.social-nav a:hover {
 	color: #333;
 }
 
@@ -369,7 +375,9 @@ ul ul {
 		padding-top: 2em;
 	}
 
-	.header__btn-view {
+	/* Social nav
+	\*------------------------------------*/
+	.social-nav {
 		margin: 2em 0 0 0;
 	}
 
