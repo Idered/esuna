@@ -1372,3 +1372,33 @@ ul ul {
 	}
 
 }
+
+/* Phones - portrait
+\*------------------------------------*/
+@media (min-width: 320) {
+
+}
+
+/* Phones - landscape
+\*------------------------------------*/
+@media (min-width: 480) {
+
+}
+
+/* Tablets - portrait
+\*------------------------------------*/
+@media (min-width: 768) {
+
+}
+
+/* Tablets - landscape
+\*------------------------------------*/
+@media (min-width: 1024) {
+
+}
+
+/* Widescreens
+\*------------------------------------*/
+@media (min-width: 1280) {
+
+}

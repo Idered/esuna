@@ -12,11 +12,6 @@
 	<link rel="dns-prefetch" href="//connect.facebook.net">
 	<link rel="dns-prefetch" href="//platform.twitter.com">
 
-	<title></title>
-
-	<link rel="shortcut icon" href="icon.png">
-	<link rel="stylesheet" href="_ui/style.css">
-
 	<!-- @see ogp.me -->
 	<meta property="og:title" content="" />
 	<meta property="og:type" content="website" />
@@ -29,6 +24,13 @@
 	<meta property="twitter:card" content="summary">
 	<meta property="twitter:description" content="">
 	<meta property="twitter:url" content="">
+
+	<title></title>
+
+	<link rel="shortcut icon" href="/icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/icon.png">
+
+	<link rel="stylesheet" href="_ui/style.css">
 
 	<script src="_ui/js/modernizr.js"></script>
 </head>
@@ -85,6 +87,7 @@
 	for (var id in scripts) {
 		script = document.createElement('script'); script.src = scripts[id];
 		script.id = id;script.type = 'text/javascript'; script.async = true;
+		/* Uncomment line bellow to add scripts */
 		/*document.getElementsByTagName('head')[0].appendChild(script);*/
 	}
 </script>
