@@ -477,7 +477,8 @@ textarea:focus {
 \*------------------------------------*/
 .nav {
 	list-style: none;
-	padding-left: 0;
+	padding: 0;
+	margin: 0;
 }
 
 .nav:after {
@@ -1029,38 +1030,6 @@ ul ul {
 
 
 /*---------------------------------------------------------------------------*\
-	$LAYOUT
-\*---------------------------------------------------------------------------*/
-
-.wrapper {
-	max-width: 960px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.main:after {
-	content: '';
-	clear: both;
-	display: table;
-}
-
-.main__inner {
-	padding-left: 15em;
-}
-
-.content {
-	float: right;
-	width: 100%;
-}
-
-.sidebar {
-	margin-left: -15em;
-	width: 12em;
-	float: left;
-}
-
-
-/*---------------------------------------------------------------------------*\
 	$HEADER
 \*---------------------------------------------------------------------------*/
 
@@ -1075,40 +1044,55 @@ ul ul {
 /* Logo
 \*------------------------------------*/
 .site-logo {
-	float: left;
-	display: inline-block;
+	display: block;
+	margin: 1em auto;
+	/* Edit */
+	width: 180px;
+	height: 48px;
 }
 
 .site-logo img {
 	display: inline-block;
 }
 
-/* Nav
+/* Navigation
 \*------------------------------------*/
 .mobile-nav-header {
-	display: none;
+	display: block;
+	background: #333;
+	text-align: right;
+	position: relative;
+	padding: 8px 8px 7px 8px;
 }
 
 .site-nav {
-	margin: 0;
-	padding: 0;
-	display: inline-block;
+	left: 0;
+	top: 39px;
+	width: 100%;
+	display: none;
+	background: #333;
+	text-align: center;
+	position: absolute;
 }
 
-.site-nav li + li {
-	/* margin-left: 35px; */
+.site-nav ul {
+	display: none;
+}
+
+.site-nav li {
+	width: 100%;
 }
 
 .site-nav a {
-	vertical-align: middle;
+	color: #ccc;
+	display: block;
+	padding: .5em 0;
 }
 
-.site-nav a:hover,
-.site-nav .active a {}
-
-.site-nav .active a {}
-
-.site-nav a:active {}
+.site-nav  a:hover,
+.site-nav .active a {
+	color: #fff;
+}
 
 
 /*---------------------------------------------------------------------------*\
@@ -1128,6 +1112,209 @@ ul ul {
 .footer {
 	font-size: .9em;
 	text-align: center;
+}
+
+
+/*---------------------------------------------------------------------------*\
+	$RESPONSIVE
+\*---------------------------------------------------------------------------*/
+
+/* Phones - portrait
+\*------------------------------------*/
+@media (min-width: 320px) {
+
+}
+
+/* Phones - landscape
+\*------------------------------------*/
+@media (min-width: 480px) {
+
+	/* Navigation
+	\*------------------------------------*/
+	.site-nav li {
+		width: 50%;
+		float: left;
+	}
+
+}
+
+/* Phones
+\*------------------------------------*/
+@media (max-width: 767px) {
+
+
+	/* Helpers
+	\*------------------------------------*/
+	.mobile-hide {
+		display: none;
+	}
+
+}
+
+/* Tablets - portrait
+\*------------------------------------*/
+@media (min-width: 768px) {
+
+	/* Helpers
+	\*------------------------------------*/
+	.tablet-hide {
+		display: none;
+	}
+
+}
+
+/* Layout width breakpoint
+\*------------------------------------*/
+@media (min-width: 960px) {
+
+	/* Layout
+	\*------------------------------------*/
+	.wrapper {
+		max-width: 960px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.main:after {
+		content: '';
+		clear: both;
+		display: table;
+	}
+
+	.main__inner {
+		padding-left: 15em;
+	}
+
+	.content {
+		float: right;
+		width: 100%;
+	}
+
+	.sidebar {
+		margin-left: -15em;
+		width: 12em;
+		float: left;
+	}
+
+	/* Site logo
+	\*------------------------------------*/
+	.site-logo {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	/* Navigation
+	\*------------------------------------*/
+	.mobile-nav-header {
+		display: none;
+	}
+
+	.site-nav {
+		width: auto;
+		text-align: left;
+		position: static;
+		display: inline-block;
+		vertical-align: middle;
+		background: transparent;
+	}
+
+	.site-nav ul {
+		display: block;
+	}
+
+	.site-nav li {
+		width: auto;
+		float: none;
+	}
+
+	.site-nav a {
+	}
+
+	.site-nav a {
+		padding: 0;
+	}
+
+	.site-nav li + li {
+		margin-left: 35px;
+	}
+	.site-nav  a:hover,
+	.site-nav .active a {
+		color: inherit;
+	}
+
+	.site-nav .active a {}
+
+}
+
+/* Tablets - landscape
+\*------------------------------------*/
+@media (min-width: 1024px) {
+
+}
+
+/* Tablets
+\*------------------------------------*/
+@media (max-width: 1024px) {
+
+}
+
+/* Widescreens
+\*------------------------------------*/
+@media (min-width: 1280px) {
+
+}
+
+@media (max-width: 479px) {
+
+	/* Forms
+	\*------------------------------------*/
+	.input-row {
+		display: block;
+		width: auto;
+	}
+
+	.input-wrap,
+	.input-row .input-wrap,
+	.input-row .input-wrap ~ .input-wrap,
+	.input-row .input-wrap ~ .input-wrap ~ .input-wrap {
+		padding: 0;
+		display: block;
+	}
+
+	.input-wrap label {
+		display: block;
+	}
+
+	.input-wrap input,
+	.input-wrap textarea {
+		width: 100%;
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+				box-sizing: border-box;
+	}
+
+	.form--aligned label {
+		display: block;
+		width: auto;
+	}
+
+	/* Buttons
+	\*------------------------------------*/
+	.btn {
+		font-size: 1em;
+	}
+
+	/* Nav
+	\*------------------------------------*/
+	.site-nav li {
+		width: 100%;
+	}
+
+	.site-nav li a {
+		text-align: left;
+		padding: .5em 1em;
+	}
+
 }
 
 
@@ -1211,194 +1398,3 @@ ul ul {
 .color--primary   { color: #00becc; }
 .color--secondary {	color: #f32837; }
 .color--tertiary  {	color: #2d303c; }
-
-
-/*---------------------------------------------------------------------------*\
-	$RESPONSIVE
-\*---------------------------------------------------------------------------*/
-
-@media (max-width: 1024px) {}
-
-@media (max-width: 959px) {
-
-	.tablet-hide {
-		display: none;
-	}
-
-	/* Layout
-	\*------------------------------------*/
-	.wrapper {
-		padding-left: 10px;
-		padding-right: 10px;
-	}
-
-}
-
-@media (max-width: 767px) {
-
-	.mobile-hide {
-		display: none;
-	}
-
-	/* Layout
-	\*------------------------------------*/
-	.main__inner {
-		padding: 0;
-	}
-
-	.content {
-		float: none;
-	}
-
-	.sidebar {
-		margin: 0;
-		width: auto;
-		float: none;
-	}
-
-	/* Header
-	\*------------------------------------*/
-	.header .wrapper {
-		padding: 0;
-	}
-
-	.site-logo {
-		float: none;
-		display: block;
-		margin: 0 auto;
-		text-align: center;
-
-		/* Edit */
-		/* width: 180px; */
-		/* height: 45px; */
-	}
-
-	/* Nav
-	\*------------------------------------*/
-	.mobile-nav-header {
-		display: block;
-		background: #333;
-		text-align: right;
-		position: relative;
-		padding: 8px 8px 7px 8px;
-	}
-
-	.site-nav {
-		left: 0;
-		top: 39px;
-		width: 100%;
-		display: none;
-		background: #333;
-		text-align: center;
-		position: absolute;
-	}
-
-	.site-nav ul {
-		display: none;
-	}
-
-	.site-nav li {
-		width: 50%;
-		padding: 0;
-		float: left;
-	}
-
-	.site-nav li + li {
-		margin-left: 0;
-	}
-
-	.site-nav a {
-		color: #ccc;
-		display: block;
-		padding: .5em 0;
-	}
-
-	.site-nav  a:hover,
-	.site-nav .active a {
-		color: #fff;
-	}
-
-}
-
-@media (max-width: 479px) {
-
-	/* Forms
-	\*------------------------------------*/
-	.input-row {
-		display: block;
-		width: auto;
-	}
-
-	.input-wrap,
-	.input-row .input-wrap,
-	.input-row .input-wrap ~ .input-wrap,
-	.input-row .input-wrap ~ .input-wrap ~ .input-wrap {
-		padding: 0;
-		display: block;
-	}
-
-	.input-wrap label {
-		display: block;
-	}
-
-	.input-wrap input,
-	.input-wrap textarea {
-		width: 100%;
-		-webkit-box-sizing: border-box;
-		   -moz-box-sizing: border-box;
-				box-sizing: border-box;
-	}
-
-	.form--aligned label {
-		display: block;
-		width: auto;
-	}
-
-	/* Buttons
-	\*------------------------------------*/
-	.btn {
-		font-size: 1em;
-	}
-
-	/* Nav
-	\*------------------------------------*/
-	.site-nav li {
-		width: 100%;
-	}
-
-	.site-nav li a {
-		text-align: left;
-		padding: .5em 1em;
-	}
-
-}
-
-/* Phones - portrait
-\*------------------------------------*/
-@media (min-width: 320) {
-
-}
-
-/* Phones - landscape
-\*------------------------------------*/
-@media (min-width: 480) {
-
-}
-
-/* Tablets - portrait
-\*------------------------------------*/
-@media (min-width: 768) {
-
-}
-
-/* Tablets - landscape
-\*------------------------------------*/
-@media (min-width: 1024) {
-
-}
-
-/* Widescreens
-\*------------------------------------*/
-@media (min-width: 1280) {
-
-}
