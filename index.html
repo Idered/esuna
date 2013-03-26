@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- @snippet esuna-dns-prefetch -->
 
@@ -11,16 +11,17 @@
 	<!-- @snippet esuna-twitter-card -->
 
 	<title></title>
+	<meta name="description" content="">
+
+	<link rel="stylesheet" href="_ui/style.css">
 
 	<link rel="shortcut icon" href="/icon.png">
     <link rel="apple-touch-icon-precomposed" href="/icon.png">
 
-	<link rel="stylesheet" href="_ui/style.css">
-
 	<script src="_ui/js/modernizr.js"></script>
 </head>
 <body>
-<header class="header">
+<header class="header" role="banner">
 	<div class="mobile-nav-header">
 		<span class="js-toggle-nav"><i class="navicon"></i></span>
 	</div>
@@ -32,7 +33,7 @@
 		</a>
 		<!-- /.site-logo -->
 
-		<ul class="nav site-nav">
+		<ul class="nav site-nav" role="navigation">
 			<li class="active"><a href="#"></a></li>
 			<li><a href="#"></a></li>
 		</ul>
@@ -54,7 +55,7 @@
 </div>
 <!-- /.main  -->
 
-<footer class="footer">
+<footer class="footer" role="contentinfo">
 	<div class="wrapper"></div>
 	<!-- /.wrapper -->
 </footer>

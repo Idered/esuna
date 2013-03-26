@@ -4,7 +4,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     uglify: {
       options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> | <%= pkg.author.name %> */\n'
       },
       build: {
         src: '_ui/js/script.js',
@@ -14,7 +14,7 @@ module.exports = function(grunt) {
     cssmin: {
       with_banner: {
         options: {
-          banner: '/* <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */'
+          banner: '/* <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> | <%= pkg.author.name %> */'
         },
         files: {
           '_ui/style.min.css': ['_ui/*.css']

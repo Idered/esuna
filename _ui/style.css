@@ -289,7 +289,7 @@ pre code {
 	padding: 0;
 }
 
-/** [Base] Blockquotes */
+/** [Base] Quotes */
 /*------------------------------------*/
 blockquote {
 	clear: both;
@@ -324,6 +324,14 @@ blockquote footer:before {
 .pull-quote--right {
 	float: right;
 	margin: 1em 0 1em 1em;
+}
+
+/** [Base] Lists */
+/*------------------------------------*/
+ul ul {
+	list-style-type: disc;
+	list-style-position: inside;
+	padding-left: 1em;
 }
 
 
@@ -727,6 +735,23 @@ input:invalid {
 	overflow: hidden;
 }
 
+/** [Object] Elastic media */
+/*------------------------------------*/
+/* figure */.elastic-media {
+	height: 0;
+	width: 100%;
+	position: relative;
+	padding-bottom: 56.25%; /* = 9 * 100/16 = 16:9 */
+}
+
+.elastic-media > * {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
 /** [Object] Notifications */
 /*------------------------------------*/
 .notification {
@@ -973,14 +998,6 @@ input:invalid {
 	content: ',\00a0';
 }
 
-/** [Object] Lists */
-/*------------------------------------*/
-ul ul {
-	list-style-type: disc;
-	list-style-position: inside;
-	padding-left: 1em;
-}
-
 /** [Object] Comments area */
 /*------------------------------------*/
 .comments-area {}
@@ -1221,6 +1238,45 @@ ul ul {
 		float: left;
 	}
 
+	/** %[min960] Logo */
+	/*------------------------------------*/
+	.site-logo {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	/** %[min768] Site nav */
+	/*------------------------------------*/
+	.mobile-nav-header {
+		display: none;
+	}
+
+	.site-nav {
+		width: auto;
+		text-align: left;
+		position: static;
+		display: inline-block;
+		vertical-align: middle;
+		background: transparent;
+	}
+
+	.site-nav li {
+		width: auto;
+		float: none;
+		margin-left: 35px;
+	}
+
+	.site-nav a {
+		padding: 0;
+	}
+
+	.site-nav  a:hover,
+	.site-nav .active a {
+		color: inherit;
+	}
+
+	.site-nav .active a {}
+
 	/** [min768 | Helper] Hide - tablet */
 	/*------------------------------------*/
 	.tablet-hide {
@@ -1239,48 +1295,6 @@ ul ul {
 		padding-left: 0;
 		padding-right: 0;
 	}
-
-	/** %[min960] Logo */
-	/*------------------------------------*/
-	.site-logo {
-		display: inline-block;
-		vertical-align: middle;
-	}
-
-	/** %[min960] Site nav */
-	/*------------------------------------*/
-	.mobile-nav-header {
-		display: none;
-	}
-
-	.site-nav {
-		width: auto;
-		text-align: left;
-		position: static;
-		display: inline-block;
-		vertical-align: middle;
-		background: transparent;
-	}
-
-	.site-nav li {
-		width: auto;
-		float: none;
-	}
-
-	.site-nav li + li {
-		margin-left: 35px;
-	}
-
-	.site-nav a {
-		padding: 0;
-	}
-
-	.site-nav  a:hover,
-	.site-nav .active a {
-		color: inherit;
-	}
-
-	.site-nav .active a {}
 
 }
 

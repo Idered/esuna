@@ -62,27 +62,6 @@ var App = App || (function($) {
 		}, // placeholder
 
 		/**
-		 * Handle dropdowns
-		 * @param  {string} dropdown Dropdown class
-		 */
-		dropdown: function(dropdown) {
-			var $dropdown;
-
-			$(dropdown).each(function() {
-				$dropdown = $(this);
-
-				$(this).find('.dropdown__toggle').on('click', function(event) {
-					event.stopPropagation();
-					$dropdown.toggleClass('is-open');
-				});
-			});
-
-			$(document).on('click', function() {
-				$('.is-open').removeClass('is-open');
-			});
-		}, // dropdown
-
-		/**
 		 * Submit forms using Ctlr + Enter shorcut
 		 */
 		submitShorcut: function() {
@@ -103,7 +82,7 @@ var App = App || (function($) {
 	Public = {
 		init: function() {
 			Utils.init();
-			Utils.dropdown('.dropdown');
+			$('.dropdown').dropdown();
 			$('.js-toggle-nav').toggles('.site-nav');
 		} // init
 	};
@@ -135,6 +114,27 @@ var App = App || (function($) {
 		});
 		return this;
 	};
+
+	/**
+	 * Handle dropdowns
+	 * @return {object}
+	 */
+	$.fn.dropdown = function() {
+		$(this).each(function() {
+			var $dropdown = $(this);
+
+			$(this).find('.dropdown__toggle').on('click', function(event) {
+				event.stopPropagation();
+				$dropdown.toggleClass('is-open');
+			});
+		});
+
+		$(document).on('click', function() {
+			$('.is-open').removeClass('is-open');
+		});
+
+		return this;
+	}; // dropdown
 
 	return Public;
 
