@@ -83,6 +83,7 @@
 			<ul>
 				<li><a href="#naming-conventions"><abbr title="Block Element Method - Naming convention">BEM</abbr> based</a></li>
 				<li>Uses mobile first approach</li>
+				<li>Optimized commenst allow for easier </li>
 				<li>Custom <a href="#devtools">Development Tools</a></li>
 			</ul>
 
@@ -167,26 +168,28 @@
 
 			<h4>Style</h4>
 
-<pre><code>.header {
-	paddding: 0 10px;
-}
-
-.content {
-	float: left;
-	width: auto;
+<pre><code>[selector] {
+    [property]: [value];
+    [- Declaration -]
 }</code></pre>
 
-			<p>One empty line is used to separate each ruleset.</p>
-
-			<p>One empty space before <code>{</code> and one after <code>:</code>.</p>
-
-			<p>For helpers you can omit this rules and write your code in one line but only if that helps to maintain readability.</p>
+			<ul>
+				<li>One empty line is used to separate each ruleset</li>
+				<li>One empty space before <code>{</code></li>
+				<li>One empty space after <code>:</code></li>
+				<li>Don't omit last semicolon</li>
+				<li>For helpers you can write your code in one line but only if that helps to maintain readability.</li>
+			</ul>
 
 			<h4>Comments</h4>
 
 			<p>There're 3 main types of comments used in <code>style.css</code>. Max width is 79 chars so you can use 80 chars column to wrap your css.</p>
 
 			<p>Comments structure is optimized for Sublime Text <code>Goto Symbol</code> function(Ctrl/CMD+ R). Each type of comments except separator type, uses special search trigger character. You can view those characters bellow.</p>
+
+			<p>Each type of comment is included as snippet <a href="http://github.com/Idered/esuna-snippets">esuna-snippets repo</a>.</p>
+
+			<p><a href="#snippets">Read more about snippets</a></p>
 
 			<h5>Section comments</h5>
 
@@ -331,6 +334,22 @@
 			<p>Grunt is JavaScript task runner. Esuna uses it to compress and concat css, js files.</p>
 
 			<p>Please follow <a href="http://gruntjs.com/getting-started">Grunt documentation</a> for more info.</p>
+
+			<h3><a href="#snippets" name="snippets">Snippets</a></h3>
+
+			<p>Esuna uses custom Sublime Text snippets. You can install them by following instructions <a href="https://github.com/Idered/esuna-snippets">here</a>.</p>
+
+			<p>Esuna snippets are namespaced. Each snipped beggins with <code>esuna-</code>. This way you can quicly find framework related snippets.</p>
+
+			<p>In <code>index.html</code> you can find comments like this:</p>
+
+			<pre><code><!-- @snippet esuna-twitter-card --></code></pre>
+
+			<p>Those comments are placeholders for those snippets. To use them, place cursor inside comment, press <code>Ctrl/CMD + Shift + /</code> , go to the end of line and press <code>Ctrl/CMD + Space</code>. This will expand snippet into full form. After that, please remove remaining <code>@snippet</code> text.</p>
+
+			<p>This way allow developer to quicly decide if he will be using those code or not. If no, then he can quicly remove it or leave for future use.</p>
+
+			<p>Full list of snippets can be found in this <a href="https://github.com/Idered/esuna-snippets">repo</a>.</p>
 
 			<h3><a href="#base" name="base">Base</a></h3>
 
@@ -935,6 +954,7 @@
 					<ul>
 						<li><a href="#structure">Structure</a></li>
 						<li><a href="#devtools">Development Tools</a></li>
+						<li><a href="#snippets">Snippets</a></li>
 						<li><a href="#base">Base</a></li>
 						<li><a href="#objects">Objects</a></li>
 						<li><a href="#helpers">Helpers</a></li>
