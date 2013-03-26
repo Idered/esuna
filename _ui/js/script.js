@@ -100,6 +100,11 @@ var App = App || (function($) {
 				_gaq.push(['_trackEvent', 'External Link', e.currentTarget.host, this.href, 0]);
 			});
 			$('.example').find('input').noon();
+			if (location.hash) {
+				$('html,body').animate({
+					scrollTop: $('[name=' + location.hash.substr(1) + ']').offset().top
+				}, 500);
+			}
 		}, // init
 
 		modifiersToggler: function() {
