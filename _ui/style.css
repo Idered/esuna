@@ -118,45 +118,6 @@ ol.linenums li {
 	$OBJECTS
 \*---------------------------------------------------------------------------*/
 
-/* Buttons
-\*------------------------------------*/
-.btn {}
-
-.btn,
-.btn:hover,
-.btn:active,
-.btn:focus {}
-
-.btn:hover {}
-
-.btn:active,
-.btn:focus {
-	outline: none;
-}
-
-/*------------------------------------*/
-
-.btn--alpha   { font-size: 3em; }
-.btn--beta    { font-size: 2.5em; }
-.btn--gamma   { font-size: 2em; }
-.btn--delta   { font-size: 1.55em; }
-.btn--epsilon { font-size: 1.4em; }
-.btn--zeta    { font-size: 1.125em; }
-
-/*------------------------------------*/
-
-.btn--primary {}
-.btn--primary:hover {}
-.btn--primary:active {}
-
-.btn--secondary {}
-.btn--secondary:hover {}
-.btn--secondary:active {}
-
-.btn--tertiary {}
-.btn--tertiary:hover {}
-.btn--tertiary:active {}
-
 /* Lists
 \*------------------------------------*/
 ul ul {
@@ -178,11 +139,14 @@ ul ul {
 	padding-top: 3em;
 	padding-bottom: 2em;
 }
+
 /* Logo
 \*------------------------------------*/
 .site-logo {
 	margin: 0;
 	line-height: 1;
+	width: auto;
+	height: auto;
 }
 
 .site-logo span {
@@ -293,44 +257,6 @@ ul ul {
 	$SIDEBAR
 \*---------------------------------------------------------------------------*/
 
-/* Nav
-\*------------------------------------*/
-.site-nav {
-	color: #666;
-	font-size: .95em;
-	display: block;
-}
-
-.site-nav__title {
-	padding: .5em 1.5em;
-	text-transform: uppercase;
-	border-bottom: 1px solid #ccc;
-	-webkit-transition: .25s ease;
-	   -moz-transition: .25s ease;
-	    -ms-transition: .25s ease;
-	     -o-transition: .25s ease;
-	        transition: .25s ease;
-}
-
-.site-nav li:hover .site-nav__title {
-	border-bottom-color: #f32837
-}
-
-.site-nav ul {
-	padding: 0 0 1.5em 0;
-}
-
-.site-nav ul a {
-	padding: .35em 0 .35em 1.5em;
-	color: #999;
-}
-
-.site-nav a:hover {
-	background: #e7fdff;
-	color: #333;
-}
-
-
 /*---------------------------------------------------------------------------*\
 	$HELPERS
 \*---------------------------------------------------------------------------*/
@@ -339,72 +265,128 @@ ul ul {
 /*---------------------------------------------------------------------------*\
 	$FOOTER
 \*---------------------------------------------------------------------------*/
-.footer {
-	border-top: 1px solid #eee;
-	margin-top: 2em;
-	padding-top: 1em;
-	padding-bottom: 1em;
-	float: right;
-	width: 100%;
-	margin-top: 2em;
-	text-align: right;
-}
-
-.footer p {
-	float: left;
-}
 
 
 /*---------------------------------------------------------------------------*\
 	$RESPONSIVE
 \*---------------------------------------------------------------------------*/
 
-@media (max-width: 1100px) {
-	.twitter-share-button {
-		display: none;
-	}
-}
-
 @media (max-width: 960px) {}
 
+
+/** =Phones - portrait */
+/*------------------------------------*/
+@media (min-width: 320px) {
+
+}
+
+/** =Phones - landscape */
+/*------------------------------------*/
+@media (min-width: 480px) {
+
+}
+
+/** =Phones */
+/*------------------------------------*/
 @media (max-width: 767px) {
 
-	/* Header
+}
+
+/** =Tablets - portrait */
+/*------------------------------------*/
+@media (min-width: 768px) {
+
+	/** %Site logo
 	\*------------------------------------*/
-	.header {
-		text-align: center;
+	.site-logo {
+		float: left;
 	}
 
-	.header .wrapper {
-		padding-top: 2em;
-	}
 
-	/* Social nav
-	\*------------------------------------*/
-	.social-nav {
-		margin: 2em 0 0 0;
-	}
-
-	/* Nav
+	/** %Site nav
 	\*------------------------------------*/
 	.site-nav {
-		display: none;
+		color: #666;
+		display: block;
+		font-size: .95em;
 	}
 
-	.site-nav__title {
-		border-bottom: none;
+	.site-nav .site-nav__title {
+		color: #00becc;
+		padding: .5em 1.5em;
+		text-transform: uppercase;
+		border-bottom: 1px solid #ccc;
+		-webkit-transition: .25s ease;
+		   -moz-transition: .25s ease;
+		    -ms-transition: .25s ease;
+		     -o-transition: .25s ease;
+		        transition: .25s ease;
 	}
 
-	/* Footer
-	\*------------------------------------*/
+	.site-nav li:hover .site-nav__title {
+		border-bottom-color: #f32837
+	}
+
+	.site-nav ul {
+		padding: 0 0 1.5em 0;
+	}
+
+	.site-nav ul a {
+		padding: .35em 0 .35em 1.5em;
+		color: #999;
+	}
+
+	.site-nav li {
+		text-align: left;
+	}
+
+	.site-nav a:hover {
+		background: #e7fdff;
+		color: #333;
+	}
+
+
+	/** %Footer  */
+	/*------------------------------------*/
 	.footer {
-		text-align: center;
+		border-top: 1px solid #eee;
+		margin-top: 2em;
+		padding-top: 1em;
+		padding-bottom: 1em;
+		float: right;
+		width: 100%;
+		margin-top: 2em;
+		text-align: right;
 	}
 
 	.footer p {
-		float: none;
+		float: left;
 	}
 
 }
 
-@media (max-width: 480px) {}
+/** =Layout width breakpoint */
+/*------------------------------------*/
+@media (min-width: 960px) {
+	.site-nav li + li {
+		margin-left: 0;
+	}
+}
+
+/** =Tablets - landscape */
+/*------------------------------------*/
+@media (min-width: 1024px) {
+
+}
+
+/** =Tablets */
+/*------------------------------------*/
+@media (max-width: 1024px) {
+
+}
+
+/** =Widescreens */
+/*------------------------------------*/
+@media (min-width: 1280px) {
+
+}
