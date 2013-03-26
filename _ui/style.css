@@ -300,13 +300,29 @@ blockquote p:first-child {
 	margin-top: 0;
 }
 
-.source {
-	display: block;
+blockquote footer {
+	color: #bbb;
 	text-indent: 0;
-	color: #00becc;
-	text-align: right;
+	display: block;
 	font-style: italic;
 	font-weight: normal;
+}
+
+blockquote footer:before {
+	content:"\2013";
+}
+
+/*------------------------------------*/
+
+.pull-quote {
+	float: left;
+	width: 34%;
+	margin: 1em 1em 1em 0;
+}
+
+.pull-quote--right {
+	float: right;
+	margin: 1em 0 1em 1em;
 }
 
 
@@ -367,7 +383,7 @@ blockquote p:first-child {
 	box-sizing: border-box;
 }
 
-/** [Form] Modifiers */
+/** [Form] Input modifiers */
 /*------------------------------------*/
 .input--half {
 	width: 50%
@@ -377,13 +393,7 @@ blockquote p:first-child {
 	width: 100%;
 }
 
-/** [Form] Actions */
-/*------------------------------------*/
-.form-actions {
-	text-align: right;
-}
-
-/** [Form] Focus */
+/** [Form] Input states */
 /*------------------------------------*/
 :focus {
   outline-color: transparent;
@@ -393,6 +403,21 @@ blockquote p:first-child {
 input:focus,
 textarea:focus {
 	border-color: #666;
+}
+
+input:valid:focus {
+	border-color: #4A993E;
+}
+
+input:invalid {
+	border-color: #b33630;
+}
+
+/** [Form] Actions */
+/*------------------------------------*/
+.form-actions {
+	text-align: right;
+	margin-bottom: 1em;
 }
 
 
@@ -1168,25 +1193,8 @@ ul ul {
 		width: 100%;
 	}
 
-	/** [Helper] Hide - tablet */
-	/*------------------------------------*/
-	.tablet-hide {
-		display: none;
-	}
-
-}
-
-/** =Layout width breakpoint */
-/*------------------------------------*/
-@media (min-width: 960px) {
-
 	/** %Layout */
 	/*------------------------------------*/
-	.wrapper {
-		padding-left: 0;
-		padding-right: 0;
-	}
-
 	.main:after {
 		content: '';
 		clear: both;
@@ -1206,6 +1214,25 @@ ul ul {
 		margin-left: -15em;
 		width: 12em;
 		float: left;
+	}
+
+	/** [Helper] Hide - tablet */
+	/*------------------------------------*/
+	.tablet-hide {
+		display: none;
+	}
+
+}
+
+/** =Layout width breakpoint */
+/*------------------------------------*/
+@media (min-width: 960px) {
+
+	/** %Layout */
+	/*------------------------------------*/
+	.wrapper {
+		padding-left: 0;
+		padding-right: 0;
 	}
 
 	/** %Logo */
