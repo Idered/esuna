@@ -1,24 +1,34 @@
-/* by @Idered */
+/**
+ * @author Idered
+ * @url    idered.pl
+ */
 
 /* global jQuery, DevTools */
 var App = App || (function($) {
 
-	var Utils   = {},
-		Public  = {};
+	var Config = {},
+		Utils  = {},
+		Public = {};
+
+	Config = {
+		debug: true,
+		devDomains: ['localhost', '.dev']
+	};
 
 	Utils = {
-		settings: {
-			debug: true,
-			devDomains: ['localhost', 'github.dev']
-		}, // settings
 
 		init: function() {
 			Utils.placeholder();
 			Utils.submitShorcut();
 
-			if (Utils.settings.debug && $.inArray(location.host, Utils.settings.devDomains) !== -1) {
+			Config.isDevDomain = $.grep(Config.devDomains, function(domain) {
+				return location.host.match(new RegExp(domain + '$', 'gi'));
+			});
+
+			if (Config.debug && Config.isDevDomain) {
+				/* Load DevTools here */
 				DevTools.loadModule('cssRefresh', {
-					interval: 2000
+					interval: 450
 				});
 				// DevTools.loadModule('windowSize');
 			}
@@ -56,15 +66,14 @@ var App = App || (function($) {
 		 * @param  {string} dropdown Dropdown class
 		 */
 		dropdown: function(dropdown) {
-			var $this;
+			var $dropdown;
 
 			$(dropdown).each(function() {
-				$this = $(this);
+				$dropdown = $(this);
 
 				$(this).find('.dropdown__toggle').on('click', function(event) {
 					event.stopPropagation();
-
-					$this.toggleClass('is-open');
+					$dropdown.toggleClass('is-open');
 				});
 			});
 
@@ -101,6 +110,8 @@ var App = App || (function($) {
 
 	/**
 	 * Toggle target element
+	 * @param  {string} target Target selector
+	 * @return {object}
 	 */
 	$.fn.toggleTarget = function(target) {
 		$(this).on('click', function(event) {
@@ -110,11 +121,18 @@ var App = App || (function($) {
 		return this;
 	};
 
+	/**
+	 * Scroll to target(value of href or name) element
+	 * @param  {int} speed Scroll spreed in ms
+	 * @return {object}
+	 */
 	$.fn.softScroll = function(speed) {
 		$(this).on('click', function(event) {
 			event.preventDefault();
 			$('html,body').animate({
-				scrollTop:$(this.hash).length ? $(this.hash).offset().top : $('[name=' + this.hash.substr(1) + ']').offset().top
+				scrollTop: $(this.hash).length ?
+					$(this.hash).offset().top :
+					$('[name=' + this.hash.substr(1) + ']').offset().top
 			}, speed || 500);
 		});
 		return this;
