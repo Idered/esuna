@@ -314,33 +314,6 @@ ul ul {
 		margin: 3px 0;
 	}
 
-	/** %Footer  */
-	/*------------------------------------*/
-	.footer {
-		border-top: 1px solid #eee;
-		margin-top: 2em;
-		padding-top: 1em;
-		padding-bottom: 1em;
-		float: right;
-		width: 100%;
-		margin-top: 2em;
-		text-align: right;
-	}
-
-	.footer p {
-		float: left;
-	}
-
-	.footer-nav {
-		margin: 1em 0;
-	}
-
-}
-
-/** =Layout width breakpoint */
-/*------------------------------------*/
-@media (min-width: 960px) {
-
 	/** %Site nav
 	\*------------------------------------*/
 	.site-nav {
@@ -386,6 +359,33 @@ ul ul {
 	.site-nav li + li {
 		margin-left: 0;
 	}
+
+	/** %Footer  */
+	/*------------------------------------*/
+	.footer {
+		border-top: 1px solid #eee;
+		margin-top: 2em;
+		padding-top: 1em;
+		padding-bottom: 1em;
+		float: right;
+		width: 100%;
+		margin-top: 2em;
+		text-align: right;
+	}
+
+	.footer p {
+		float: left;
+	}
+
+	.footer-nav {
+		margin: 1em 0;
+	}
+
+}
+
+/** =Layout width breakpoint */
+/*------------------------------------*/
+@media (min-width: 960px) {
 }
 
 /** =Tablets - landscape */

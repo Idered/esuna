@@ -1226,32 +1226,6 @@ ul ul {
 		display: block;
 	}
 
-	/** [Helper] Hide - tablet */
-	/*------------------------------------*/
-	.tablet-hide {
-		display: none;
-	}
-
-}
-
-/** =Layout width breakpoint */
-/*------------------------------------*/
-@media (min-width: 960px) {
-
-	/** %Layout */
-	/*------------------------------------*/
-	.wrapper {
-		padding-left: 0;
-		padding-right: 0;
-	}
-
-	/** %Logo */
-	/*------------------------------------*/
-	.site-logo {
-		display: inline-block;
-		vertical-align: middle;
-	}
-
 	/** %Site nav */
 	/*------------------------------------*/
 	.mobile-nav-header {
@@ -1286,6 +1260,32 @@ ul ul {
 	}
 
 	.site-nav .active a {}
+
+	/** [Helper] Hide - tablet */
+	/*------------------------------------*/
+	.tablet-hide {
+		display: none;
+	}
+
+}
+
+/** =Layout width breakpoint */
+/*------------------------------------*/
+@media (min-width: 960px) {
+
+	/** %Layout */
+	/*------------------------------------*/
+	.wrapper {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	/** %Logo */
+	/*------------------------------------*/
+	.site-logo {
+		display: inline-block;
+		vertical-align: middle;
+	}
 
 }
 
