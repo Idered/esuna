@@ -82,7 +82,7 @@
 
 			<ul>
 				<li><a href="#naming-conventions"><abbr title="Block Element Method - Naming convention">BEM</abbr> based</a></li>
-				<li>Responsive</li>
+				<li>Uses mobile first approach</li>
 				<li>Custom <a href="#devtools">Development Tools</a></li>
 			</ul>
 
@@ -186,31 +186,62 @@
 
 			<p>There're 3 main types of comments used in <code>style.css</code>. Max width is 79 chars so you can use 80 chars column to wrap your css.</p>
 
-			<h5>Top level comments</h5>
-
-<pre><code>
-
-/*---------------------------------------------------------------------------*\
-   $NORMALIZE normalize.css v2.1.0 | git.io/normalize
-\*---------------------------------------------------------------------------*/
-
-</code></pre>
-
-			<p>This is primary style of comments used to separate main sections of css. Section name is uppercased and preceded by <code>$</code> for easier jumping between sections.</p>
-
-			<p>There're two empty lines before this comment and one after.</p>
-
-			<p>Please note that these comments aren't used in media queries.</p>
+			<p>Comments structure is optimized for Sublime Text <code>Goto Symbol</code> function(Ctrl/CMD+ R). Each type of comments except separator type, uses special search trigger character. You can view those characters bellow.</p>
 
 			<h5>Section comments</h5>
 
 <pre><code>
-/* Pagination
-\*------------------------------------*/</code></pre>
 
-			<p>These comments are used for single objects like pagination, post, footer, etc.</p>
+/** $Helpers */
+/*---------------------------------------------------------------------------*/
 
-			<p>One empty line before this comment.</p>
+</code></pre>
+
+			<p>This is primary style of comments used to separate main sections of css. Section name is preceded by <code>$</code>.</p>
+
+			<p>There're two empty lines before this comment and one after.</p>
+
+			<p>Please note that these comments aren't used inside media queries.</p>
+			<p>Search trigger character: <code>$</code></p>
+
+			<h5>Object comments</h5>
+
+			<p>Bellow you can see 3 types of object comments. Each one has different purpose.</p>
+
+			<p>One empty line before this type of comments.</p>
+
+<pre><code>
+/* [Object] Nav */
+/*------------------------------------*/
+
+/* [Helper] Text */
+/*------------------------------------*/</code></pre>
+
+			<p>This comments are ussed to group objects by category. Category name is usualy related to section name. You don't have to group elements in this sections: <code>Layout</code>, <code>Content</code>, <code>Sidebar</code>, <code>Footer</code>, <code>Media queries</code>.</p>
+
+			<p>Search trigger character: <code>[</code></p>
+
+<pre><code>
+/* %Header */
+/*------------------------------------*/
+
+/* %Site nav */
+/*------------------------------------*/</code></pre>
+
+			<p>This comments are used for elements which doesn't need any category.</p>
+
+			<p>Search trigger character: <code>%</code></p>
+
+<pre><code>
+/** =Phones - landscape */
+/*------------------------------------*/
+
+/** =Tablets */
+/*------------------------------------*/</code></pre>
+
+			<p>This comments are used as titles for media  queries.</p>
+
+			<p>Search trigger character: <code>=</code></p>
 
 			<h5>Separator comments</h5>
 
@@ -219,7 +250,7 @@
 
 </code></pre>
 
-			<p>These comments are used to visually separate objects into smaller parts. For example you can separate two different styles of <code>&lt;ul&gt;</code>lists using this comment.</p>
+			<p>These comments are used to visually separate objects into smaller parts. For example you can separate two different styles of <code>&lt;ul&gt;</code> lists using this comment.</p>
 
 			<h2><a href="#framework" name="framework">Framework</a></h2>
 
