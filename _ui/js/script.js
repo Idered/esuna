@@ -124,15 +124,14 @@ var App = App || (function($) {
 	/**
 	 * Scroll to target(value of href or name) element
 	 * @param  {int} speed Scroll spreed in ms
+	 * @param  {string} target Optional target element
 	 * @return {object}
 	 */
-	$.fn.softScroll = function(speed) {
+	$.fn.softScroll = function(speed, target) {
 		$(this).on('click', function(event) {
 			event.preventDefault();
 			$('html,body').animate({
-				scrollTop: $(this.hash).length ?
-					$(this.hash).offset().top :
-					$('[name=' + this.hash.substr(1) + ']').offset().top
+				scrollTop: $(target || this.hash || '[name=' + this.name.substr(1) + ']').offset().top
 			}, speed || 500);
 		});
 		return this;
