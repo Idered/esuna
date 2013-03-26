@@ -104,7 +104,7 @@ var App = App || (function($) {
 		init: function() {
 			Utils.init();
 			Utils.dropdown('.dropdown');
-			$('.js-toggle-nav').toggleTarget('.site-nav');
+			$('.js-toggle-nav').toggles('.site-nav');
 		} // init
 	};
 
@@ -113,7 +113,7 @@ var App = App || (function($) {
 	 * @param  {string} target Target selector
 	 * @return {object}
 	 */
-	$.fn.toggleTarget = function(target) {
+	$.fn.toggles = function(target) {
 		$(this).on('click', function(event) {
 			event.preventDefault();
 			$(target).stop().slideToggle();
@@ -126,7 +126,7 @@ var App = App || (function($) {
 	 * @param  {int} speed Scroll speed in ms
 	 * @return {object}
 	 */
-	$.fn.softScroll = function(speed) {
+	$.fn.scrollsTo = function(speed) {
 		$(this).on('click', function(event) {
 			event.preventDefault();
 			$('html,body').animate({

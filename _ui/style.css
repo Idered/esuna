@@ -13,6 +13,7 @@
  * - Content...............
  * - Sidebar...............
  * - Footer................
+ * - Vendor................ Third party elements
  * - Media queries......... Responsive stuff
  * - Helpers...............
  * - Print.................
@@ -1109,6 +1110,10 @@ ul ul {
 }
 
 
+/** $Vendor */
+/*---------------------------------------------------------------------------*/
+
+
 /** $Media queries */
 /*---------------------------------------------------------------------------*/
 
@@ -1122,7 +1127,7 @@ ul ul {
 /*------------------------------------*/
 @media (min-width: 480px) {
 
-	/** [Form] Modifiers */
+	/** [min480 | Form] Modifiers */
 	/*------------------------------------*/
 	.form--aligned .input-wrap {
 		display: table;
@@ -1139,7 +1144,7 @@ ul ul {
 		display: table-cell;
 	}
 
-	/** %Site nav */
+	/** %[min480] Site nav */
 	/*------------------------------------*/
 	.site-nav li {
 		width: 50%;
@@ -1153,7 +1158,7 @@ ul ul {
 /*------------------------------------*/
 @media (max-width: 767px) {
 
-	/** [Helper] Hide - mobile */
+	/** [Helper - max767] Hide - mobile */
 	/*------------------------------------*/
 	.mobile-hide {
 		display: none;
@@ -1165,7 +1170,7 @@ ul ul {
 /*------------------------------------*/
 @media (min-width: 768px) {
 
-	/** [Form] Input row */
+	/** [min768 | Form] Input row */
 	/*------------------------------------*/
 	.input-row {
 		width: 100%;
@@ -1193,7 +1198,7 @@ ul ul {
 		width: 100%;
 	}
 
-	/** %Layout */
+	/** %[min768] Layout */
 	/*------------------------------------*/
 	.main:after {
 		content: '';
@@ -1216,7 +1221,7 @@ ul ul {
 		float: left;
 	}
 
-	/** [Helper] Hide - tablet */
+	/** [min768 | Helper] Hide - tablet */
 	/*------------------------------------*/
 	.tablet-hide {
 		display: none;
@@ -1228,21 +1233,21 @@ ul ul {
 /*------------------------------------*/
 @media (min-width: 960px) {
 
-	/** %Layout */
+	/** %[min960] Layout */
 	/*------------------------------------*/
 	.wrapper {
 		padding-left: 0;
 		padding-right: 0;
 	}
 
-	/** %Logo */
+	/** %[min960] Logo */
 	/*------------------------------------*/
 	.site-logo {
 		display: inline-block;
 		vertical-align: middle;
 	}
 
-	/** %Site nav */
+	/** %[min960] Site nav */
 	/*------------------------------------*/
 	.mobile-nav-header {
 		display: none;
