@@ -105,6 +105,7 @@ var App = App || (function($) {
 					scrollTop: $('[name=' + location.hash.substr(1) + ']').offset().top
 				}, 500);
 			}
+			Public.spyNav();
 		}, // init
 
 		modifiersToggler: function() {
@@ -139,6 +140,27 @@ var App = App || (function($) {
 			});
 		}, // sitckySidebar
 
+		spyNav: function() {
+			var sections = $('.content').find('[name]').not('input, textarea, checkbox, select'),
+				viewport = $(window),
+				stateHistory = {},
+				scrollTop, active, newActive, section;
+
+			viewport.on('scroll', function() {
+				scrollTop = viewport.scrollTop();
+				sections.each(function() {
+					newActive = scrollTop >= $(this).offset().top  ? $(this).attr('name') : newActive;
+				});
+
+				if (newActive != active) {
+					active = newActive;
+					section = $('[name=' + active + ']');
+					history.replaceState({}, '', '#' + section.attr('name'));
+				}
+			});
+
+		}, //spyNav
+
 		codeHelper: function() {
 
 			$('pre').find('code').each(function() {
@@ -171,36 +193,6 @@ var App = App || (function($) {
 
 			});
 		}
-	};
-
-	/**
-	 * Toggle target element
-	 */
-	$.fn.toggleTarget = function(target) {
-		$(this).on('click', function(event) {
-			event.preventDefault();
-			$(target).stop().slideToggle();
-		});
-		return this;
-	};
-
-	$.fn.softScroll = function(speed) {
-		var statesHistory = {};
-		$(this).on('click', function(event) {
-			event.preventDefault();
-			history.pushState(statesHistory, this.innerHTML, this.hash || '#' + this.name);
-			$('html,body').animate({
-				scrollTop:$(this.hash).length ? $(this.hash).offset().top : $('[name=' + this.hash.substr(1) + ']').offset().top
-			}, speed || 500);
-		});
-		return this;
-	};
-
-	$.fn.noon = function() {
-		$(this).on('click', function(event) {
-			event.preventDefault();
-		});
-		return this;
 	};
 
 	return Public;
