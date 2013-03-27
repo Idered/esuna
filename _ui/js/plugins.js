@@ -26,16 +26,17 @@ var DevTools = {
 					return null;
 				});
 
+				styleSheets = $(styleSheets);
 
 				var timer = setInterval(function() {
-					$(styleSheets).each(function() {
+					styleSheets.each(function() {
 						lastModified = cssRefresh.getFiletime(this.href);
 						if (lastModified != this.lastModified) {
 							this.lastModified = lastModified;
 							this.href = this.href.replace(/\.css.*/, '.css?reload=' + new Date().getTime());
 						}
 					});
-				}, options.interval || 250);
+				}, options.interval || 500);
 			}, // init
 
 			getFiletime: function(file) {
@@ -68,3 +69,52 @@ var DevTools = {
 		} // windowSize
 	}
 };
+
+/**
+ * Toggle target element
+ * @param  {string} target Target selector
+ * @return {object}
+ */
+$.fn.toggles = function(target) {
+	$(this).on('click', function(event) {
+		event.preventDefault();
+		$(target).stop().slideToggle();
+	});
+	return this;
+};
+
+/**
+ * Scroll to target(value of href or name) element
+ * @param  {int} speed Scroll speed in ms
+ * @return {object}
+ */
+$.fn.scrollsTo = function(speed) {
+	$(this).on('click', function(event) {
+		event.preventDefault();
+		$('html,body').animate({
+			scrollTop: $(this.hash).length ? $(this.hash).offset().top : $('[name=' + this.hash.substr(1) + ']').offset().top
+		}, speed || 500);
+	});
+	return this;
+};
+
+/**
+ * Handle dropdowns
+ * @return {object}
+ */
+$.fn.dropdown = function() {
+	$(this).each(function() {
+		var $dropdown = $(this);
+
+		$(this).find('.dropdown__toggle').on('click', function(event) {
+			event.stopPropagation();
+			$dropdown.toggleClass('is-open');
+		});
+	});
+
+	$(document).on('click', function() {
+		$('.is-open').removeClass('is-open');
+	});
+
+	return this;
+}; // dropdown

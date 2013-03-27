@@ -28,7 +28,7 @@ var App = App || (function($) {
 			if (Config.debug && Config.isDevDomain) {
 				/* Load DevTools here */
 				DevTools.loadModule('cssRefresh', {
-					interval: 450
+					interval: 400
 				});
 				// DevTools.loadModule('windowSize');
 			}
@@ -86,55 +86,6 @@ var App = App || (function($) {
 			$('.js-toggle-nav').toggles('.site-nav');
 		} // init
 	};
-
-	/**
-	 * Toggle target element
-	 * @param  {string} target Target selector
-	 * @return {object}
-	 */
-	$.fn.toggles = function(target) {
-		$(this).on('click', function(event) {
-			event.preventDefault();
-			$(target).stop().slideToggle();
-		});
-		return this;
-	};
-
-	/**
-	 * Scroll to target(value of href or name) element
-	 * @param  {int} speed Scroll speed in ms
-	 * @return {object}
-	 */
-	$.fn.scrollsTo = function(speed) {
-		$(this).on('click', function(event) {
-			event.preventDefault();
-			$('html,body').animate({
-				scrollTop: $(this.hash).length ? $(this.hash).offset().top : $('[name=' + this.hash.substr(1) + ']').offset().top
-			}, speed || 500);
-		});
-		return this;
-	};
-
-	/**
-	 * Handle dropdowns
-	 * @return {object}
-	 */
-	$.fn.dropdown = function() {
-		$(this).each(function() {
-			var $dropdown = $(this);
-
-			$(this).find('.dropdown__toggle').on('click', function(event) {
-				event.stopPropagation();
-				$dropdown.toggleClass('is-open');
-			});
-		});
-
-		$(document).on('click', function() {
-			$('.is-open').removeClass('is-open');
-		});
-
-		return this;
-	}; // dropdown
 
 	return Public;
 
