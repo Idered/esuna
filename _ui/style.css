@@ -501,7 +501,7 @@ input:invalid {
 /** %[Object] Grid */
 /*------------------------------------*/
 .grid {
-	margin-left: -20px;
+	margin-left: -1em;
 }
 
 .grid:after {
