@@ -13,6 +13,7 @@
  * - Content...............
  * - Sidebar...............
  * - Footer................
+ * - Vendor................ Third party elements
  * - Media queries......... Responsive stuff
  * - Helpers...............
  * - Print.................
@@ -288,7 +289,7 @@ pre code {
 	padding: 0;
 }
 
-/** [Base] Blockquotes */
+/** [Base] Quotes */
 /*------------------------------------*/
 blockquote {
 	clear: both;
@@ -323,6 +324,14 @@ blockquote footer:before {
 .pull-quote--right {
 	float: right;
 	margin: 1em 0 1em 1em;
+}
+
+/** [Base] Lists */
+/*------------------------------------*/
+ul ul {
+	list-style-type: disc;
+	list-style-position: inside;
+	padding-left: 1em;
 }
 
 
@@ -413,6 +422,38 @@ input:invalid {
 	border-color: #b33630;
 }
 
+/** [Form] Validation messages */
+/*------------------------------------*/
+::-webkit-validation-bubble-message {
+    color: #eee;
+    background: #000;
+    border: 0;
+    padding-right: 2.3em;
+    margin-top: 1px;
+    opacity: .9;
+    font-size: .75em;
+    height: 1.3em;
+}
+
+::-webkit-validation-bubble-message:before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    margin-right: 4px;
+    background: #000;
+}
+
+::-webkit-validation-bubble-arrow {
+    border: 0;
+    left: 50%;
+    opacity: .9;
+    background: #000;
+    box-shadow: none;
+    margin: 1px 0 0 -6px;
+}
+
 /** [Form] Actions */
 /*------------------------------------*/
 .form-actions {
@@ -489,6 +530,17 @@ input:invalid {
 
 .s--phone    { background-position: 0 0; }
 .s--email    { background-position: 0 0; }
+
+/** [Object] Navicon */
+/*------------------------------------*/
+.navicon {
+	cursor: pointer;
+	display: inline-block;
+	width: 1em; /* 16px */
+	height: .1875em; /* 3/16px */
+	border-top: .5625em double #999; /* 9/16px */
+	border-bottom: .1875em solid #999; /* 3/16px */
+}
 
 /** [Object] Nav */
 /*------------------------------------*/
@@ -665,41 +717,6 @@ input:invalid {
 	border-radius: 0;
 }
 
-/*------------------------------------*/
-
-.btn-group {
-	display: table;
-}
-
-.btn-group .btn {
-	display: table-cell;
-	border-radius: 0;
-}
-
-.btn-group .btn:first-child {
-	border-radius: 5px 0 0 5px;
-}
-
-.btn-group .btn:last-child {
-	border-radius: 0 5px 5px 0;
-}
-
-.btn-group--vertical {
-	display: inline-block;
-}
-
-.btn-group--vertical .btn {
-	display: block;
-}
-
-.btn-group--vertical .btn:first-child {
-	border-radius: 5px 5px 0 0;
-}
-
-.btn-group--vertical .btn:last-child {
-	border-radius: 0 0 5px 5px;
-}
-
 /** [Object] Media */
 /*------------------------------------*/
 .media {
@@ -726,32 +743,49 @@ input:invalid {
 	overflow: hidden;
 }
 
+/** [Object] Elastic media */
+/*------------------------------------*/
+/* figure */.elastic-media {
+	height: 0;
+	width: 100%;
+	position: relative;
+	padding-bottom: 56.25%; /* = 9 * 100/16 = 16:9 */
+}
+
+.elastic-media > * {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
 /** [Object] Notifications */
 /*------------------------------------*/
 .notification {
-	position: relative;
-	border-radius: 5px;
-	margin-bottom: 2em;
-	padding: .5em 1em;
-	color: #fff;
-	font-weight: 400;
+    position: relative;
+    border-radius: 5px;
+    margin-bottom: 2em;
+    padding: .5em 1em;
+    color: #fff;
+    font-weight: 400;
 	text-shadow: 0 1px 2px rgba(0,0,0, .2);
 }
 
 .notification--success {
-	background-color: #8dc63f;
+    background-color: #8dc63f;
 }
 
 .notification--error {
-	background-color: #d3222a;
+    background-color: #d3222a;
 }
 
 .notification--info {
-	background-color: #29b5d3;
+    background-color: #29b5d3;
 }
 
 .notification--warning {
-	background-color: #f2ae00;
+    background-color: #f2ae00;
 }
 
 /** [Object] Bar */
@@ -769,17 +803,6 @@ input:invalid {
 .bar--small  { margin-bottom: .75em; }
 .bar--large  { margin-bottom: 2em; }
 .bar--huge 	 { margin-bottom: 3em; }
-
-/** [Object] Navicon */
-/*------------------------------------*/
-.navicon {
-	cursor: pointer;
-	display: inline-block;
-	width: 1em; /* 16px */
-	height: .1875em; /* 3/16px */
-	border-top: .5625em double #999; /* 9/16px */
-	border-bottom: .1875em solid #999; /* 3/16px */
-}
 
 /** [Object] Pagination */
 /*------------------------------------*/
@@ -838,6 +861,7 @@ input:invalid {
 	width: 100%;
 	max-width: 400px;
 	line-height: 2.2;
+	margin-bottom: 1em;
 	text-align: left;
 	position: relative;
 	display: inline-block;
@@ -897,6 +921,7 @@ input:invalid {
 	left: 0;
 	right: 0;
 	padding: 0;
+	z-index: 1;
 	margin: -1px 0 0 0;
 	position: absolute;
 
@@ -972,12 +997,85 @@ input:invalid {
 	content: ',\00a0';
 }
 
-/** [Object] Lists */
+/** [Object] Widgets */
 /*------------------------------------*/
-ul ul {
-	list-style-type: disc;
-	list-style-position: inside;
-	padding-left: 1em;
+.widget {
+	margin-bottom: 1em;
+}
+
+.widget__title {
+	margin-top: 0;
+}
+
+.widget__content {}
+
+.widget__content :last-child {
+	margin-bottom: 0;
+}
+
+/*------------------------------------*/
+
+.widget--archive {}
+.widget--search {}
+.widget--tags {}
+
+/** [Object] Group */
+/*------------------------------------*/
+.group > * {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/*------------------------------------*/
+
+.group--horizontal {
+	display: table;
+}
+
+.group--horizontal > * {
+	display: table-cell;
+}
+
+.group--horizontal > *:first-child {
+	border-radius: 3px 0 0 3px;
+}
+
+.group--horizontal > *:first-child ~ * {
+	border-left: 0;
+	border-radius: 0;
+}
+
+.group--horizontal > *:last-child {
+	border-radius: 0 3px 3px 0;
+}
+
+/*------------------------------------*/
+
+.group--vertical {
+	display: inline-block;
+}
+
+.group--vertical > * {
+	display: block;
+}
+
+.group--vertical > *:first-child {
+	border-radius: 3px 3px 0 0;
+}
+
+.group--vertical > *:first-child ~ * {
+	border-top: 0;
+	border-radius: 0;
+}
+
+.group--vertical > *:last-child {
+	border-radius: 0 0 3px 3px;
+}
+
+/*------------------------------------*/
+
+.group--full {
+	width: 100%;
 }
 
 /** [Object] Comments area */
@@ -1031,6 +1129,30 @@ ul ul {
 	padding-right: 10px;
 }
 
+.cell.cell-1of12 { width: 8.333%; }
+.cell.cell-1of10 { width: 10%; }
+.cell.cell-1of8 { width: 12.5%; }
+.cell.cell-1of6, .cell.cell-2of12 { width: 16.667%; }
+.cell.cell-1of5, .cell.cell-2of10 { width: 20%; }
+.cell.cell-1of4, .cell.cell-2of8, .cell.cell-3of12 { width: 25%; }
+.cell.cell-3of10 { width: 30%; }
+.cell.cell-1of3, .cell.cell-2of6, .cell.cell-3of9, .cell.cell-4of12 { width: 33.333%; }
+.cell.cell-3of8 { width: 37.5%; }
+.cell.cell-2of5, .cell.cell-4of10 { width: 40%; }
+.cell.cell-5of12 { width: 41.667%; }
+.cell.cell-1of2, .cell.cell-2of4, .cell.cell-3of6, .cell.cell-4of8, .cell.cell-5of10, .cell.cell-6of12 { width: 50%; }
+.cell.cell-7of12 { width: 58.333%; }
+.cell.cell-3of5, .cell.cell-6of10 { width: 60%; }
+.cell.cell-5of8 { width: 62.5%; }
+.cell.cell-2of3, .cell.cell-4of6, .cell.cell-8of12 { width: 66.667%; }
+.cell.cell-7of10 { width: 70%; }
+.cell.cell-3of4, .cell.cell-6of8, .cell.cell-9of12 { width: 75%; }
+.cell.cell-4of5, .cell.cell-8of10 { width: 80%; }
+.cell.cell-5of6, .cell.cell-10of12 { width: 83.333%; }
+.cell.cell-7of8 { width: 87.5%; }
+.cell.cell-9of10 { width: 90%; }
+.cell.cell-11of12 { width: 91.667%; }
+
 
 /** $Header */
 /*---------------------------------------------------------------------------*/
@@ -1076,10 +1198,6 @@ ul ul {
 	position: absolute;
 }
 
-.site-nav ul {
-	display: none;
-}
-
 .site-nav li {
 	width: 100%;
 }
@@ -1113,6 +1231,10 @@ ul ul {
 }
 
 
+/** $Vendor */
+/*---------------------------------------------------------------------------*/
+
+
 /** $Media queries */
 /*---------------------------------------------------------------------------*/
 
@@ -1126,7 +1248,7 @@ ul ul {
 /*------------------------------------*/
 @media (min-width: 480px) {
 
-	/** [Form] Modifiers */
+	/** [min480 | Form] Modifiers */
 	/*------------------------------------*/
 	.form--aligned .input-wrap {
 		display: table;
@@ -1143,7 +1265,7 @@ ul ul {
 		display: table-cell;
 	}
 
-	/** %Site nav */
+	/** %[min480] Site nav */
 	/*------------------------------------*/
 	.site-nav li {
 		width: 50%;
@@ -1157,7 +1279,7 @@ ul ul {
 /*------------------------------------*/
 @media (max-width: 767px) {
 
-	/** [Helper] Hide - mobile */
+	/** [Helper - max767] Hide - mobile */
 	/*------------------------------------*/
 	.mobile-hide {
 		display: none;
@@ -1169,13 +1291,13 @@ ul ul {
 /*------------------------------------*/
 @media (min-width: 768px) {
 
-	/** [Form] Input row */
+	/** [min768 | Form] Input row */
 	/*------------------------------------*/
 	.input-row {
 		width: 100%;
 		display: table;
 		margin-bottom: 1em;
-		table-layout: fixed;
+	    table-layout: fixed;
 	}
 
 	.input-row .input-wrap {
@@ -1197,7 +1319,7 @@ ul ul {
 		width: 100%;
 	}
 
-	/** %Layout */
+	/** %[min768] Layout */
 	/*------------------------------------*/
 	.main:after {
 		content: '';
@@ -1220,13 +1342,14 @@ ul ul {
 		float: left;
 	}
 
-	/** %Site nav */
+	/** %[min960] Logo */
 	/*------------------------------------*/
-	.site-nav ul {
-		display: block;
+	.site-logo {
+		display: inline-block;
+		vertical-align: middle;
 	}
 
-	/** %Site nav */
+	/** %[min768] Site nav */
 	/*------------------------------------*/
 	.mobile-nav-header {
 		display: none;
@@ -1244,9 +1367,6 @@ ul ul {
 	.site-nav li {
 		width: auto;
 		float: none;
-	}
-
-	.site-nav li + li {
 		margin-left: 35px;
 	}
 
@@ -1261,7 +1381,7 @@ ul ul {
 
 	.site-nav .active a {}
 
-	/** [Helper] Hide - tablet */
+	/** [min768 | Helper] Hide - tablet */
 	/*------------------------------------*/
 	.tablet-hide {
 		display: none;
@@ -1273,18 +1393,11 @@ ul ul {
 /*------------------------------------*/
 @media (min-width: 960px) {
 
-	/** %Layout */
+	/** %[min960] Layout */
 	/*------------------------------------*/
 	.wrapper {
 		padding-left: 0;
 		padding-right: 0;
-	}
-
-	/** %Logo */
-	/*------------------------------------*/
-	.site-logo {
-		display: inline-block;
-		vertical-align: middle;
 	}
 
 }
@@ -1314,23 +1427,23 @@ ul ul {
 /** [Helper] Display */
 /*------------------------------------*/
 .hidden {
-	display: none !important;
-	visibility: hidden;
+    display: none !important;
+    visibility: hidden;
 }
 
 .invisible {
-	visibility: hidden;
+    visibility: hidden;
 }
 
 .visuallyhidden {
-	border: 0;
-	padding: 0;
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	position: absolute;
-	clip: rect(0 0 0 0);
+    border: 0;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    position: absolute;
+    clip: rect(0 0 0 0);
 }
 
 /** [Helper] Clearfix */
@@ -1394,62 +1507,62 @@ ul ul {
 
 @media print {
 
-	* {
-		background: transparent !important;
-		color: #000 !important; /* Black prints faster: h5bp.com/s */
-		box-shadow: none !important;
-		text-shadow: none !important;
-	}
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
 
-	a, a:visited {
-		text-decoration: underline;
-	}
+    a, a:visited {
+        text-decoration: underline;
+    }
 
-	a[href]:after {
-		content: " (" attr(href) ")";
-	}
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
 
-	abbr[title]:after {
-		content: " (" attr(title) ")";
-	}
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
 
-	a[href^="javascript:"]:after,
-	a[href^="#"]:after {
-		content: "";
-	}
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
 
-	pre,
-	blockquote {
-		border: 1px solid #999;
-		page-break-inside: avoid;
-	}
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
 
-	thead {
-		display: table-header-group; /* h5bp.com/t */
-	}
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
 
-	tr, img {
-		page-break-inside: avoid;
-	}
+    tr, img {
+        page-break-inside: avoid;
+    }
 
-	img {
-		max-width: 100% !important;
-	}
+    img {
+        max-width: 100% !important;
+    }
 
-	@page {
-		margin: 0.5cm;
-	}
+    @page {
+        margin: 0.5cm;
+    }
 
-	p, h2, h3 {
-		orphans: 3;
-		widows: 3;
-	}
+    p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+    }
 
-	h2, h3 {
-		page-break-after: avoid;
-	}
+    h2, h3 {
+        page-break-after: avoid;
+    }
 
-	.mobile-nav-header {
-		display: none;
-	}
+    .mobile-nav-header {
+    	display: none;
+    }
 }

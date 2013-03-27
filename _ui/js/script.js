@@ -185,8 +185,10 @@ var App = App || (function($) {
 	};
 
 	$.fn.softScroll = function(speed) {
+		var statesHistory = {};
 		$(this).on('click', function(event) {
 			event.preventDefault();
+			history.pushState(statesHistory, this.innerHTML, this.hash || '#' + this.name);
 			$('html,body').animate({
 				scrollTop:$(this.hash).length ? $(this.hash).offset().top : $('[name=' + this.hash.substr(1) + ']').offset().top
 			}, speed || 500);
