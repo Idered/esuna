@@ -646,14 +646,8 @@ input:invalid {
 	line-height: 2;
 	border-radius: 3px;
 	color: #fff;
-	text-shadow: 0 1px 2px rgba(0,0,0, .35);
-}
-
-.btn,
-.btn:hover,
-.btn:active,
-.btn:focus {
 	text-decoration: none;
+	text-shadow: 0 1px 2px rgba(0,0,0, .35);
 }
 
 .btn:hover,
@@ -709,10 +703,10 @@ input:invalid {
 .btn--zeta    { font-size: 1.125em; }
 
 .btn--natural {
-	vertical-align:baseline;
-	line-height:inherit;
-	font-size:inherit;
-	height:auto;
+	vertical-align: baseline;
+	line-height: inherit;
+	font-size: inherit;
+	height: auto;
 	padding-right: 0.5em;
 	padding-left: 0.5em;
 }
@@ -755,7 +749,7 @@ input:invalid {
 	background-color: #ddd;
 	color: #777;
 	cursor: default;
-	box-shadow:none;
+	box-shadow: none;
 	text-shadow: none;
 }
 
@@ -1286,7 +1280,8 @@ input:invalid {
 
 	.form--aligned label {
 		display: table-cell;
-		width: 8em;
+		min-width: 8em;
+		width: 20%;
 	}
 
 	.form--aligned .input-wrap input,
