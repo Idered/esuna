@@ -545,23 +545,31 @@ input:invalid {
 /** [Object] Sprites */
 /*------------------------------------*/
 .s {
-	background-image:url(img/sprite.png);
-	vertical-align:middle;
-	display:inline-block;
-	position:relative;
-	line-height:1;
-	zoom:1;
-	top:-1px;
+	background-image: url(img/sprite.png);
+	vertical-align: middle;
+	display: inline-block;
+	position: relative;
+	line-height: 1;
+	zoom: 1;
+	top: -1px;
 	width: 16px;
-	height:16px;
-	overflow:hidden;
+	height: 16px;
+	overflow: hidden;
 }
 
 .s:before {
-	width:0;
-	height:100%;
+	width: 0;
+	height: 100%;
 	content: '';
-	display:block;
+	display: block;
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+
+	.s {
+		background-image: url(img/sprite@2x.png);
+	}
+
 }
 
 /*------------------------------------*/
