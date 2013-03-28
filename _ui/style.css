@@ -498,19 +498,19 @@ input:invalid {
 /** $Objects */
 /*---------------------------------------------------------------------------*/
 
-/** %[Object] Grid */
+/** %[Object] Row */
 /*------------------------------------*/
-.grid {
+.row {
 	margin-left: -1em;
 }
 
-.grid:after {
+.row:after {
 	content: '';
 	clear: both;
 	display: table;
 }
 
-.grid > .cell {
+.row > .cell {
 	float: left;
 	padding-left: 1em;
 	-webkit-box-sizing: border-box;
