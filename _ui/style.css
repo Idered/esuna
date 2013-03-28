@@ -1366,7 +1366,7 @@ input:invalid {
 		float: left;
 	}
 
-	/** %[min960] Logo */
+	/** %[min768] Logo */
 	/*------------------------------------*/
 	.site-logo {
 		display: inline-block;
