@@ -21,7 +21,7 @@ var App = App || (function($) {
 	 */
 	Ajax = {
 		/**
-		 * Callback for sucessful submissions
+		 * Callback for successful submissions
 		 * @param  {object} data Response from ajax request
 		 */
 		onSuccess: function(data) {
@@ -66,6 +66,7 @@ var App = App || (function($) {
 	 */
 	Utils = {
 		init: function() {
+			Utils.ajaxForms();
 			Utils.placeholder();
 			Utils.submitShorcut();
 
@@ -160,9 +161,8 @@ var App = App || (function($) {
 	Public = {
 		init: function() {
 			Utils.init();
-			Utils.ajaxForms();
 			$('.dropdown').dropdown();
-			$('.js-toggle-nav').toggles('.site-nav');
+			$('.js-toggle-nav').toggles('.site-nav', 'is-open');
 		} // init
 	}; // Public
 

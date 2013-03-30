@@ -1,5 +1,5 @@
 #!/bin/sh
 
-grunt min
+grunt build
 
 exit 0

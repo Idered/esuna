@@ -3,9 +3,11 @@
 
 /*! DevTools | MIT License | by Idered */
 var DevTools = {
-
 	loadModule: function(module, options) {
-		options = $.extend({}, options);
+		options = $.extend({
+			interval: 500,
+			idle: 10
+		}, options);
 		if (this.modules[module]) {
 			this.modules[module].init(options);
 		}
@@ -21,6 +23,7 @@ var DevTools = {
 				styleSheets = $.map(styleSheets, function(styleSheet) {
 					if (styleSheet.href.indexOf(window.location.host) !== -1) {
 						styleSheet.lastModified = cssRefresh.getFiletime(styleSheet.href);
+						styleSheet.requestsNum = 0;
 						return styleSheet;
 					}
 					return null;
@@ -30,13 +33,17 @@ var DevTools = {
 
 				var timer = setInterval(function() {
 					styleSheets.each(function() {
-						lastModified = cssRefresh.getFiletime(this.href);
-						if (lastModified != this.lastModified) {
-							this.lastModified = lastModified;
-							this.href = this.href.replace(/\.css.*/, '.css?reload=' + new Date().getTime());
+						if (this.requestsNum < 20 || !(this.requestsNum % options.idle)) {
+							lastModified = cssRefresh.getFiletime(this.href);
+							if (lastModified != this.lastModified) {
+								this.requestsNum = 0;
+								this.lastModified = lastModified;
+								this.href = this.href.replace(/\.css.*/, '.css?reload=' + new Date().getTime());
+							}
 						}
+						this.requestsNum++;
 					});
-				}, options.interval || 500);
+				}, options.interval);
 			}, // init
 
 			getFiletime: function(file) {
@@ -67,8 +74,8 @@ var DevTools = {
 				}).trigger('resize');
 			}
 		} // windowSize
-	}
-};
+	} // modules
+} // DevTools;
 
 /**
  * Toggle target element

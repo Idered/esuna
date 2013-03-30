@@ -1,12 +1,23 @@
 module.exports = function(grunt) {
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        meta: {
+            cssfiles: ['_ui/*.css'],
+            images: ['_ui/img/*.png', '_ui/img/*.jpg'],
+            jsfile: ['_ui/js/script.js']
+        },
         uglify: {
             options: {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> | <%= pkg.author.name %> */\n'
             },
             build: {
-                src: '_ui/js/script.js',
+                src: '<%= meta.jsfile %>',
                 dest: '_ui/js/script.min.js'
             }
         },
@@ -16,12 +27,12 @@ module.exports = function(grunt) {
                     banner: '/* <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> | <%= pkg.author.name %> */'
                 },
                 files: {
-                    '_ui/style.min.css': ['_ui/*.css']
+                    '_ui/style.min.css': '<%= meta.cssfiles %>'
                 }
             }
         },
         jshint: {
-            all: ['_ui/js/script.js'],
+            all: '<%= meta.jsfile %>',
             options: {
                 curly: true,
                 eqeqeq: true,
@@ -35,16 +46,20 @@ module.exports = function(grunt) {
             }
         },
         imagemin: {
-            targets: ['_ui/img/*.png', '_ui/img/*.jpg']
+            targets: '<%= meta.images %>'
+        },
+        watch: {
+          scripts: {
+            files: '<%= meta.jsfile %>',
+            tasks: ['jshint', 'uglify']
+          },
+          styles: {
+            files: '<%= meta.cssfiles %>',
+            tasks: ['cssmin']
+          }
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
-
-    grunt.registerTask('default', ['jshint', 'uglify', 'cssmin', 'imagemin']);
-    grunt.registerTask('min',     ['uglify', 'cssmin', 'imagemin']);
-    grunt.registerTask('jsdebug', ['jshint']);
+    grunt.registerTask('default', ['jshint', 'uglify', 'cssmin', 'watch']);
+    grunt.registerTask('build',   ['uglify', 'cssmin', 'imagemin']);
 };
