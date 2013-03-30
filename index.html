@@ -1,8 +1,70 @@
----
-layout: section
-title: Getting started
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-{% for post in site.posts limit:1 %}
-{{site.posts}}
-{% endfor %}
+	<!-- @snippet esuna-dns-prefetch -->
+
+	<!-- @snippet esuna-open-graph -->
+
+	<!-- @snippet esuna-twitter-card -->
+
+	<title></title>
+	<meta name="description" content="">
+
+	<link rel="stylesheet" href="_ui/style.css">
+
+	<link rel="shortcut icon" href="/icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/icon.png">
+
+	<script src="_ui/js/modernizr.js"></script>
+</head>
+<body>
+<header class="header" role="banner">
+	<div class="mobile-nav-header">
+		<span class="js-toggle-nav"><i class="navicon"></i></span>
+	</div>
+	<!-- /.mobile-nav-header -->
+
+	<div class="wrapper">
+		<a href="/" rel="index" class="site-logo fx--opacity">
+			<!-- <img src="_ui/img/logo.png" alt=""> -->
+		</a>
+		<!-- /.site-logo -->
+
+		<ul class="nav site-nav" role="navigation">
+			<li class="active"><a href="#"></a></li>
+			<li><a href="#"></a></li>
+		</ul>
+		<!-- /.nav.site-nav -->
+	</div>
+	<!-- /.wrapper -->
+</header>
+<!-- /.header -->
+
+<div class="main wrapper">
+	<div class="main__inner">
+		<div class="content"></div>
+		<!-- /.content -->
+
+		<aside class="sidebar"></aside>
+		<!-- /.sidebar -->
+	</div>
+	<!-- /.main__inner -->
+</div>
+<!-- /.main  -->
+
+<footer class="footer" role="contentinfo">
+	<div class="wrapper"></div>
+	<!-- /.wrapper -->
+</footer>
+<!-- /.footer -->
+
+<!-- @snippet esuna-scripts -->
+
+<script src="_ui/js/jquery.js"></script>
+<script src="_ui/js/plugins.js"></script>
+<script src="_ui/js/script.js"></script>
+</body>
+</html>
