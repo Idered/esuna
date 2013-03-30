@@ -10,7 +10,7 @@ module.exports = function(grunt) {
         meta: {
             cssfiles: ['_ui/*.css', '!_ui/*.min.css'],
             images: ['_ui/img/*.png', '_ui/img/*.jpg'],
-            jsfile: ['_ui/js/script.js']
+            jsfiles: ['_ui/js/script.js', '!_ui/js/*.min.js']
         },
         uglify: {
             options: {
@@ -50,7 +50,7 @@ module.exports = function(grunt) {
         },
         watch: {
           scripts: {
-            files: '<%= meta.jsfile %>',
+            files: '<%= meta.jsfiles %>',
             tasks: ['jshint', 'uglify']
           },
           styles: {
