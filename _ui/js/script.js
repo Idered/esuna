@@ -6,7 +6,8 @@
 /* global jQuery, DevTools */
 var App = App || (function($) {
 
-	var Config = {},
+	var Ajax   = {},
+		Config = {},
 		Utils  = {},
 		Public = {};
 
@@ -15,8 +16,55 @@ var App = App || (function($) {
 		devDomains: ['localhost', '.dev']
 	};
 
-	Utils = {
+	/**
+	 * Contain ajax callbacks
+	 */
+	Ajax = {
+		/**
+		 * Callback for sucessful submissions
+		 * @param  {object} data Response from ajax request
+		 */
+		onSuccess: function(data) {
+			if (Config.debug) {
+				console.log('Request successful: ',  data);
+			}
+		}, // onSuccss
 
+		/**
+		 * Callback for failed submissions
+		 */
+		onFail: function() {
+			if (Config.debug) {
+				console.error('Request failed: ',  arguments);
+			}
+		}, // onFail
+
+		/**
+		 * Public callbacks
+		 */
+		callbacks: {
+			/**
+			 * Sample callback that is called before ajax request
+			 * @param  {jquery} form jQuery object of form element
+			 */
+			sampleCallbackBefore: function(form) {
+				console.log('[Event] Before callback', form);
+			}, // sampleCallbackBefore
+
+			/**
+			 * Sample callback that is called after ajax request
+			 * @param  {object} data Response
+			 */
+			sampleCallbackAfter: function(data) {
+				console.log('[Event] After callback', data);
+			} // sampleCallbackAfter
+		}
+	}; // Ajax
+
+	/**
+	 * Helper functions, toolbox
+	 */
+	Utils = {
 		init: function() {
 			Utils.placeholder();
 			Utils.submitShorcut();
@@ -76,16 +124,47 @@ var App = App || (function($) {
 					return false;
 				}
 			});
-		} // submitShortcut
-	};
+		}, // submitShortcut
+
+		ajaxForms: function() {
+			$('[data-remote]').on('submit', function() {
+				var form = $(this),
+					callbacks = {
+						before: Ajax.callbacks[form.data('callback-before')],
+						after: Ajax.callbacks[form.data('callback-after')]
+					};
+
+				if (typeof callbacks.before === 'function') {
+					callbacks.before.apply(App, form);
+				}
+
+				$.ajax({
+					type: form.attr('method') || 'GET',
+					url: form.attr('action'),
+					data: form.serialize(),
+					dataType: form.data('type') || 'json'
+				}).fail(function() {
+					Ajax.onFail.apply(App, arguments);
+				}).done(function() {
+					Ajax.onSuccess.apply(App, arguments);
+
+					if (typeof callbacks.after === 'function') {
+						callbacks.after.apply(App, arguments);
+					}
+				});
+				return false;
+			});
+		} // ajaxForms
+	}; // Utils
 
 	Public = {
 		init: function() {
 			Utils.init();
+			Utils.ajaxForms();
 			$('.dropdown').dropdown();
 			$('.js-toggle-nav').toggles('.site-nav');
 		} // init
-	};
+	}; // Public
 
 	return Public;
 
