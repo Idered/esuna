@@ -193,6 +193,11 @@ body {
 	margin: 0;
 }
 
+html, body {
+	min-height: 100%;
+	height: 100%;
+}
+
 /** [Base] Links */
 /*------------------------------------*/
 a {
@@ -224,6 +229,8 @@ h4, h5, h6,
 .alpha, .beta, .gamma,
 .delta, .epsilon, .zeta {
 	margin: .5em 0;
+	color: #1a2732;
+	font-weight: 300;
 }
 
 h1, .alpha {
@@ -231,7 +238,7 @@ h1, .alpha {
 }
 
 h2, .beta {
-	font-size: 2.2em;
+	font-size: 2em;
 }
 
 h3, .gamma {
@@ -573,6 +580,12 @@ input:invalid {
 }
 
 /*------------------------------------*/
+
+.s--esuna-logo {
+	background-position: 0 0;
+	width: 147px;
+	height: 40px
+}
 
 .s--facebook { background-position: 0 0; }
 .s--twitter  { background-position: 0 0; }
@@ -1169,7 +1182,6 @@ input:invalid {
 /*---------------------------------------------------------------------------*/
 
 .wrapper {
-	max-width: 960px;
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: 10px;
@@ -1194,12 +1206,12 @@ input:invalid {
 	display: block;
 	margin: 1em auto;
 	/* Edit */
-	width: 180px;
-	height: 48px;
+	width: 147px;
+	height: 40px;
 }
 
 .site-logo img {
-	display: inline-block;
+	display: block;
 }
 
 /** %Site nav */
@@ -1243,6 +1255,9 @@ input:invalid {
 
 /** $Sidebar */
 /*---------------------------------------------------------------------------*/
+.sidebar {
+	background-color: #1a2732;
+}
 
 
 /** $Footer */
@@ -1252,6 +1267,7 @@ input:invalid {
 	font-size: .9em;
 	text-align: center;
 }
+
 
 
 /** $Vendor */
@@ -1352,7 +1368,7 @@ input:invalid {
 	}
 
 	.main__inner {
-		padding-left: 15em;
+		padding-left: 25.5em;
 	}
 
 	.content {
@@ -1360,10 +1376,18 @@ input:invalid {
 		width: 100%;
 	}
 
+	/** %[min768] Sidebar */
+	/*------------------------------------*/
 	.sidebar {
-		margin-left: -15em;
-		width: 12em;
-		float: left;
+		width: 22.5em;
+		min-height: 100%;
+		height: 100%;
+		margin-left: -25.5em;
+		padding: 2.5em 2.5em 1em 2.5em;
+		border-right: 10px solid #00b0ff;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
 	}
 
 	/** %[min768] Logo */
@@ -1371,6 +1395,7 @@ input:invalid {
 	.site-logo {
 		display: inline-block;
 		vertical-align: middle;
+		margin: 0 0 3em 0;
 	}
 
 	/** %[min768] Site nav */
@@ -1381,29 +1406,119 @@ input:invalid {
 
 	.site-nav {
 		width: auto;
-		text-align: left;
+		display: block;
 		position: static;
-		display: inline-block;
-		vertical-align: middle;
 		background: transparent;
+	}
+
+	.site-nav__title {
+		color: #acc0c7;
+		font-size: 1.25em;
+		font-weight: 600;
+		font-style: italic;
+		display: block;
+		margin: 1em 0 .5em 0;
 	}
 
 	.site-nav li {
 		width: auto;
 		float: none;
-		margin-left: 35px;
+		display: block;
+		text-align: left;
+	}
+
+	.site-nav__submenu {
+		padding-left: 1em;
+	}
+
+	.site-nav__submenu li {
+		margin-bottom: .2em;
 	}
 
 	.site-nav a {
+		color: #51626f;
+		/* font-size: 1.125em; */
+		font-weight: 600;
 		padding: 0;
+		font-size: 1.125em;
+		display: inline-block;
+		-webkit-transition: color .25s ease;
+		   -moz-transition: color .25s ease;
+		    -ms-transition: color .25s ease;
+		     -o-transition: color .25s ease;
+		        transition: color .25s ease;
 	}
 
 	.site-nav  a:hover,
 	.site-nav .active a {
-		color: inherit;
+		color: #acc0c7;
 	}
 
 	.site-nav .active a {}
+
+	/** %[min768] Section */
+	/*------------------------------------*/
+	.section-header {
+		text-align: right;
+		margin: 0 0 2.5em -3em;
+		padding: 2.5em 2.5em 2.5em 3em;
+		border-bottom: 1px solid #dfe5e6;
+	}
+
+	.section-header:after {
+		content: '';
+		clear: both;
+		display: table;
+	}
+
+	.section-header__inner {
+		max-width: 35em;
+	}
+
+	.section-header__title {
+		float: left;
+		margin: 0;
+		font-size: 2em;
+		line-height: 1.5;
+		font-weight: normal;
+	}
+
+	.section-header__choose {
+		color: #fff;
+		margin: .5em 0;
+		text-shadow: none;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: .9em;
+		font-family: "Open Sans Condensed";
+		height: 2.2em;
+		line-height: 2.2em;
+		background-color: #acc0c7;
+	}
+
+	.section-header__choose:after {
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: .5em;
+		font-size: .9em;
+		margin-top: -1px;
+		content: '';
+		width: 0px;
+		height: 0px;
+		border-style: solid;
+		border-width: .45em .45em 0 .45em;
+		border-color: #fff transparent transparent transparent;
+	}
+
+	.section-header__choose:hover {
+		opacity: 1;
+		background: #394a59;
+	}
+
+	.section {
+		max-width: 35em;
+		padding: 0 2.5em 2.5em 0;
+	}
 
 	/** [min768 | Helper] Hide - tablet */
 	/*------------------------------------*/

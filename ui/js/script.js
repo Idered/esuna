@@ -27,9 +27,7 @@ var App = App || (function($) {
 
 			if (Config.debug && Config.isDevDomain) {
 				/* Load DevTools here */
-				DevTools.loadModule('cssRefresh', {
-					interval: 400
-				});
+				// DevTools.loadModule('cssRefresh', { interval: 1000 });
 				// DevTools.loadModule('windowSize');
 			}
 		}, //init
