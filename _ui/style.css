@@ -250,6 +250,41 @@ h6, .zeta {
 	font-size: 1em;
 }
 
+/** [Base] Selection */
+/*------------------------------------*/
+::-moz-selection {
+    background: #2b2b2b;
+    color: #eee;
+    text-shadow: none;
+}
+
+::selection {
+    background: #2b2b2b;
+    color: #eee;
+    text-shadow: none;
+}
+
+/** [Base] Separators */
+/*------------------------------------*/
+hr {
+    border-top: 1px solid #ccc;
+    display: block;
+    height: 0;
+    border: 0;
+    padding: 0;
+    margin: 1em 0;
+}
+
+/*------------------------------------*/
+
+.separator--dashed {
+	border-top-style: dashed;
+}
+
+.separator--subtle {
+	border-top-color: #eee;
+}
+
 /** [Base] Code */
 /*------------------------------------*/
 code, kbd, pre, samp {
@@ -1532,7 +1567,7 @@ input:invalid {
 .color--tertiary  {	color: #2d303c; }
 
 
-/** $Print */
+/** $Print | From h5bp.com */
 /*---------------------------------------------------------------------------*/
 
 @media print {
