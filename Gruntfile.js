@@ -33,9 +33,6 @@ module.exports = function(grunt) {
                     DevTools: true
                 },
             }
-        },
-        imagemin: {
-            targets: ['_ui/img/*.png', '_ui/img/*.jpg']
         }
     });
 
