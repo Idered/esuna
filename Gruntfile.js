@@ -8,7 +8,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         meta: {
-            cssfiles: ['_ui/*.css'],
+            cssfiles: ['_ui/*.css', '!_ui/*.min.css'],
             images: ['_ui/img/*.png', '_ui/img/*.jpg'],
             jsfile: ['_ui/js/script.js']
         },
