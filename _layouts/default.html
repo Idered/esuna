@@ -42,13 +42,13 @@
 </head>
 <body>
 
+<div class="mobile-nav-header">
+	<span class="js-toggle-nav"><i class="navicon"></i></span>
+</div>
+<!-- /.mobile-nav-header -->
+
 <div class="main">
 	<div class="main__inner">
-		<div class="content">
-			{{ content }}
-		</div>
-		<!-- /.content -->
-
 		<aside class="sidebar">
 			<header class="header" role="banner">
 
@@ -61,7 +61,7 @@
 					<li>
 						<span class="site-nav__title">Getting started</span>
 						<ul class="site-nav__submenu" data-section="getting-started">
-							<li><a href="getting-started#about">About</a></li>
+							<li><a href="#about">About</a></li>
 							<li><a href="#installation">Installation</a></li>
 							<li><a href="#configuration">Configuration</a></li>
 						</ul>
@@ -96,17 +96,29 @@
 			<!-- /.header -->
 		</aside>
 		<!-- /.sidebar -->
+		<div class="content">
+			{{ content }}
+		</div>
+		<!-- /.content -->
+
+		<footer class="footer">
+			<div class="footer__inner">
+				<p class="footer__copyright">Build with <span class="color--secondary">♥</span> and brought to you by <a href="http://twitter.com/idered">@Idered.</a> Code released under MIT license.</p>
+				<ul class="nav footer-nav">
+					<li><a href="https://github.com/Idered/esuna">GitHub Repo</a></li>
+					<li> · </li>
+					<li><a href="https://github.com/Idered/esuna/issues">Issues</a></li>
+					<li> · </li>
+					<li><a href="#top">Top</a></li>
+				</ul>
+			</div>
+			<!-- /.footer__inner -->
+		</footer>
+		<!-- /.footer -->
 	</div>
 	<!-- /.main__inner -->
 </div>
 <!-- /.main  -->
-
-<footer class="footer" role="contentinfo">
-	<div class="wrapper"></div>
-	<!-- /.wrapper -->
-</footer>
-<!-- /.footer -->
-
 <script src="../ui/js/jquery.js"></script>
 <script src="../ui/js/plugins.js"></script>
 <script src="../ui/js/script.js"></script>

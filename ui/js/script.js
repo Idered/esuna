@@ -80,9 +80,34 @@ var App = App || (function($) {
 	Public = {
 		init: function() {
 			Utils.init();
+			// Public.stickyNav();
 			$('.dropdown').dropdown();
+			Public.nav();
+		}, // init
+
+		nav: function() {
+			var viewport = $(window);
 			$('.js-toggle-nav').toggles('.site-nav');
-		} // init
+			$('.site-nav').find('a').on('click', function() {
+				if (viewport.innerWidth() < 768) {
+					$(this).closest('.nav').slideToggle();
+				}
+			});
+		},
+
+		stickyNav: function() {
+			var nav = $(".site-nav"),
+				viewport = $(window),
+				offset = $('.section').offset().top - 40;
+
+			viewport.on('scroll', function() {
+				if (viewport.width() >= 768) {
+					nav.css(viewport.scrollTop() > offset ? {position: 'fixed', top: 0} : {position: 'static'});
+				} else {
+					nav.css({position: '', top: ''});
+				}
+			});
+		}
 	};
 
 	return Public;

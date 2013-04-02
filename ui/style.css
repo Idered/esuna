@@ -195,7 +195,6 @@ body {
 
 html, body {
 	min-height: 100%;
-	height: 100%;
 }
 
 /** [Base] Links */
@@ -1184,10 +1183,19 @@ input:invalid {
 .wrapper {
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-left: 1.5em;
+	padding-right: 1.5em;
 }
 
+.main {
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+}
+
+.sidebar {
+	padding: 1.5em 0;
+	margin: 0 -1.5em;
+}
 
 /** $Header */
 /*---------------------------------------------------------------------------*/
@@ -1204,7 +1212,7 @@ input:invalid {
 /*------------------------------------*/
 .site-logo {
 	display: block;
-	margin: 1em auto;
+	margin: 0 auto;
 	/* Edit */
 	width: 147px;
 	height: 40px;
@@ -1237,10 +1245,17 @@ input:invalid {
 	width: 100%;
 }
 
+.site-nav__title {
+	color: #acc0c7;
+	display: block;
+	font-size: 1.125em;
+	margin: 1em 0 .5em 1em;
+}
+
 .site-nav a {
 	color: #ccc;
 	display: block;
-	padding: .5em 1em;
+	padding: .5em 1.5em;
 }
 
 .site-nav  a:hover,
@@ -1264,10 +1279,15 @@ input:invalid {
 /*---------------------------------------------------------------------------*/
 
 .footer {
-	font-size: .9em;
+	border-top: 1px solid #dfe5e6;
+	margin: 2em -1.5em 0 -1.5em;
+	padding: 1.5em;
 	text-align: center;
 }
 
+.footer__inner {
+	font-size: .9em;
+}
 
 
 /** $Vendor */
@@ -1310,7 +1330,12 @@ input:invalid {
 	.site-nav li {
 		width: 50%;
 		float: left;
-		text-align: center;
+	}
+
+	.site-nav li li {
+		width: auto;
+		float: none;
+		display: block;
 	}
 
 }
@@ -1361,6 +1386,10 @@ input:invalid {
 
 	/** %[min768] Layout */
 	/*------------------------------------*/
+	.main {
+		padding: 0;
+	}
+
 	.main:after {
 		content: '';
 		clear: both;
@@ -1368,21 +1397,22 @@ input:invalid {
 	}
 
 	.main__inner {
-		padding-left: 25.5em;
+		padding-left: 17.5em;
 	}
 
 	.content {
-		float: right;
+		float: left;
 		width: 100%;
 	}
 
 	/** %[min768] Sidebar */
 	/*------------------------------------*/
 	.sidebar {
-		width: 22.5em;
+		position: fixed;
+		float: left;
+		width: 17.5em;
 		min-height: 100%;
-		height: 100%;
-		margin-left: -25.5em;
+		margin-left: -17.5em;
 		padding: 2.5em 2.5em 1em 2.5em;
 		border-right: 10px solid #00b0ff;
 		-webkit-box-sizing: border-box;
@@ -1395,7 +1425,7 @@ input:invalid {
 	.site-logo {
 		display: inline-block;
 		vertical-align: middle;
-		margin: 0 0 3em 0;
+		margin: 0 0 1em 0;
 	}
 
 	/** %[min768] Site nav */
@@ -1405,6 +1435,7 @@ input:invalid {
 	}
 
 	.site-nav {
+		left: 2.5em;
 		width: auto;
 		display: block;
 		position: static;
@@ -1413,7 +1444,7 @@ input:invalid {
 
 	.site-nav__title {
 		color: #acc0c7;
-		font-size: 1.25em;
+		font-size: 1.125em;
 		font-weight: 600;
 		font-style: italic;
 		display: block;
@@ -1440,7 +1471,7 @@ input:invalid {
 		/* font-size: 1.125em; */
 		font-weight: 600;
 		padding: 0;
-		font-size: 1.125em;
+		font-size: 1em;
 		display: inline-block;
 		-webkit-transition: color .25s ease;
 		   -moz-transition: color .25s ease;
@@ -1460,7 +1491,7 @@ input:invalid {
 	/*------------------------------------*/
 	.section-header {
 		text-align: right;
-		margin: 0 0 2.5em -3em;
+		margin: 0 0 2.5em 0;
 		padding: 2.5em 2.5em 2.5em 3em;
 		border-bottom: 1px solid #dfe5e6;
 	}
@@ -1517,7 +1548,26 @@ input:invalid {
 
 	.section {
 		max-width: 35em;
-		padding: 0 2.5em 2.5em 0;
+		padding: 0 2.5em 2.5em 3em;
+	}
+
+	/** %[min768] Footer  */
+	/*------------------------------------*/
+	.footer {
+		float: left;
+		width: 100%;
+		padding-left: 2.5em;
+		margin: 0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	.footer__inner {
+		font-size: 1em;
+		max-width: 35em;
+		font-size: .9em;
+		text-align: left;
 	}
 
 	/** [min768 | Helper] Hide - tablet */

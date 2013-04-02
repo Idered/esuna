@@ -3,6 +3,7 @@ date: 2013-03-26 16:56:14
 layout: section
 slug: getting-started
 title: Getting started
+sectionJump: false
 ---
 
 ## About {#about}

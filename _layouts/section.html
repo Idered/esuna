@@ -5,7 +5,9 @@ layout: default
 <header class="section-header">
 	<div class="section-header__inner">
 		<h1 class="section-header__title">{{page.title}}</h1>
-		<a href="#" class="js-choose-section section-header__choose btn btn--soft">Choose Section</a>
+		{% if page.sectionJump == true %}
+			<a href="#" class="js-choose-section section-header__choose btn btn--soft">Choose Section</a>
+		{% endif %}
 	</div>
 </header>
 
