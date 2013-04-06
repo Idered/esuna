@@ -114,8 +114,7 @@ $.fn.scrollsTo = function(speed) {
 $.fn.dropdown = function() {
 	$(this).each(function() {
 		var $dropdown = $(this);
-
-		$(this).find('.dropdown__toggle').on('click', function(event) {
+		$dropdown.find('.dropdown__toggle').on('click', function(event) {
 			event.stopPropagation();
 			$dropdown.toggleClass('is-open');
 
