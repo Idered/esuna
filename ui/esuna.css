@@ -1256,6 +1256,7 @@ input:invalid {
 	opacity: 0;
 	z-index: 99999;
 	bottom: 100%;
+	top: auto;
 	-webkit-transition: .25s ease, bottom 0s;
 	-moz-transition: .25s ease, bottom 0s;
 	-ms-transition: .25s ease, bottom 0s;
