@@ -22,7 +22,7 @@ Main features:
 You can clone repo or just download:
 
 1. `git clone https://github.com/Idered/esuna`
-2. Download zip
+2. [Download zip](https://github.com/Idered/esuna/archive/master.zip)
 
 ## Configuration {#configuration}
 
