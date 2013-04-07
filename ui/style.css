@@ -70,7 +70,6 @@ h1, h2, h3,
 h4, h5, h6,
 .alpha, .beta, .gamma,
 .delta, .epsilon, .zeta {
-	margin: .5em 0;
 	color: #1a2732;
 	font-weight: 300;
 }
@@ -623,7 +622,6 @@ ul ul {
 
 	.site-nav a {
 		color: #51626f;
-		/* font-size: 1.125em; */
 		font-weight: 600;
 		padding: 0;
 		font-size: 1em;
@@ -636,6 +634,7 @@ ul ul {
 	}
 
 	.site-nav  a:hover,
+	.site-nav  a:focus,
 	.site-nav .active a {
 		color: #acc0c7;
 	}

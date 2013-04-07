@@ -3,19 +3,20 @@ date: 2013-03-26 16:56:14
 layout: section
 slug: getting-started
 title: Getting started
-sectionJump: false
 ---
 
-## About {#about}
+{:id .visuallyhidden}
+## About
 
-Esuna is open source Front-End framework for those who don't want to struggle with heavy frameworks. It contains well formatted code for popular elements used on websites like comments, responsive navigation, tags, and many other elements which you use in most of your projects.
+{:id .delta .text--center .bar}
+Esuna is [open source](http://git.io/esuna) Front-End framework and set of coding guidelines. <br>It's a solid base on which you can build your projects.
 
-Main features:
+Here's a round up:
 
-* [BEM based](/esuna/style-guidelines#css-naming-conventions)
-* Uses mobile-first approach
-* Custom [Development Tools](/esuna/framework#development-tools)
-* [Optimized comments](/esuna/style-guidelines#guide-css) allow for easier search
+* It's [BEM based](/esuna/style-guidelines#css-naming-conventions) and mobile first framework
+* Basic style for most useful elements used during development - no candy look
+* Contains custom set of [development tools]({{ site.url }}/framework#development-tools)
+* Has [optimized comments style](/esuna/style-guidelines#css-comments) which allow to fully utilize Sublime Text goto symbol function
 
 ## Installation {#installation}
 
