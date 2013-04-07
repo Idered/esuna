@@ -4,7 +4,13 @@
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-uglify": "~0.2.0",
+<<<<<<< HEAD
     "grunt-contrib-cssmin": "~0.5.0"
+=======
+    "grunt-contrib-cssmin": "~0.5.0",
+    "grunt-contrib-imagemin": "~0.1.2",
+    "grunt-contrib-jshint": "~0.3.0"
+>>>>>>> docs-new
   },
   "author": {
     "name": "Kasper Mikiewicz",

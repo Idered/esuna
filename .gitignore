@@ -1,2 +1,6 @@
 node_modules/
 test/
+<<<<<<< HEAD
+=======
+*.min.*
+>>>>>>> docs-new
