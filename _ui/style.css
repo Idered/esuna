@@ -217,10 +217,12 @@ a:hover {
 
 /** [Base] Typography */
 /*------------------------------------*/
-h1, h2, h3,
-h4, h5, h6,
-.alpha, .beta, .gamma,
-.delta, .epsilon, .zeta {
+h1, .alpha,
+h2, .beta,
+h3, .gamma,
+h4, .delta,
+h5, .epsilon,
+h6, .zeta {
 	margin: .5em 0;
 }
 
@@ -435,14 +437,12 @@ input:invalid {
 /*------------------------------------*/
 .form-actions {
 	text-align: right;
-	margin-bottom: 1em;
 }
 
 
 /** $Fx */
 /*---------------------------------------------------------------------------*/
 
-.fx--pulse,
 .fx--opacity {
 	-webkit-transition: all .25s ease;
 	-moz-transition: all .25s ease;
@@ -599,6 +599,8 @@ input:invalid {
 	display: inline-block;
 }
 
+/*------------------------------------*/
+
 .nav--stacked li {
 	display: list-item;
 }
@@ -606,6 +608,8 @@ input:invalid {
 .nav--stacked a {
 	display: block;
 }
+
+/*------------------------------------*/
 
 .nav--fluid {
 	display: table;
@@ -1091,16 +1095,16 @@ input:invalid {
 	display: table-cell;
 }
 
-.group--horizontal > *:first-child {
+.group--horizontal > :first-child {
 	border-radius: 3px 0 0 3px;
 }
 
-.group--horizontal > *:first-child ~ * {
+.group--horizontal > :first-child ~ * {
 	border-left: 0;
 	border-radius: 0;
 }
 
-.group--horizontal > *:last-child {
+.group--horizontal > :last-child {
 	border-radius: 0 3px 3px 0;
 }
 
@@ -1114,16 +1118,16 @@ input:invalid {
 	display: block;
 }
 
-.group--vertical > *:first-child {
+.group--vertical > :first-child {
 	border-radius: 3px 3px 0 0;
 }
 
-.group--vertical > *:first-child ~ * {
+.group--vertical > :first-child ~ * {
 	border-top: 0;
 	border-radius: 0;
 }
 
-.group--vertical > *:last-child {
+.group--vertical > :last-child {
 	border-radius: 0 0 3px 3px;
 }
 
@@ -1161,7 +1165,7 @@ input:invalid {
 	margin-top: 0;
 }
 
-.comment__text p:last-child {
+.comment__text :last-child {
 	margin-bottom: 0;
 }
 
@@ -1390,16 +1394,18 @@ input:invalid {
 
 	.input-row .input-wrap {
 		display: table-cell;
+	}
+
+	.input-row :first-child {
 		padding-right: .5em;
 	}
 
 	.input-row .input-wrap ~ .input-wrap {
-		padding-left: .5em;
-		padding-right: 0;
+		padding-left: 1em;
 	}
 
-	.input-row .input-wrap ~ .input-wrap ~ .input-wrap {
-		padding-left: 1em;
+	.input-row :first-child + .input-wrap {
+		padding-left: .5em;
 	}
 
 	.input-row input,
