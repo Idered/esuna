@@ -1,7 +1,9 @@
 auto: true
 server: true
 markdown: kramdown
+baseurl: /esuna
+url: /esuna
 pygments: true
 permalink: /:title
 include: ui ui/js ui/img
-exclude: node_modules test build.sh README.md package.json Gruntfile.js
+exclude: test build.sh README.md package.json Gruntfile.js

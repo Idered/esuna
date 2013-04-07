@@ -19,8 +19,8 @@
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,600italic,700" rel="stylesheet" type="text/css">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet" type="text/css">
 
-	<link rel="stylesheet" href="/esuna/ui/esuna.css">
-	<link rel="stylesheet" href="/esuna/ui/style.css">
+	<link rel="stylesheet" href="{{ site.url }}/ui{{ site.url }}.css">
+	<link rel="stylesheet" href="{{ site.url }}/ui/style.css">
 
 	<link rel="shortcut icon" href="icon.png">
 	<link rel="apple-touch-icon-precomposed" href="icon.png">
@@ -29,17 +29,17 @@
 	<meta name="og:title" content="Esuna · Classy Front-End Framework" />
 	<meta name="og:type" content="website" />
 	<meta name="og:description" content="Esuna is open source, classy Front-End framework for those who don't want to struggle with heavy frameworks and tons of useless code." />
-	<meta name="og:url" content="http://idered.pl/esuna/">
+	<meta name="og:url" content="http://idered.pl{{ site.url }}/">
 
 	<!-- @see dev.twitter.com/docs/cards -->
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:creator" content="@Idered">
 	<meta name="twitter:site" content="@EsunaFramework">
-	<meta name="twitter:url" content="http://idered.pl/esuna/">
+	<meta name="twitter:url" content="http://idered.pl{{ site.url }}/">
 	<meta name="twitter:title" content="Esuna · Classy Front-End Framework">
 	<meta name="twitter:description" content="Esuna is open source, classy Front-End framework for those who don't want to struggle with heavy frameworks and tons of useless code.">
 
-	<script src="/esuna/ui/js/modernizr.js"></script>
+	<script src="{{ site.url }}/ui/js/modernizr.js"></script>
 </head>
 <body>
 
@@ -53,7 +53,7 @@
 		<aside class="sidebar">
 			<header class="header" role="banner">
 
-				<a href="/esuna/" rel="index" class="site-logo fx--opacity">
+				<a href="{{ site.url }}/" rel="index" class="site-logo fx--opacity">
 					<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Esuna" class="s s--esuna-logo">
 				</a>
 				<!-- /.site-logo -->
@@ -62,33 +62,33 @@
 					<li>
 						<span class="site-nav__title">Getting started</span>
 						<ul class="site-nav__submenu" data-section="getting-started">
-							<li><a href="/esuna/#about">About</a></li>
-							<li><a href="/esuna/#installation">Installation</a></li>
-							<li><a href="/esuna/#configuration">Configuration</a></li>
+							<li><a href="{{ site.url }}/#about">About</a></li>
+							<li><a href="{{ site.url }}/#installation">Installation</a></li>
+							<li><a href="{{ site.url }}/#configuration">Configuration</a></li>
 						</ul>
 					</li>
 					<li>
 						<span class="site-nav__title">Style guidelines</span>
 						<ul class="site-nav__submenu" data-section="style-g../uidelines">
-							<li><a href="/esuna/style-guidelines#guide-html">HTML</a></li>
-							<li><a href="/esuna/style-guidelines#guide-css">CSS</a></li>
+							<li><a href="{{ site.url }}/style-guidelines#guide-html">HTML</a></li>
+							<li><a href="{{ site.url }}/style-guidelines#guide-css">CSS</a></li>
 						</ul>
 					</li>
 					<!-- <li>
 						<span class="site-nav__title">Tools &amp; Workflow</span>
 						<ul class="site-nav__submenu" data-section="tools-and-workflow">
-							<li><a href="/esuna/tools-and-workflow#sublime-text">Sublime Text</a></li>
-							<li><a href="/esuna/tools-and-workflow#grunt">Grunt</a></li>
+							<li><a href="{{ site.url }}/tools-and-workflow#sublime-text">Sublime Text</a></li>
+							<li><a href="{{ site.url }}/tools-and-workflow#grunt">Grunt</a></li>
 						</ul>
 					</li> -->
 					<li>
 						<span class="site-nav__title">Framework</span>
 						<ul class="site-nav__submenu" data-section="framework">
-							<li><a href="/esuna/framework#structure">Structure</a></li>
-							<li><a href="/esuna/framework#development-tools">Development Tools</a></li>
-							<li><a href="/esuna/framework#base">Base elements</a></li>
-							<li><a href="/esuna/framework#objects">Objects</a></li>
-							<li><a href="/esuna/framework#helpers">Helpers</a></li>
+							<li><a href="{{ site.url }}/framework#structure">Structure</a></li>
+							<li><a href="{{ site.url }}/framework#development-tools">Development Tools</a></li>
+							<li><a href="{{ site.url }}/framework#base">Base elements</a></li>
+							<li><a href="{{ site.url }}/framework#objects">Objects</a></li>
+							<li><a href="{{ site.url }}/framework#helpers">Helpers</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -106,9 +106,9 @@
 			<div class="footer__inner">
 				<p class="footer__copyright">Build with <span class="color--secondary">♥</span> and brought to you by <a href="http://twitter.com/idered">@Idered.</a> Code released under MIT license.</p>
 				<ul class="nav footer-nav">
-					<li><a href="https://github.com/Idered/esuna">GitHub Repo</a></li>
+					<li><a href="https://github.com/Idered{{ site.url }}">GitHub Repo</a></li>
 					<li> · </li>
-					<li><a href="https://github.com/Idered/esuna/issues">Issues</a></li>
+					<li><a href="https://github.com/Idered{{ site.url }}/issues">Issues</a></li>
 				</ul>
 			</div>
 			<!-- /.footer__inner -->
@@ -129,8 +129,8 @@
 		document.getElementsByTagName('head')[0].appendChild(script);
 	}
 </script>
-<script src="/esuna/ui/js/jquery.js"></script>
-<script src="/esuna/ui/js/plugins.js"></script>
-<script src="/esuna/ui/js/script.js"></script>
+<script src="{{ site.url }}/ui/js/jquery.js"></script>
+<script src="{{ site.url }}/ui/js/plugins.js"></script>
+<script src="{{ site.url }}/ui/js/script.js"></script>
 </body>
 </html>
