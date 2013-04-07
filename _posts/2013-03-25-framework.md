@@ -596,11 +596,6 @@ It's an icon based on font size . You can use it in responsive navigations.
 
 #### Usage
 
-<div class="example" markdown="0">
-	<div class="example__content">
-		<i class="navicon"></i>
-	</div>
-</div>
 
 ### Pagination {#object-pagination}
 
