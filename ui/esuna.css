@@ -1255,6 +1255,7 @@ input:invalid {
 	background: #333;
 	position: absolute;
 	opacity: 0;
+	z-index: 99999;
 	visibility: hidden;
 	-webkit-transition: .25s ease;
 	-moz-transition: .25s ease;
