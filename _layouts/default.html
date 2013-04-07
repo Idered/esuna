@@ -118,6 +118,17 @@
 	<!-- /.main__inner -->
 </div>
 <!-- /.main  -->
+<script>
+	var scripts = {
+		'analytics'     : ('https:'==location.protocol?'//ssl':'//www') + '.google-analytics.com/ga.js'
+	}, script, _gaq=[['_setAccount','UA-18366146-7'],['_trackPageview']];
+
+	for (var id in scripts) {
+		script = document.createElement('script'); script.src = scripts[id];
+		script.id = id;script.type = 'text/javascript'; script.async = true;
+		document.getElementsByTagName('head')[0].appendChild(script);
+	}
+</script>
 <script src="/esuna/ui/js/jquery.js"></script>
 <script src="/esuna/ui/js/plugins.js"></script>
 <script src="/esuna/ui/js/script.js"></script>
