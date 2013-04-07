@@ -1250,23 +1250,23 @@ input:invalid {
 
 .site-nav {
 	left: 0;
-	top: 39px;
 	width: 100%;
 	background: #333;
 	position: absolute;
 	opacity: 0;
 	z-index: 99999;
-	visibility: hidden;
-	-webkit-transition: .25s ease;
-	-moz-transition: .25s ease;
-	-ms-transition: .25s ease;
-	-o-transition: .25s ease;
-	transition: .25s ease;
+	bottom: 100%;
+	-webkit-transition: .25s ease, bottom 0s;
+	-moz-transition: .25s ease, bottom 0s;
+	-ms-transition: .25s ease, bottom 0s;
+	-o-transition: .25s ease, bottom 0s;
+	transition: .25s ease, bottom 0s;
 }
 
 .site-nav.is-open {
 	opacity: 1;
-	visibility: visible;
+	top: 37px;
+	bottom: auto;
 }
 
 .site-nav li {
