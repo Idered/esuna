@@ -1255,8 +1255,7 @@ input:invalid {
 	position: absolute;
 	opacity: 0;
 	z-index: 99999;
-	bottom: 100%;
-	top: auto;
+	top: 100%;
 	-webkit-transition: .25s ease, bottom 0s;
 	-moz-transition: .25s ease, bottom 0s;
 	-ms-transition: .25s ease, bottom 0s;
@@ -1267,7 +1266,6 @@ input:invalid {
 .site-nav.is-open {
 	opacity: 1;
 	top: 37px;
-	bottom: auto;
 }
 
 .site-nav li {
