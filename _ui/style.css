@@ -968,6 +968,7 @@ input:invalid {
 	right: -1px;
 	padding: 0;
 	z-index: 1;
+	margin: 0;
 	position: absolute;
 
 	overflow: auto;
@@ -992,10 +993,6 @@ input:invalid {
 
 .dropdown__content li {
 	margin: 0;
-	font-size: .75em;
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
 }
 
 .dropdown__content li + li {
@@ -1006,6 +1003,10 @@ input:invalid {
 	display: block;
 	color: inherit;
 	text-decoration: none;
+	font-size: .75em;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 .dropdown__content a:hover {
