@@ -4,15 +4,32 @@ layout: default
 
 <header class="section-header">
 	<div class="section-header__inner">
-		<h1 class="section-header__title">{{page.title}}</h1>
-		{% if page.sectionJump == true %}
-			<a href="#" class="js-choose-section section-header__choose btn btn--soft">Choose Section</a>
+		<h1 class="section-header__title">{{ page.title }}</h1>
+		{% if page.sections %}
+			<div class="dropdown section-header__choose js-softscroll">
+				<div class="dropdown__toggle">Choose Section</div>
+				<ul class="dropdown__content">
+				{% for section in page.sections %}
+					<li>
+						<a href="#{{ section.id }}">{{ section.title }}{% if section.sub %}<i class="arrow arrow--right"></i>{% endif %}</a>
+
+						{% if section.sub %}
+						<ul class="section-header__choose-sub">
+						{% for sub in section.sub %}
+							<li>
+								<a href="#{{ sub.id }}">{{ sub.title }}</a>
+							</li>
+						{% endfor %}
+						</ul>
+						{% endif %}
+					</li>
+				{% endfor %}
+				</ul>
+			</div>
 		{% endif %}
 	</div>
 </header>
 
 <article class="section">
-
 	{{ content }}
-
 </article>
