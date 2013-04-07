@@ -55,6 +55,7 @@ dfn {
 }
 
 hr {
+	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
 	height: 0;
@@ -430,38 +431,6 @@ input:invalid {
 	border-color: #b33630;
 }
 
-/** [Form] Validation messages */
-/*------------------------------------*/
-::-webkit-validation-bubble-message {
-	color: #eee;
-	background: #000;
-	border: 0;
-	padding-right: 2.3em;
-	margin-top: 1px;
-	opacity: .9;
-	font-size: .75em;
-	height: 1.3em;
-}
-
-::-webkit-validation-bubble-message:before {
-	content: '';
-	position: absolute;
-	display: inline-block;
-	width: 17px;
-	height: 17px;
-	margin-right: 4px;
-	background: #000;
-}
-
-::-webkit-validation-bubble-arrow {
-	border: 0;
-	left: 50%;
-	opacity: .9;
-	background: #000;
-	box-shadow: none;
-	margin: 1px 0 0 -6px;
-}
-
 /** [Form] Actions */
 /*------------------------------------*/
 .form-actions {
@@ -473,15 +442,14 @@ input:invalid {
 /** $Fx */
 /*---------------------------------------------------------------------------*/
 
-[class*=fx--] {
+.fx--pulse,
+.fx--opacity {
 	-webkit-transition: all .25s ease;
 	-moz-transition: all .25s ease;
 	-ms-transition: all .25s ease;
 	-o-transition: all .25s ease;
 	transition: all .25s ease;
 }
-
-/*------------------------------------*/
 
 .fx--opacity:hover {
 	opacity: .7;
@@ -528,7 +496,7 @@ input:invalid {
 	display: block;
 }
 
-@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+@media (-webkit-min-device-pixel-ratio: 1.5) {
 
 	.s {
 		background-image: url(img/sprite@2x.png);
@@ -919,12 +887,12 @@ input:invalid {
 
 /** [Object] Dropdown */
 /*------------------------------------*/
-.dropdown *::-moz-selection {
+.dropdown ::-moz-selection {
 	background: transparent;
 	color: inherit;
 }
 
-.dropdown *::selection {
+.dropdown ::selection {
 	background: transparent;
 	color: inherit;
 }
@@ -1070,8 +1038,12 @@ input:invalid {
 	float: left;
 }
 
-.tags--separated a ~ a:before {
+.tags--separated a:before {
 	content: ',\00a0';
+}
+
+.tags--separated :first-child:before {
+	content: none;
 }
 
 /** [Object] Widgets */
@@ -1252,11 +1224,11 @@ input:invalid {
 	background: #333;
 	position: absolute;
 	opacity: 0;
-	-webkit-transition: .25s ease, bottom 0s;
-	-moz-transition: .25s ease, bottom 0s;
-	-ms-transition: .25s ease, bottom 0s;
-	-o-transition: .25s ease, bottom 0s;
-	transition: .25s ease, bottom 0s;
+	-webkit-transition: opacity .25s ease;
+	-moz-transition: opacity .25s ease;
+	-ms-transition: opacity .25s ease;
+	-o-transition: opacity .25s ease;
+	transition: opacity .25s ease;
 }
 
 .site-nav.is-open {
@@ -1330,8 +1302,8 @@ input:invalid {
 		width: 20%;
 	}
 
-	.form--aligned .input-wrap input,
-	.form--aligned .input-wrap textarea {
+	.form--aligned input,
+	.form--aligned textarea {
 		display: table-cell;
 	}
 
