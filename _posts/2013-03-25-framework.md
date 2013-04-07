@@ -605,7 +605,6 @@ It's an icon based on font size . You can use it in responsive navigations.
 </div>
 </div>
 
-### Pagination {#object-pagination}
 
 #### Usage
 

@@ -1,6 +1,4 @@
 node_modules/
 test/
-<<<<<<< HEAD
-=======
+_site/
 *.min.*
->>>>>>> docs-new
