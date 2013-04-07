@@ -52,7 +52,7 @@ sections: [
 				title: 'Dropdown'
 			}, {
 				id: 'object-tags',
-				title: 'Usage'
+				title: 'Tags'
 			}, {
 				id: 'object-comments-area',
 				title: 'Comments area'
