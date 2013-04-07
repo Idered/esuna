@@ -276,44 +276,11 @@ ul ul {
 
 /** %Site nav */
 /*------------------------------------*/
-.mobile-nav-header {
-	display: block;
-	background: #333;
-	text-align: right;
-	position: relative;
-	padding: 8px 8px 7px 8px;
-}
-
-.site-nav {
-	left: 0;
-	top: 39px;
-	width: 100%;
-	background: #333;
-	position: absolute;
-}
-
-.site-nav li {
-	width: 100%;
-}
-
 .site-nav__title {
 	color: #acc0c7;
-	display: block;
 	font-size: 1.125em;
 	margin: 1em 0 .5em 1em;
 }
-
-.site-nav a {
-	color: #ccc;
-	display: block;
-	padding: .5em 1.5em;
-}
-
-.site-nav  a:hover,
-.site-nav .active a {
-	color: #fff;
-}
-
 
 /** $Content */
 /*---------------------------------------------------------------------------*/
