@@ -14,7 +14,7 @@ Main features:
 
 * [BEM based](/esuna/style-guidelines#css-naming-conventions)
 * Uses mobile-first approach
-* Custom [Development Tools](/framework#development-tools)
+* Custom [Development Tools](/esuna/framework#development-tools)
 * [Optimized comments](/esuna/style-guidelines#guide-css) allow for easier search
 
 ## Installation {#installation}
