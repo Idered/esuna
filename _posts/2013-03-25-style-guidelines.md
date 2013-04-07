@@ -2,7 +2,7 @@
 date: 2013-03-25 16:56:14
 layout: section
 slug: style-guidelines
-title: Style guidelies
+title: Style guidelines
 sections: [
 	{
 		id: 'guide-html',
