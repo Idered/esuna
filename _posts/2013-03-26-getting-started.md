@@ -12,10 +12,10 @@ Esuna is open source Front-End framework for those who don't want to struggle wi
 
 Main features:
 
-* [BEM based](/style-guidelines#naming-conventions)
+* [BEM based](/esuna/style-guidelines#css-naming-conventions)
 * Uses mobile-first approach
 * Custom [Development Tools](/framework#development-tools)
-* [Optimized comments](/style-guidelines#css) allow for easier search
+* [Optimized comments](/esuna/style-guidelines#guide-css) allow for easier search
 
 ## Installation {#installation}
 
@@ -28,4 +28,4 @@ You can clone repo or just download:
 
 Esuna uses custom DevTools set which helps with development. Those tools are only initialized on specified development domain. To set it, open `_ui/js/script.js` and find `devDomains` variable at the beginning of file. Set it to your domain, usually `localhost`.
 
-Read more about [DevTools](/framework#development-tools).
+Read more about [DevTools](/esuna/framework#development-tools).
