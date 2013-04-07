@@ -598,7 +598,7 @@ It's an icon based on font size . You can use it in responsive navigations.
 
 <div class="example">
 	<div class="example__content">
-		<i class="navicon"></i>
+		<i class="navicon"><!-- . --></i>
 	</div>
 	<div class="example__code" markdown="1">
 
