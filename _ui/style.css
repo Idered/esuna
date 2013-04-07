@@ -149,9 +149,6 @@ input[type="radio"] {
 
 input[type="search"] {
 	-webkit-appearance: textfield;
-	-moz-box-sizing: content-box;
-	-webkit-box-sizing: content-box;
-	box-sizing: content-box;
 }
 
 input[type="search"]::-webkit-search-cancel-button,
@@ -181,7 +178,7 @@ table {
 /*---------------------------------------------------------------------------*/
 
 html {
-	font: 300 1em/1.5 "Open Sans", sans-serif;
+	font: 400 1em/1.5 "Open Sans", sans-serif;
 	background-color: #fff;
 	color: #666;
 	-webkit-font-smoothing: antialiased;
@@ -535,6 +532,8 @@ input:invalid {
 
 	.s {
 		background-image: url(img/sprite@2x.png);
+		/* Change this to sprite.png width and height */
+		background-size: 0 0;
 	}
 
 }
@@ -564,12 +563,11 @@ input:invalid {
 /** [Object] Arrows */
 /*------------------------------------*/
 .arrow {
-	display: inline-block;
-	vertical-align: middle;
 	width: 0;
 	height: 0;
 	cursor: pointer;
 	margin: .3125em 0;
+	display: inline-block;
 	border: .375em solid #999;
 }
 
@@ -1136,6 +1134,10 @@ input:invalid {
 
 /*------------------------------------*/
 
+.group--vertical {
+	display: inline-block;
+}
+
 .group--vertical > * {
 	display: block;
 }
@@ -1245,22 +1247,22 @@ input:invalid {
 
 .site-nav {
 	left: 0;
-	top: 39px;
+	bottom: 100%;
 	width: 100%;
 	background: #333;
 	position: absolute;
 	opacity: 0;
-	visibility: hidden;
-	-webkit-transition: .25s ease;
-	-moz-transition: .25s ease;
-	-ms-transition: .25s ease;
-	-o-transition: .25s ease;
-	transition: .25s ease;
+	-webkit-transition: .25s ease, bottom 0s;
+	-moz-transition: .25s ease, bottom 0s;
+	-ms-transition: .25s ease, bottom 0s;
+	-o-transition: .25s ease, bottom 0s;
+	transition: .25s ease, bottom 0s;
 }
 
 .site-nav.is-open {
+	top: 39px;
 	opacity: 1;
-	visibility: visible;
+	bottom: auto;
 }
 
 .site-nav li {
