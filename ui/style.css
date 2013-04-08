@@ -322,6 +322,7 @@ ul ul {
 
 .section-header__choose .dropdown__content li {
 	position: relative;
+	letter-spacing: .069em;
 }
 
 .section-header__choose:after,

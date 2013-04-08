@@ -12,7 +12,16 @@ sections: [
 		title: 'Development Tools'
 	}, {
 		id: 'base',
-		title: 'Base'
+		title: 'Base',
+		sub: [
+			{
+				id: 'base-separators',
+				title: 'Separators'
+			}, {
+				id: 'base-forms',
+				title: 'Forms'
+			}
+		]
 	}, {
 		id: 'objects',
 		title: 'Objects',
@@ -166,7 +175,27 @@ Please follow [Grunt documentation](http://gruntjs.com/getting-started) for more
 
 ## Base {#base}
 
-### Forms
+### Separators {#base-separators}
+
+<div class="example">
+	<div class="example__content">
+		<hr>
+		<hr class="separator--dashed">
+		<hr class="separator--subtle">
+	</div>
+	<div class="example__code" markdown="1">
+	<hr>
+	<hr class="separator--dashed">
+	<hr class="separator--subtle">
+</div>
+</div>
+
+#### Modifiers
+
+* `.separator--dashed`
+* `.separator--subtle`
+
+### Forms {#base-forms}
 
 #### Vertical mode
 
@@ -812,6 +841,9 @@ Basic structure of comments area you can use in most of wordpress projects.
 
 `.text--break`
 : Break words longer than container width.
+
+`.text--nowrap`
+: Display text in one line - prevents from wrapping.
 
 #### Font sizes
 
