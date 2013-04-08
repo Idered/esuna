@@ -95,7 +95,7 @@ The naming convention follows this pattern:
 `.block--modifier`
 : represents a different state of .block.
 
----
+<hr class="separator--subtle">
 
 Further reading
 : [MindBEMding - getting your head round BEM syntax](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax) by Harry Roberts
@@ -139,6 +139,7 @@ This is primary style of comments used to separate main sections of css. Section
 There're two empty lines before this comment and one after.
 
 Please note that these comments aren't used inside media queries.
+
 Search trigger character: `$`
 
 #### Object comments

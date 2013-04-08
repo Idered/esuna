@@ -45,6 +45,9 @@ sections: [
 				id: 'object-navicon',
 				title: 'Navicon'
 			}, {
+				id: 'object-arrows',
+				title: 'Arrows'
+			}, {
 				id: 'object-pagination',
 				title: 'Pagination'
 			}, {
@@ -63,6 +66,9 @@ sections: [
 		title: 'Helpers',
 		sub: [
 			{
+				id: 'helper-size',
+				title: 'Size'
+			}, {
 				id: 'helper-display',
 				title: 'Display'
 			}, {
@@ -117,10 +123,10 @@ sections: [
 Please see [my snippets repo](http://github.com/Idered/snippets) for basic structure of elements included in `style.css`, I've put there structure of comments, post, blockquotes, tags and many more elements.
 
 `plugins.js`
-: This file contains Respond.js polyfill to add min/max-width and media query support. It also contains [DevTools](#development-tools).
+: This file contains Respond.js polyfill to add min/max-width and media query support. It also contains [development tools](#development-tools) and some other plugins.
 
 `script.js`
-: This file is where you work on JS stuff. There's already a basic structure with plaeholder polyfill and some other useful scripts.
+: This file is where you work on JS stuff. There's already a basic structure.
 
 `__assets`
 : In this folder you can put not converted fonts, PSD's including sprite.psd, documentations from client, etc.
@@ -130,10 +136,9 @@ Please see [my snippets repo](http://github.com/Idered/snippets) for basic struc
 
 ## Development Tools {#development-tools}
 
-DevTools is a custom set of tools that can help you during development. Currently this set is rather small but it will be expanded in future.
+Developments Tools is a custom set of tools that can help you during development. Currently this set is rather small but it will be expanded in future.
 
 ### Tools
-
 
 `cssRefresher`
 : Simple css refresh script with no UI. Options:
@@ -269,13 +274,6 @@ Please follow [Grunt documentation](http://gruntjs.com/getting-started) for more
 `.form--aligned`
 : Align labels to left and make them equal width.
 
-`.input--half`
-: Fill 50% of parent width.
-
-`.input--full`
-: Fill 100% of parent width.
-
-
 ## Objects {#objects}
 
 ### Rows {#object-rows}
@@ -334,6 +332,9 @@ Please follow [Grunt documentation](http://gruntjs.com/getting-started) for more
 ### Sprites {#object-sprites}
 
 Sprites default file is `_ui/img/sprite.png`. Default single sprite size is 16x16px.
+
+{:id .notification .notification--info}
+Don't forget to update background-size property in retina media query.
 
 #### Usage
 
@@ -451,20 +452,20 @@ Use font size to manipulate button size.
 
 <div class="example">
 	<div class="example__content">
-		<p class="group group--horizontal">
+		<p class="group--horizontal">
 			<a href="#" class="btn btn--primary">Button 1</a>
 			<a href="#" class="btn btn--secondary">Button 2</a>
 			<a href="#" class="btn btn--tertiary">Button 3</a>
 		</p>
 
-		<p class="group group--vertical">
+		<p class="group--vertical">
 			<a href="#" class="btn btn--primary">Button 1</a>
 			<a href="#" class="btn btn--secondary">Button 2</a>
 			<a href="#" class="btn btn--tertiary">Button 3</a>
 		</p>
 
 		<form action="">
-			<div class="input-wrap group group--horizontal group--full">
+			<div class="input-wrap group--horizontal group--full">
 				<input type="text" id="username" name="username" placeholder="Name" class="cell cell-4of12">
 				<input type="email" id="email" name="email" placeholder="Email" class="cell cell-4of12">
 				<input type="url" id="url" name="url" placeholder="URL" class="cell cell-4of12">
@@ -472,7 +473,7 @@ Use font size to manipulate button size.
 		</form>
 
 		<form action="">
-			<div class="input-wrap group group--vertical">
+			<div class="input-wrap group--vertical">
 				<input type="text" id="username" name="username" placeholder="Name">
 				<input type="email" id="email" name="email" placeholder="Email">
 				<input type="url" id="url" name="url" placeholder="URL">
@@ -480,27 +481,27 @@ Use font size to manipulate button size.
 		</form>
 
 		<form action="" class="search-form">
-			<div class="input-wrap group group--horizontal">
+			<div class="input-wrap group--horizontal">
 				<input type="search" name="q" placeholder="Search..." class="cell cell-9of12">
 				<input type="submit" name="submit" value="Go" class="cell cell-3of12">
 			</div>
 		</form>
 	</div>
 	<div class="example__code" markdown="1">
-	<p class="group group--horizontal">
+	<p class="group--horizontal">
 		<a href="#" class="btn btn--primary">Button 1</a>
 		<a href="#" class="btn btn--secondary">Button 2</a>
 		<a href="#" class="btn btn--tertiary">Button 3</a>
 	</p>
 
-	<p class="group group--vertical">
+	<p class="group--vertical">
 		<a href="#" class="btn btn--primary">Button 1</a>
 		<a href="#" class="btn btn--secondary">Button 2</a>
 		<a href="#" class="btn btn--tertiary">Button 3</a>
 	</p>
 
 	<form action="">
-		<div class="input-wrap group group--horizontal group--full">
+		<div class="input-wrap group--horizontal group--full">
 			<input type="text" id="username" name="username" placeholder="Name" class="cell cell-4of12">
 			<input type="email" id="email" name="email" placeholder="Email" class="cell cell-4of12">
 			<input type="url" id="url" name="url" placeholder="URL" class="cell cell-4of12">
@@ -508,7 +509,7 @@ Use font size to manipulate button size.
 	</form>
 
 	<form action="">
-		<div class="input-wrap group group--vertical">
+		<div class="input-wrap group--vertical">
 			<input type="text" id="username" name="username" placeholder="Name">
 			<input type="email" id="email" name="email" placeholder="Email">
 			<input type="url" id="url" name="url" placeholder="URL">
@@ -517,21 +518,15 @@ Use font size to manipulate button size.
 </div>
 </div>
 
-`.group`
-: Basic class, its optional - allows to hide text overflow.
-
 `.group--horizontal`
 : Throws list into horizontal mode. You can change width of elements using <a href="#row">row</a>.
 
 `.group--vertical`
 : Throws list into vertical mode.
 
-`.group--full`
-: Group fit parent width.
-
 ### Media object {#object-media-object}
 
-You can use this object in many cases, e.g. separate user avatar from comment text, separate post data from post content, etc.
+You can use this object in many cases, e.g. separate user avatar from comment text, separate post date from post content, etc.
 
 Please see this [article](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code) for more info about this object.
 
@@ -545,7 +540,7 @@ Please see this [article](http://www.stubbornella.org/content/2010/06/25/the-med
 #### Modifiers
 
 `.media__img--rev`
-: Align image to right.
+: Align img object to right.
 
 ### Notifications {#object-notifications}
 
@@ -605,6 +600,34 @@ It's an icon based on font size . You can use it in responsive navigations.
 </div>
 </div>
 
+### Arrows {#object-arrows}
+
+You can use those arrows in dropdowns, 'read more' links, etc. Arrow size is based on `font-size`.
+
+#### Usage
+
+<div class="example">
+	<div class="example__content">
+		<i class="arrow arrow--up"></i>
+		<i class="arrow arrow--right"></i>
+		<i class="arrow arrow--down"></i>
+		<i class="arrow arrow--left"></i>
+	</div>
+	<div class="example__code" markdown="1">
+	<i class="arrow arrow--up"></i>
+	<i class="arrow arrow--right"></i>
+	<i class="arrow arrow--down"></i>
+	<i class="arrow arrow--left"></i>
+</div>
+</div>
+
+#### Modifiers
+
+* `.arrow--up`
+* `.arrow--right`
+* `.arrow--down`
+* `.arrow--left`
+
 ### Pagination {#object-pagination}
 
 #### Usage
@@ -645,19 +668,19 @@ It's an icon based on font size . You can use it in responsive navigations.
 		<div class="dropdown">
 			<div class="dropdown__toggle">Your account</div>
 			<ul class="dropdown__content">
-				<li><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></li>
-				<li><a href="">Settings</a></li>
-				<li><a href="">Friends</a></li>
-				<li><a href="">Go pro</a></li>
-				<li><a href="">Sign out</a></li>
+				<li><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></li>
+				<li><a href="#">Settings</a></li>
+				<li><a href="#">Friends</a></li>
+				<li><a href="#">Go pro</a></li>
+				<li><a href="#">Sign out</a></li>
 			</ul>
 		</div>
 	</div>
 	<div class="example__code" markdown="1">
 	<div class="dropdown">
-		<div class="dropdown__text"></div>
 		<div class="dropdown__toggle"></div>
 		<ul class="dropdown__content">
+			<li><a href=""></a></li>
 			<li><a href=""></a></li>
 		</ul>
 	</div>
@@ -684,6 +707,11 @@ It's an icon based on font size . You can use it in responsive navigations.
 	</div>
 </div>
 </div>
+
+#### Modifiers
+
+`.tags--separated`
+: Throws tags into comma separated mode.
 
 ### Comments area {#object-comments-area}
 
@@ -736,6 +764,14 @@ Basic structure of comments area you can use in most of wordpress projects.
 ~~~
 
 ## Helpers {#helpers}
+
+### Size {#helper-size}
+
+`.half`
+: 50% width of parent.
+
+`.full`
+: 100% width of parent, also applies border-box box-sizing mode.
 
 ### Display {#helper-display}
 
