@@ -1229,6 +1229,7 @@ input:invalid {
 	background: #333;
 	position: absolute;
 	opacity: 0;
+	z-index: 99999;
 	-webkit-transition: opacity .25s ease;
 	-moz-transition: opacity .25s ease;
 	-ms-transition: opacity .25s ease;
