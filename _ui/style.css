@@ -54,13 +54,6 @@ dfn {
 	font-style: italic;
 }
 
-hr {
-	-webkit-box-sizing: content-box;
-	-moz-box-sizing: content-box;
-	box-sizing: content-box;
-	height: 0;
-}
-
 mark {
 	background: #ff0;
 	color: #000;
@@ -267,12 +260,15 @@ h6, .zeta {
 /** [Base] Separators */
 /*------------------------------------*/
 hr {
-	border-top: 1px solid #ccc;
-	display: block;
 	height: 0;
 	border: 0;
 	padding: 0;
 	margin: 1em 0;
+	display: block;
+	border-top: 1px solid #ccc;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
 }
 
 /*------------------------------------*/
@@ -734,7 +730,11 @@ input:invalid {
 .btn--inactive,
 .btn--inactive:hover,
 .btn--inactive:active,
-.btn--inactive:focus {
+.btn--inactive:focus,
+.btn:disabled,
+.btn:disabled:hover,
+.btn:disabled:active,
+.btn:disabled:focus {
 	opacity: 1;
 	background-color: #ddd;
 	color: #777;
