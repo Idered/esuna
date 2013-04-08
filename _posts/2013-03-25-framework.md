@@ -637,10 +637,10 @@ You can use those arrows in dropdowns, 'read more' links, etc. Arrow size is bas
 
 <div class="example">
 	<div class="example__content">
-		<i class="arrow arrow--up"></i>
-		<i class="arrow arrow--right"></i>
-		<i class="arrow arrow--down"></i>
-		<i class="arrow arrow--left"></i>
+		<i class="arrow arrow--up"><!-- . --></i>
+		<i class="arrow arrow--right"><!-- . --></i>
+		<i class="arrow arrow--down"><!-- . --></i>
+		<i class="arrow arrow--left"><!-- . --></i>
 	</div>
 	<div class="example__code" markdown="1">
 	<i class="arrow arrow--up"></i>
