@@ -9,9 +9,9 @@ title: Getting started
 ## About
 
 {:id .delta .text--center .bar}
-Esuna is [open source](http://git.io/esuna) Front-End framework and set of coding guidelines. <br>It's a solid base on which you can build your projects.
+Esuna is [open source](http://git.io/esuna) Front-End framework and set of coding guidelines. <br class="mobile-hide">It's a solid base on which you can build your projects.
 
-Here's a round up:
+Here's a round up of info about Esuna:
 
 * It's [BEM based](/esuna/style-guidelines#css-naming-conventions) and mobile first framework
 * Basic style for most useful elements used during development - no candy look
@@ -22,11 +22,13 @@ Here's a round up:
 
 You can clone repo or just download:
 
-1. `git clone https://github.com/Idered/esuna`
-2. [Download zip](https://github.com/Idered/esuna/archive/master.zip)
+* `git clone https://github.com/Idered/esuna`
+* [Download zip](https://github.com/Idered/esuna/archive/master.zip)
 
 ## Configuration {#configuration}
 
-Esuna uses custom DevTools set which helps with development. Those tools are only initialized on specified development domain. To set it, open `_ui/js/script.js` and find `devDomains` variable at the beginning of file. Set it to your domain, usually `localhost`.
+Esuna uses custom set of [development tools]({{ site.url }}/framework#development-tools), some of them needs additional configuration. Those tools are only initialized on specified development domains, to set those domains, open `_ui/js/script.js` and find `devDomains` variable at the beginning of file. Add there your development domains.
 
-Read more about [DevTools](/esuna/framework#development-tools).
+If you're going to add retina images in your project then open `_ui/style.css` adn goto `Sprites` sections. There's a special media query which applies to devices with higher resolution - update `background-size` property with width and height of `_ui/img/sprite.png`. If you don't want to support retina devices then simply remove that media query.
+
+
