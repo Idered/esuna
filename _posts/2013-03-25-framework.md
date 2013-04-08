@@ -253,7 +253,7 @@ Please follow [Grunt documentation](http://gruntjs.com/getting-started) for more
 			</div>
 			<div class="input-wrap">
 				<label for="message">Message</label>
-				<textarea name="message" class="input--full" id="message" rows="5"></textarea>
+				<textarea name="message" class="full" id="message" rows="5"></textarea>
 			</div>
 			<div class="form-actions">
 				<input type="submit" name="submit" value="Send" class="btn btn--primary">
@@ -278,7 +278,7 @@ Please follow [Grunt documentation](http://gruntjs.com/getting-started) for more
 		</div>
 		<div class="input-wrap">
 			<label for="message">Message</label>
-			<textarea name="message" class="input--full" id="message" rows="5"></textarea>
+			<textarea name="message" class="full" id="message" rows="5"></textarea>
 		</div>
 		<div class="form-actions">
 			<input type="submit" name="submit" value="Send" class="btn btn--primary">
