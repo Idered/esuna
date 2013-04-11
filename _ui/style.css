@@ -109,6 +109,7 @@ legend {
 	padding: 0;
 }
 
+.btn,
 button, input,
 select, textarea {
 	font-family: inherit;
@@ -391,18 +392,11 @@ ul ul {
 	margin-bottom: 1em;
 }
 
-.input-wrap:after {
-	content: '';
-	clear: both;
-	display: table;
-}
-
 .input-wrap label {
 	display: block;
 }
 
-.input-wrap input,
-.input-wrap textarea {
+.text-input {
 	padding: .5em;
 	border-radius: 3px;
 	border: 1px solid #aaa;
@@ -471,6 +465,16 @@ input:invalid {
 
 /** $Objects */
 /*---------------------------------------------------------------------------*/
+
+.nav,
+.comments,
+.list--plain,
+.pagination ul,
+.dropdown__content {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
 
 /** [Object] Sprites */
 /*------------------------------------*/
@@ -580,18 +584,6 @@ input:invalid {
 
 /** [Object] Nav */
 /*------------------------------------*/
-.nav {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-
-.nav:after {
-	content: '';
-	clear: both;
-	display: table;
-}
-
 .nav li,
 .nav a {
 	display: inline-block;
@@ -619,16 +611,59 @@ input:invalid {
 	text-align: center;
 }
 
+/** [Object] Pagination */
+/*------------------------------------*/
+.pagination {
+	text-align: center;
+}
+
+.pagination ul {
+	vertical-align: top;
+	display: inline-block;
+}
+
+.pagination a,
+.pagination li,
+.pagination span {
+	vertical-align: top;
+	display: inline-block;
+}
+
+.pagination a,
+.pagination span {
+	padding: 0 .25em;
+}
+
+.pagination__prev,
+.pagination__next {}
+
+.pagination__prev {}
+.pagination__next {}
+
+.pagination__prev a,
+.pagination__next a {}
+
+.pagination__prev a {}
+.pagination__next a {}
+
+.pagination .current,
+.pagination a:hover {}
+
+.pagination a:active {}
+
+.pagination__prev:hover,
+.pagination__next:hover {}
+
+.pagination__prev:active,
+.pagination__next:active {}
+
 /** [Object] Buttons */
 /*------------------------------------*/
 .btn {
 	display: inline-block;
 	vertical-align: middle;
-	font-family: inherit;
-	font-size: 100%;
 	cursor: pointer;
 	border: none;
-	margin: 0;
 	height: 2em;
 	padding: 0 1em;
 	line-height: 2;
@@ -761,12 +796,6 @@ input:invalid {
 	display: block;
 }
 
-.media:after {
-	content: '';
-	clear: both;
-	display: table;
-}
-
 .media__img {
 	float: left;
 	margin-right: 1em;
@@ -832,64 +861,9 @@ input:invalid {
 	margin-bottom: 1.5em;
 }
 
-.bar:after {
-	content: '';
-	clear: both;
-	display: table;
-}
-
 .bar--small { margin-bottom: .75em; }
 .bar--large { margin-bottom: 2em; }
 .bar--huge  { margin-bottom: 3em; }
-
-/** [Object] Pagination */
-/*------------------------------------*/
-.pagination {
-	text-align: center;
-}
-
-.pagination ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	vertical-align: top;
-	display: inline-block;
-}
-
-.pagination a,
-.pagination li,
-.pagination span {
-	vertical-align: top;
-	display: inline-block;
-}
-
-.pagination a,
-.pagination span {
-	padding: 0 .25em;
-}
-
-.pagination__prev,
-.pagination__next {}
-
-.pagination__prev {}
-.pagination__next {}
-
-.pagination__prev a,
-.pagination__next a {}
-
-.pagination__prev a {}
-.pagination__next a {}
-
-.pagination .current,
-.pagination a:hover {}
-
-.pagination a:active {}
-
-.pagination__prev:hover,
-.pagination__next:hover {}
-
-.pagination__prev:active,
-.pagination__next:active {}
 
 /** [Object] Dropdown */
 /*------------------------------------*/
@@ -968,9 +942,7 @@ input:invalid {
 
 	left: -1px;
 	right: -1px;
-	padding: 0;
 	z-index: 1;
-	margin: 0;
 	position: absolute;
 
 	overflow: auto;
@@ -978,7 +950,6 @@ input:invalid {
 
 	opacity: 0;
 	visibility:hidden;
-	list-style-type: none;
 
 	-webkit-transition: .25s ease;
 	-moz-transition: .25s ease;
@@ -1032,12 +1003,6 @@ input:invalid {
 }
 
 /*------------------------------------*/
-
-.tags--separated:after {
-	content: '';
-	clear: both;
-	display: table;
-}
 
 .tags--separated a {
 	border: none;
@@ -1142,12 +1107,6 @@ input:invalid {
 
 .comments-area__title {}
 
-.comments {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-}
-
 .comment {
 	position: relative;
 }
@@ -1190,12 +1149,8 @@ input:invalid {
 /** $Header */
 /*---------------------------------------------------------------------------*/
 
-.header {}
-
-.header:after {
-	content: '';
-	clear: both;
-	display: table;
+.header {
+	margin-bottom: 1em;
 }
 
 /** %Logo */
@@ -1309,8 +1264,7 @@ input:invalid {
 		width: 20%;
 	}
 
-	.form--aligned input,
-	.form--aligned textarea {
+	.form--aligned .text-input {
 		display: table-cell;
 	}
 
@@ -1318,12 +1272,6 @@ input:invalid {
 	/*------------------------------------*/
 	.row {
 		margin-left: -1em;
-	}
-
-	.row:after {
-		content: '';
-		clear: both;
-		display: table;
 	}
 
 	.row > .cell {
@@ -1411,17 +1359,14 @@ input:invalid {
 		padding-left: .5em;
 	}
 
-	.input-row input,
-	.input-row textarea {
+	.input-row .text-input {
 		width: 100%;
 	}
 
 	/** %[min768] Layout */
 	/*------------------------------------*/
-	.main:after {
-		content: '';
-		clear: both;
-		display: table;
+	.main {
+		margin-bottom: 1em;
 	}
 
 	.main__inner {
@@ -1560,7 +1505,14 @@ input:invalid {
 
 /** [Helper] Clearfix */
 /*------------------------------------*/
-.cf:after {
+.cf:after,
+.nav:after,
+.bar:after,
+.row:after,
+.media:after,
+.header:after,
+.input-wrap:after,
+.tags--separated:after {
 	content: '';
 	clear: both;
 	display: table;
