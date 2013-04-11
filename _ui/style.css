@@ -396,7 +396,7 @@ ul ul {
 	display: block;
 }
 
-.text-input {
+.input {
 	padding: .5em;
 	border-radius: 3px;
 	border: 1px solid #aaa;
@@ -1107,14 +1107,16 @@ input:invalid {
 
 .comments-area__title {}
 
+.comments {}
+
 .comment {
 	position: relative;
 }
 
 .comment__photo {
 	float: left;
-	max-width: 80px;
-	margin-right: 24px;
+	max-width: 5em;
+	margin-right: 1.5em;
 }
 
 .comment__content {
@@ -1141,8 +1143,8 @@ input:invalid {
 	max-width: 960px;
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-left: 1em;
+	padding-right: 1em;
 }
 
 
@@ -1174,7 +1176,7 @@ input:invalid {
 	background: #333;
 	text-align: right;
 	position: relative;
-	padding: 8px 8px 7px 8px;
+	padding: .5em .5em .45px .5em;
 }
 
 /*------------------------------------*/
@@ -1264,7 +1266,7 @@ input:invalid {
 		width: 20%;
 	}
 
-	.form--aligned .text-input {
+	.form--aligned .input {
 		display: table-cell;
 	}
 
@@ -1359,7 +1361,7 @@ input:invalid {
 		padding-left: .5em;
 	}
 
-	.input-row .text-input {
+	.input-row .input {
 		width: 100%;
 	}
 
