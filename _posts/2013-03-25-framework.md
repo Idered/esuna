@@ -119,7 +119,7 @@ sections: [
 : Contains basic structure.
 
 `Gruntfile.js`
-: <a href="http://gruntjs.com">Grunt</a> configuration file.
+: [Grunt](http://gruntjs.com) configuration file.
 
 `package.json`
 : File used by Grunt. Contains basic info about project and dependencies.
