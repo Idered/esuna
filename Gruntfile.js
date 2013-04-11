@@ -126,6 +126,7 @@ module.exports = function(grunt) {
                     "errors": true,
                     "ids": true
                 },
+                /** Source */
                 src: '_ui/*.css'
             }
         },
@@ -144,7 +145,12 @@ module.exports = function(grunt) {
         }
     });
 
+    // Default taks for development
     grunt.registerTask('default', ['jshint', 'csslint', 'watch']);
+
+    // Lint files once
     grunt.registerTask('lint', ['jshint', 'csslint']);
+
+    // Build files for production
     grunt.registerTask('build', ['clean', 'htmlmin', 'uglify', 'cssmin', 'imagemin', 'copy']);
 };
