@@ -1176,7 +1176,7 @@ input:invalid {
 	background: #333;
 	text-align: right;
 	position: relative;
-	padding: .5em .5em .45px .5em;
+	padding: 8px 11px 5px 11px;
 }
 
 /*------------------------------------*/
@@ -1196,7 +1196,7 @@ input:invalid {
 }
 
 .site-nav.is-open {
-	top: 39px;
+	top: 37px;
 	opacity: 1;
 	bottom: auto;
 }
