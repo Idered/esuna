@@ -127,10 +127,10 @@ $.fn.dropdown = function() {
 	return this;
 }; // dropdown
 
-/** Placeholder shim */
+/*! Placeholder shim */
 (function($){if(!('placeholder'in document.createElement('input'))){$('[placeholder]').focus(function(){var input=$(this);if(input.val()===input.attr('placeholder')){input.val('').removeClass('placeholder');}}).blur(function(){var input=$(this);if(input.val()===''||input.val()===input.attr('placeholder')){input.val(input.attr('placeholder')).addClass('placeholder');}}).blur();$('[placeholder]').parents('form').submit(function(){$(this).find('[placeholder]').each(function(){var input=$(this);if(input.val()===input.attr('placeholder')){input.val('');}});});}})(jQuery);
 
-/** Submit forms using Ctlr + Enter shorcut */
+/*! Submit forms using Ctlr + Enter shorcut */
 (function($){var isCtrl=false;$('textarea, input').keyup(function(key){if(key.which===17){isCtrl=false;}}).keydown(function(key){if(key.which===17){isCtrl=true;}if(key.which===13&&isCtrl===true){$(this).closest('form').submit();return false;}});})(jQuery);
 
 /*! Respond.js v1.1.0: min/max-width media query polyfill. (c) Scott Jehl. MIT/GPLv2 Lic. j.mp/respondjs  */
