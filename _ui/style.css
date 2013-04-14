@@ -1245,13 +1245,13 @@ input:invalid {
 
 /** =[min320] Phones - portrait */
 /*------------------------------------*/
-@media (min-width: 320px) {
+@media (min-width: 20em) {
 
 }
 
 /** =[min480] Phones - landscape */
 /*------------------------------------*/
-@media (min-width: 480px) {
+@media (min-width: 30em) {
 
 	/** [min480 | Form] Modifiers */
 	/*------------------------------------*/
@@ -1322,7 +1322,7 @@ input:invalid {
 
 /** =[max767] Phones */
 /*------------------------------------*/
-@media (max-width: 767px) {
+@media (max-width: 47.9375em) {
 
 	/** [max767 | Helper] Hide - mobile */
 	/*------------------------------------*/
@@ -1334,7 +1334,7 @@ input:invalid {
 
 /** =[min768] Tablets - portrait */
 /*------------------------------------*/
-@media (min-width: 768px) {
+@media (min-width: 48em) {
 
 	/** [min768 | Form] Input row */
 	/*------------------------------------*/
@@ -1437,7 +1437,7 @@ input:invalid {
 
 /** =[min960] Layout width breakpoint */
 /*------------------------------------*/
-@media (min-width: 960px) {
+@media (min-width: 60em) {
 
 	/** %[min960] Layout */
 	/*------------------------------------*/
@@ -1450,19 +1450,19 @@ input:invalid {
 
 /** =[min1024] Tablets - landscape */
 /*------------------------------------*/
-@media (min-width: 1024px) {
+@media (min-width: 64em) {
 
 }
 
 /** =[max1024] Tablets */
 /*------------------------------------*/
-@media (max-width: 1024px) {
+@media (max-width: 64em) {
 
 }
 
-/** =[min1280] Widescreens */
+/** =[min1200] Widescreens */
 /*------------------------------------*/
-@media (min-width: 1280px) {
+@media (min-width: 75em) {
 
 }
 
