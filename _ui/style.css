@@ -689,18 +689,21 @@ input:invalid {
 .btn--small {
 	padding-right: 0.5em;
 	padding-left: 0.5em;
+	line-height: 2em;
 	height: 2em;
 }
 
 .btn--large {
 	padding-right: 1.5em;
 	padding-left: 1.5em;
+	line-height: 4em;
 	height: 4em;
 }
 
 .btn--huge {
 	padding-right: 2em;
 	padding-left: 2em;
+	line-height: 5em;
 	height: 5em;
 }
 
